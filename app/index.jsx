@@ -1,11 +1,10 @@
 require('expose?$!expose?jQuery!jquery');
 require("bootstrap-webpack");
-require('!style!css!react-bootstrap-modal/lib/styles/rbm-complete.css');
-require('./main.css');
+require('./main201609.css');
 require('bootstrap-select');
 require('!style!css!bootstrap-select/dist/css/bootstrap-select.min.css');
 
-require('./photos/world-study-fair032016.jpg');
+// require('./photos/world-study-fair032016.jpg');
 
 import React from 'react';
 import ReactDom from 'react-dom';

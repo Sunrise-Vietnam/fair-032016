@@ -1,0 +1,269 @@
+@media (max-width: 767px) {
+  .navBarCustom {
+    background-color: lightgray;
+  }
+
+  .marginBottomXS {
+    margin-bottom: 15px;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .navBarCustom {
+    background-color: white;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .marginBottomSM {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 991px) {
+  .navBarCustom {
+    background-color: white;
+  }
+
+  .smallSpacing {
+    height: 17px;
+  }
+
+  .mediumSpacing {
+    height: 30px;
+  }
+
+  .largeSpacing {
+    height: 70px;
+  }
+
+  h5 {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 992px) {
+  .marginBottomMD {
+    margin-bottom: 15px;
+  }
+
+  .smallSpacing {
+    height: 20px;
+  }
+
+  .mediumSpacing {
+    height: 50px;
+  }
+
+  .largeSpacing {
+    height: 90px;
+  }
+
+  h5 {
+    font-size: 16px;
+    line-height: 22px !important;
+  }
+}
+
+body {
+  color: #3c3c3c;
+}
+
+.noPadding {
+  padding: 0 !important;
+}
+
+.white, .customInput {
+  color: #fff;
+}
+
+.grayBg {
+  background-color: #f4f4f4
+}
+
+.orange {
+  color: #ed7618;
+  font-weight: 800;
+}
+
+.lblue {
+  color: #26a4fb;
+}
+
+.dblue {
+  color: #0965cc;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+.upperText {
+  text-transform: uppercase;
+}
+
+.imgResponsive {
+  width: 100%;
+  height: auto;
+}
+
+.sectionTitle {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.btnBlock {
+  margin: 20px auto 10px auto;
+  display: block;
+  padding: 7px 55px 13px 55px;
+  border-radius: 10px !important;
+  box-shadow: none;
+  border: none;
+}
+
+.btnBlock h4 {
+  margin-bottom: 0;
+}
+
+#btnRegister {
+  background-color: #282828;
+  color: white;
+}
+
+#btnRegister:hover {
+  background-color: #42464f;
+}
+
+#btnToForm {
+  background-color: white;
+  color: #282828;
+}
+
+.navBarCustom {
+  margin-bottom: 0 !important;
+  text-align: center;
+  border: 0 !important
+}
+
+.navBarCustom > .container-fluid > .centerMenu {
+  display: inline-block !important;
+}
+
+.centerMenu > ul > li > a {
+  text-align: center;
+  color: black;
+  font-weight: bold;
+}
+
+.centerMenu > ul > li > a.customA {
+  padding-top: 40px;
+  height: 100px;
+}
+
+.centerMenu > ul > li > a:hover {
+  background-color: white;
+}
+
+.centerMenu > ul > li > a.customA:hover {
+  background-image: linear-gradient(to right, #4d28b4, #7c20a3, #a41794);
+  color: white;
+}
+
+.banner {
+  margin-top: 95px;
+}
+
+.bannerContent {
+  justify-content: flex-end;
+}
+
+.iconPlaces {
+  width: 18px;
+  height: auto;
+}
+
+.spaceImg {
+  min-width: 18px;
+}
+
+.customMedia h5 {
+  font-size: 17px !important;
+}
+
+.customInput, .selectpicker {
+  background-color: #6e61ca !important;
+  border-radius: 8px !important;
+  padding: 12px 40px 12px 10px !important;
+  height: auto !important;
+  color: #fff !important;
+  font-size: 15px;
+}
+
+input::-webkit-input-placeholder { /* Chrome */
+  color: #fff !important;
+  font-style: italic;
+}
+
+input:-ms-input-placeholder { /* IE 10+ */
+  color: #fff !important;
+  font-style: italic;
+}
+
+input::-moz-placeholder { /* Firefox 19+ */
+  color: #fff !important;
+  font-style: italic;
+  opacity: 1;
+}
+
+input:-moz-placeholder { /* Firefox 4 - 18 */
+  color: #fff !important;
+  font-style: italic;
+  opacity: 1;
+}
+
+.selectpicker {
+
+}
+
+.opportunities {
+  background-image: url('./photos/201609/background-co-hoi.png');
+  background-size: cover;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.schoolsContainer {
+  background-image: url('./photos/201609/background-schools.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.schoolsContainer h4 {
+  line-height: 28px !important;
+}
+
+.footer {
+  background-image: url('./photos/201609/background-lien-he.png');
+  background-position: center;
+  background-size: contain;
+  color: white;
+}
+
+.footer p {
+  font-size: 14px;
+}
+
+.customMedia {
+  margin-top: 10px !important;
+}

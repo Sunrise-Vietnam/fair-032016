@@ -31,6 +31,14 @@ var common = {
                 loaders: ["style", "css"],
                 include: PATHS.app
             },
+	        {
+		        test: /\.scss$/,
+		        loaders: [
+			        'style?sourceMap',
+			        'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
+			        'sass'
+		        ]
+	        },
             {
                 test: /\.jsx?$/,
                 loaders: ['babel?cacheDirectory'],
@@ -52,7 +60,7 @@ var common = {
     plugins : [
         new HtmlwebpackPlugin({
             template: 'html-webpack-template.html',
-            title : 'Triển lãm thế giới du học tháng 03/2016 | Sunrise Vietnam Co. , Ltd',
+            title : 'Triển lãm thế giới du học tháng 09/2016 | Sunrise Vietnam Co. , Ltd',
             mobile : true,
             appMountId: 'app',
             ogImage : '/./photos/9f8474d4192fa108648293a162bc0d2.jpg',

@@ -1,12 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router';
-import Modal from 'react-bootstrap-modal';
-import _ from 'underscore';
+import _ from 'lodash';
 import DDP from 'ddp.js';
-
+import styles from '../../main201609.scss';
+import Slider from 'react-slick';
 
 const _formObj = {
-    isOpenModal: false,
     hovaten: '',
     sodienthoai: '',
     email: '',
@@ -19,39 +18,31 @@ const _formObj = {
     bietchuongtrinhquakenh: []
 }
 
-const _eventCode = 'Pk-FuP2cdvZDGopoPvnDAdLZDuhVCO29Cnv5s3ekeWN';
+const _eventCode = 'WPwoyeHuDBFYXdBYM3C6CW0XUQGGrwVgqKPEpuWu';
 
 export default class Home extends React.Component {
     constructor(props) {
         super(props);
-        this.state = _.clone(_formObj);
 
-        this._openModal = this._openModal.bind(this);
-        this._handle_Hovaten = this._handle_Hovaten.bind(this);
-        this._handle_Sodienthoai = this._handle_Sodienthoai.bind(this);
-        this._handle_Email = this._handle_Email.bind(this);
-        this._handle_Thamdutai = this._handle_Thamdutai.bind(this);
-        this._handle_Nguoidangkyla = this._handle_Nguoidangkyla.bind(this);
-        this._handle_Thanhphodangsong = this._handle_Thanhphodangsong.bind(this);
-        this._handle_Nhucauhoc = this._handle_Nhucauhoc.bind(this);
-        this._handle_Thoigianduhoc = this._handle_Thoigianduhoc.bind(this);
-        this._handle_Chuongtrinh = this._handle_Chuongtrinh.bind(this);
-        this._handle_Bietchuongtrinhquakenh = this._handle_Bietchuongtrinhquakenh.bind(this);
-        this._saveAndCloseModal = this._saveAndCloseModal.bind(this);
-    }
 
-    _openModal() {
-        this.setState({
-            isOpenModal: true
-        })
-        //this.props.history.pushState(null, "/thanks-you")
+        // this._handle_Hovaten = this._handle_Hovaten.bind(this);
+        // this._handle_Sodienthoai = this._handle_Sodienthoai.bind(this);
+        // this._handle_Email = this._handle_Email.bind(this);
+        // this._handle_Thamdutai = this._handle_Thamdutai.bind(this);
+        // this._handle_Nguoidangkyla = this._handle_Nguoidangkyla.bind(this);
+        // this._handle_Thanhphodangsong = this._handle_Thanhphodangsong.bind(this);
+        // this._handle_Nhucauhoc = this._handle_Nhucauhoc.bind(this);
+        // this._handle_Thoigianduhoc = this._handle_Thoigianduhoc.bind(this);
+        // this._handle_Chuongtrinh = this._handle_Chuongtrinh.bind(this);
+        // this._handle_Bietchuongtrinhquakenh = this._handle_Bietchuongtrinhquakenh.bind(this);
+        // this._saveAndCloseModal = this._saveAndCloseModal.bind(this);
     }
 
     _saveAndCloseModal() {
         if (this._isFormValid()) {
             let params = {
                 eventCode: _eventCode,
-                obj: _.omit(this.state, 'isOpenModal')
+                obj: this.state
             }
             let self = this;
             let msgId = this.ddp.method('registerEventGLVH', [params.eventCode, params.obj]);
@@ -143,563 +134,572 @@ export default class Home extends React.Component {
         });
     }
 
-    componentDidUpdate() {
-        if (this.state.isOpenModal && this.state.isOpenModal === true) {
-            var self = this;
-            $('.selectpicker').selectpicker().on('loaded.bs.select', function (e) {
-                if (e.target.id === 'chuongtrinh') {
-                    $(e.target).selectpicker('val', self.state.duhoctai);
-                } else {
-                    $(e.target).selectpicker('val', self.state.bietchuongtrinhquakenh);
-                }
-            });
-        }
-    }
-
     render() {
-        let closeModal = () => this.setState({isOpenModal: false});
-        let _disabled = {};
-        if (!this._isFormValid()) {
-            _disabled['disabled'] = 'disabled';
-        }
+        // let closeModal = () => this.setState({isOpenModal: false});
+        // let _disabled = {};
+        // if (!this._isFormValid()) {
+        //     _disabled['disabled'] = 'disabled';
+        // }
         return <div>
             <Header/>
-            <Main openModal={this._openModal}/>
+			<Main/>
             <Footer/>
-            <Modal show={this.state.isOpenModal} onHide={closeModal} aria-labelledby="ModalHeader"
-                   backdrop='static'>
-                <Modal.Header closeButton>
-                    <Modal.Title id='ModalHeader'>ĐĂNG KÝ THAM DỰ <span className="subTitle">Xin nhập/chọn đầy đủ thông tin</span></Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <form data-toggle="validator" role="form" id="dangkyform" className="form-horizontal">
-                        <div className="form-group">
-                            <div className="col-xs-12">
-                                <div className="input-group">
-                                    <input aria-describedby="hvt" type="text" className="form-control dblue"
-                                           id="hovaten" placeholder="Họ và tên" onChange={this._handle_Hovaten}
-                                           value={this.state.hovaten}/>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="form-group">
-                            <div className="col-xs-12">
-                                <div className="input-group">
-                                    <select id="thamdutai" className="form-control dblue"
-                                            onChange={this._handle_Thamdutai} value={this.state.thamdutai}>
-                                        <option defaultValue value="">Bạn sẽ tham dự triển lãm tại</option>
-                                        <option value="Hà Nội">Hà Nội - Thứ 7 từ 13h - 17h30 ngày 19/03/2016 tại Star Galaxy Convention, 87 Láng Hạ - Đống
-                                            Đa</option>
-                                        <option value="Hải Phòng">Hải Phòng - Chủ Nhật từ 8h - 12h30 ngày 20/03/2016 tại khách sạn Nam Cường 47 Lạch Tray</option>
-                                        <option value="TP HCM">TP.HCM - Thứ 6 từ 15h - 19h30 ngày 18/03/2016 tại Khách sạn Liberty Central Saigon, 59 - 61
-                                            Pasteur - Quận 1</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="form-group">
-                            <div className="col-xs-12 col-sm-6 marginbottom">
-                                <div className="input-group">
-                                    <input type="text"
-                                           maxLength="14" className="form-control dblue" id="sodt"
-                                           placeholder="Số điện thoại" onChange={this._handle_Sodienthoai}
-                                           value={this.state.sodienthoai}/>
-                                </div>
-                                <div className="smallspace visible-xs"></div>
-                            </div>
-                            <div className="col-xs-12 col-sm-6">
-                                <div className="input-group">
-                                    <input aria-describedby="email" type="text"
-                                           className="form-control dblue" id="dcemail"
-                                           placeholder="Địa chỉ Email" onChange={this._handle_Email}
-                                           value={this.state.email}/>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="form-group">
-                            <div className="col-xs-12 col-sm-6 marginbottom">
-                                <div className="input-group">
-                                    <select id="danhtinh" className="form-control dblue"
-                                            onChange={this._handle_Nguoidangkyla} value={this.state.nguoidangkyla}>
-                                        <option defaultValue value="">Bạn là</option>
-                                        <option value="Học sinh THPT">Học sinh THPT</option>
-                                        <option value="Học sinh THCS">Sinh viên Đại học</option>
-                                        <option value="Học sinh THCS">Đã tốt nghiệp</option>
-                                        <option value="Phụ huynh">Phụ huynh</option>
-                                        <option value="Khác">Khác</option>
-                                    </select>
-                                </div>
-                                <div className="smallspace visible-xs"></div>
-                            </div>
-                            <div className="col-xs-12 col-sm-6">
-                                <div className="input-group">
-                                    <select id="diachi" className="form-control dblue"
-                                            onChange={this._handle_Thanhphodangsong}
-                                            value={this.state.thanhphodangsong}>
-                                        <option defaultValue value="">Nơi bạn đang sống</option>
-                                        <option value="Hà Nội">Hà Nội</option>
-                                        <option value="TP HCM">TP HCM</option>
-                                        <option value="Hải Phòng">Hải Phòng</option>
-                                        <option value="Đà Nẵng">Đà Nẵng</option>
-                                        <option value="Cần Thơ">Cần Thơ</option>
-                                        <option value="An Giang">An Giang</option>
-                                        <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option>
-                                        <option value="Bắc Giang">Bắc Giang</option>
-                                        <option value="Bắc Kạn">Bắc Kạn</option>
-                                        <option value="Bạc Liêu">Bạc Liêu</option>
-                                        <option value="Bắc Ninh">Bắc Ninh</option>
-                                        <option value="Bến Tre">Bến Tre</option>
-                                        <option value="Bình Định">Bình Định</option>
-                                        <option value="Bình Dương">Bình Dương</option>
-                                        <option value="Bình Phước">Bình Phước</option>
-                                        <option value="Bình Thuận">Bình Thuận</option>
-                                        <option value="Cà Mau">Cà Mau</option>
-                                        <option value="Cao Bằng">Cao Bằng</option>
-                                        <option value="Đắk Lắk">Đắk Lắk</option>
-                                        <option value="Đắk Nông">Đắk Nông</option>
-                                        <option value="Điện Biên">Điện Biên</option>
-                                        <option value="Đồng Nai">Đồng Nai</option>
-                                        <option value="Đồng Tháp">Đồng Tháp</option>
-                                        <option value="Gia Lai">Gia Lai</option>
-                                        <option value="Hà Giang">Hà Giang</option>
-                                        <option value="Hà Nam">Hà Nam</option>
-                                        <option value="Hà Tĩnh">Hà Tĩnh</option>
-                                        <option value="Hải Dương">Hải Dương</option>
-                                        <option value="Hậu Giang">Hậu Giang</option>
-                                        <option value="Hòa Bình">Hòa Bình</option>
-                                        <option value="Hưng Yên">Hưng Yên</option>
-                                        <option value="Khánh Hòa">Khánh Hòa</option>
-                                        <option value="Kiên Giang">Kiên Giang</option>
-                                        <option value="Kon Tum">Kon Tum</option>
-                                        <option value="Lai Châu">Lai Châu</option>
-                                        <option value="Lâm Đồng">Lâm Đồng</option>
-                                        <option value="Lạng Sơn">Lạng Sơn</option>
-                                        <option value="Lào Cai">Lào Cai</option>
-                                        <option value="Long An">Long An</option>
-                                        <option value="Nam Định">Nam Định</option>
-                                        <option value="Nghệ An">Nghệ An</option>
-                                        <option value="Ninh Bình">Ninh Bình</option>
-                                        <option value="Ninh Thuận">Ninh Thuận</option>
-                                        <option value="Phú Thọ">Phú Thọ</option>
-                                        <option value="Phú Yên">Phú Yên</option>
-                                        <option value="Quảng Bình">Quảng Bình</option>
-                                        <option value="Quảng Nam">Quảng Nam</option>
-                                        <option value="Quảng Ngãi">Quảng Ngãi</option>
-                                        <option value="Quảng Ninh">Quảng Ninh</option>
-                                        <option value="Quảng Trị">Quảng Trị</option>
-                                        <option value="Sóc Trăng">Sóc Trăng</option>
-                                        <option value="Sơn La">Sơn La</option>
-                                        <option value="Tây Ninh">Tây Ninh</option>
-                                        <option value="Thái Bình">Thái Bình</option>
-                                        <option value="Thái Nguyên">Thái Nguyên</option>
-                                        <option value="Thanh Hóa">Thanh Hóa</option>
-                                        <option value="Thừa Thiên Huế">Thừa Thiên Huế</option>
-                                        <option value="Tiền Giang">Tiền Giang</option>
-                                        <option value="Trà Vinh">Trà Vinh</option>
-                                        <option value="Tuyên Quang">Tuyên Quang</option>
-                                        <option value="Vĩnh Long">Vĩnh Long</option>
-                                        <option value="Vĩnh Phúc">Vĩnh Phúc</option>
-                                        <option value="Yên Bái">Yên Bái</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="form-group">
-                            <div className="col-xs-12 col-sm-6 marginbottom">
-                                <div className="input-group">
-                                    <select id="chuongtrinh" className="form-control selectpicker dblue"
-                                            title="Bạn dự định du học tại" multiple
-                                            data-selected-text-format="count>1" mobile="true"
-                                            onChange={this._handle_Chuongtrinh}>
-                                        <option value="Anh">Anh</option>
-                                        <option value="Mỹ">Mỹ</option>
-                                        <option value="Úc">Úc</option>
-                                        <option value="Canada">Canada</option>
-                                        <option value="Phần Lan">Phần Lan</option>
-                                        <option value="Malaysia">Malaysia</option>
-                                        <option value="Thái Lan">Thái Lan</option>
-                                        <option value="Thuỵ Sỹ">Thuỵ Sỹ</option>
-                                        <option value="Hà Lan">Hà Lan</option>
-                                        <option value="Newzealand">New Zealand</option>
-                                        <option value="Đức">Đức</option>
-                                        <option value="Ý">Ý</option>
-                                        <option value="Hàn Quốc">Hàn Quốc</option>
-                                        <option value="Nhật bản">Nhật bản</option>
-                                        <option value="Trung Quốc">Trung quốc</option>
-                                        <option value="Khác">Khác</option>
-                                    </select>
-                                </div>
-                                <div className="smallspace visible-xs"></div>
-                            </div>
-                            <div className="col-xs-12 col-sm-6">
-                                <div className="input-group">
-                                    <select id="tgduhoc" className="form-control dblue"
-                                            onChange={this._handle_Thoigianduhoc} value={this.state.thoigianduhoc}>
-                                        <option defaultValue value="">Thời gian dự định du học</option>
-                                        <option value="Kỳ xuân 2016">Kỳ hè 2016</option>
-                                        <option value="Kỳ thu 2016">Kỳ thu 2016</option>
-                                        <option value="Kỳ xuân 2017">Kỳ xuân 2017</option>
-                                        <option value="Kỳ xuân 2017">Kỳ hè 2017</option>
-                                        <option value="Kỳ thu 2017">Kỳ thu 2017</option>
-                                        <option value="Khác">Khác</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="form-group">
-                            <div className="col-xs-12 col-sm-6 marginbottom">
-                                <div className="input-group">
-                                    <select id="nhucau" className="form-control dblue"
-                                            onChange={this._handle_Nhucauhoc} value={this.state.nhucauhoc}>
-                                        <option defaultValue value="">Bạn có nhu cầu học
-                                        </option>
-                                        <option value="IELTS">IELTS</option>
-                                        <option value="TOEFL">TOEFL</option>
-                                        <option value="SAT">SAT</option>
-                                        <option value="GMAT">GMAT</option>
-                                        <option value="Không">Không</option>
-                                    </select>
-                                </div>
-                                <div className="smallspace visible-xs"></div>
-                            </div>
-                            <div className="col-xs-12 col-sm-6">
-                                <div className="input-group">
-                                    <select multiple="multiple" className="form-control selectpicker dblue"
-                                            name="kenh[]" id="kenh" title="Bạn biết chương trình này qua kênh"
-                                            data-selected-text-format="count>1" mobile="true"
-                                            onChange={this._handle_Bietchuongtrinhquakenh}>
-                                        <option value="Facebook SunriseVietnam">Facebook SunriseVietnam</option>
-                                        <option value="Website SunriseVietnam">Website SunriseVietnam</option>
-                                        <option value="Truyền hình Hải Phòng">Truyền hình Hải Phòng</option>
-                                        <option value="Email">Email</option>
-                                        <option value="Google">Google</option>
-                                        <option value="Băng rôn">Băng rôn</option>
-                                        <option value="Bạn bè giới thiệu">Bạn bè giới thiệu</option>
-                                        <option value="Dân trí">Dân trí</option>
-                                        <option value="CLB trong trường">CLB trong trường</option>
-                                        <option value="VnExpress">VnExpress</option>
-                                        <option value="Khác">Khác</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </Modal.Body>
-                <Modal.Footer>
-                    <button type="submit" className="btn dbluebg white" id="dkbtn" {..._disabled}
-                            onClick={this._saveAndCloseModal}>Gửi đăng ký
-                    </button>
-                    <button type="reset" className="btn whitebg dred" onClick={this._resetForm}>Làm Lại</button>
-                </Modal.Footer>
-            </Modal>
         </div>
     }
 }
 
-const Main = React.createClass({
-    displayName: 'Main',
-    _openModal(){
-        //console.log('open modal...');
-        this.props.openModal();
-    },
+class SimpleSlider extends React.Component{
+	render() {
+		const settings = {
+			dots: true,
+			infinite: true,
+			speed: 500,
+			slidesToShow: 5,
+			slidesToScroll: 1,
+			nextArrow: <img src={require ('../../photos/201609/Arrow_R.png')}/>,
+			prevArrow: <img src={require ('../../photos/201609/Arrow_L.png')}/>,
+		};
+		const images = this.props.images;
+		const prefix = this.props.id;
+		return (
+			<Slider {...settings}>
+				{images && images.map((src)=> {
+					const id = _.uniqueId(prefix)
+					return <div key={id}><img src={src}/></div>
+				})}
+			</Slider>
+		);
+	}
+}
+
+class Main extends React.Component{
+	constructor(props){
+		super(props);
+		this.state = _.clone(_formObj);
+		this._handleChange = this._handleChange.bind(this);
+		this.slider1 = [
+			require('../../photos/201609/schools-1/Abbey2.png'),
+			require('../../photos/201609/schools-1/BlueMoutains2.png'),
+			require('../../photos/201609/schools-1/Chase-Grammar-School2.png'),
+			require('../../photos/201609/schools-1/Dimension2.png'),
+			require('../../photos/201609/schools-1/JCU2.png'),
+			require('../../photos/201609/schools-1/Knox-School2.png'),
+			require('../../photos/201609/schools-1/Le_Cordon_Bleu2.png'),
+			require('../../photos/201609/schools-1/St-Paul-International-College2.png'),
+			require('../../photos/201609/schools-1/The-Oxford-International-Group2.png'),
+			require('../../photos/201609/schools-1/Toronto2.png'),
+		];
+		this.slider2 = [
+			require('../../photos/201609/Study Group/Bellerbys-College.png'),
+			require('../../photos/201609/Study Group/James-Madison.png'),
+			require('../../photos/201609/Study Group/Lancaster-University.png'),
+			require('../../photos/201609/Study Group/LongIsland-University.png'),
+			require('../../photos/201609/Study Group/Maine.png'),
+			require('../../photos/201609/Study Group/roosevelt.png'),
+			require('../../photos/201609/Study Group/Taylors-College.png'),
+			require('../../photos/201609/Study Group/The-University-of-Vermont.png'),
+			require('../../photos/201609/Study Group/University-of-Huddersfield.png'),
+			require('../../photos/201609/Study Group/University-of-Leicerter.png'),
+			require('../../photos/201609/Study Group/University-of-Sussex.png'),
+			require('../../photos/201609/Study Group/Widener-University.png'),
+		];
+		this.slider3 = [
+			require('../../photos/201609/Kings/canisius-college.png'),
+			require('../../photos/201609/Kings/Kings.png'),
+			require('../../photos/201609/Kings/Kings.png'),
+			require('../../photos/201609/Kings/Kings.png'),
+			require('../../photos/201609/Kings/Kings.png'),
+			require('../../photos/201609/Kings/Kings-New-York.png'),
+			require('../../photos/201609/Kings/Kings.png'),
+			require('../../photos/201609/Kings/Kings.png'),
+			require('../../photos/201609/Kings/Marymount-California-University.png'),
+			require('../../photos/201609/Kings/Rider-University.png'),
+			require('../../photos/201609/Kings/University-of-Southern-California.png'),
+		];
+		this.slider4 = [
+			require('../../photos/201609/Kaplan/Birminghamuniversity.png'),
+			require('../../photos/201609/Kaplan/City-University-London.png'),
+			require('../../photos/201609/Kaplan/Merrimack-college.png'),
+			require('../../photos/201609/Kaplan/Northeastern-University.png'),
+			require('../../photos/201609/Kaplan/Pace-University.png'),
+			require('../../photos/201609/Kaplan/Quinniplac-University.png'),
+			require('../../photos/201609/Kaplan/University-of-Liverpool.png'),
+			require('../../photos/201609/Kaplan/University-of-Nottingham.png'),
+			require('../../photos/201609/Kaplan/University-of-York.png'),
+		]
+	}
+	componentDidMount(){
+		var self = this;
+		$('.selectpicker').selectpicker().on('loaded.bs.select', function (e) {
+			if (e.target.id === 'chuongtrinh') {
+				$(e.target).selectpicker('val', self.state.duhoctai);
+			} else {
+				$(e.target).selectpicker('val', self.state.bietchuongtrinhquakenh);
+			}
+		});
+	}
+	_handleChange = (key) => ({
+		value: this.state[key],
+		onChange: e => {
+			this.setState({[key] : e.target.value})
+		}
+	});
     render(){
         return <div>
-            <div className="headbanner"><img width="100%" src={require("../../photos/banner.png")}/></div>
-            <div className="container-fluid bgmblue">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-xs-12 smallspace"></div>
-                        <div className="col-sm-6 hidden-xs center-block">
-                            <img className="img-responsive" id="imgfair" src={require("../../photos/fair-intro.png")}/>
-                            <button type="button" className="center-block btn btn-reg bgorange white" id="btn-intro" onClick={this._openModal}><h2
-                                className="semibold">ĐĂNG KÝ NGAY</h2></button>
-                        </div>
-                        <div className="col-xs-12 col-sm-5 col-sm-offset-1">
-                            <p className="semibold text-justify">Tham gia Triển lãm THẾ GIỚI DU HỌC để được gặp gỡ đại
-                                diện tuyển sinh của 70 trường Trung học, Đại học từ Anh, Úc, Mỹ, Canada, Hà Lan, Thụy
-                                Sỹ, Trung Quốc, Nhật Bản tìm hiểu cơ hội học bổng, làm việc định cư và 100% nhận các
-                                phần quà hấp dẫn.</p>
+	        {/*banner*/}
+	        <div className={`${styles.banner}`}>
+		        <img src={require ('../../photos/201609/cover.png')} width="100%"/>
+	        </div>
+	        {/*places*/}
+	        <div className="container">
+		        <div className="col-xs-12 col-md-8 col-md-offset-2 text-center">
+			        <div className={styles.mediumSpacing}></div>
+			        <img src={require ('../../photos/201609/title-places.png')} className={styles.imgResponsive}/>
+			        <div className={styles.smallSpacing}></div>
+		        </div>
+		        <div className="col-xs-12 col-sm-6 col-md-4">
+			        <ul className="media-list">
+				        <li className="media">
+					        <div className="media-left media-top">
+						        <p className={styles.iconPlaces}></p>
+					        </div>
+					        <div className="media-body">
+						        <h4 className="media-heading text-uppercase"><strong className={`${styles.dblue}`}><em>* TP.HCM</em></strong></h4>
+					        </div>
+				        </li>
+				        <li className={`media ${styles.customMedia}`}>
+					        <div className="media-left media-top">
+						        <img src={require ('../../photos/201609/time.png')} className={styles.iconPlaces}/>
+					        </div>
+					        <div className="media-body">
+						        <h5 className="media-heading text-uppercase"><strong>THỨ 6, TỪ 16 GIỜ - 20 GIỜ</strong><br/>
+							        Ngày 30/09/2016</h5>
+					        </div>
+				        </li>
+				        <li className={`media ${styles.customMedia}`}>
+					        <div className="media-left media-top">
+						        <img src={require ('../../photos/201609/place.png')} className={styles.iconPlaces}/>
+					        </div>
+					        <div className="media-body">
+						        <h5 className="media-heading text-uppercase"><strong>Tại KS Liberty Central Saigon</strong><br/>
+							        59-61 Pasteur - Quận 1</h5>
+					        </div>
+				        </li>
+			        </ul>
+			        <div className={`visible-xs ${styles.smallSpacing}`}></div>
+		        </div>
+		        <div className="col-xs-12 col-sm-6 col-md-4">
+			        <ul className="media-list">
+				        <li className="media">
+					        <div className="media-left media-top">
+						        <p className={styles.iconPlaces}></p>
+					        </div>
+					        <div className="media-body">
+						        <h4 className="media-heading text-uppercase"><strong className={`${styles.dblue}`}><em>* HÀ NỘI</em></strong></h4>
+					        </div>
+				        </li>
+				        <li className={`media ${styles.customMedia}`}>
+					        <div className="media-left media-top">
+						        <img src={require ('../../photos/201609/time.png')} className={styles.iconPlaces}/>
+					        </div>
+					        <div className="media-body">
+						        <h5 className="media-heading text-uppercase"><strong>Thứ 7 từ 14 giờ - 18 giờ</strong><br/>
+							        <span className={styles.spaceImg}></span>Ngày
+							        01/10/2016</h5>
+					        </div>
+				        </li>
+				        <li className={`media ${styles.customMedia}`}>
+					        <div className="media-left media-top">
+						        <img src={require ('../../photos/201609/place.png')} className={styles.iconPlaces}/>
+					        </div>
+					        <div className="media-body">
+						        <h5 className="media-heading text-uppercase"><strong>Tại Star Galaxy Convention</strong><br/>
+							        87 Láng Hạ - Đống Đa<br/>
+							        (Cạnh rạp chiếu phim Quốc gia)</h5>
+					        </div>
+				        </li>
+			        </ul>
+			        <div className={`visible-xs visible-sm ${styles.smallSpacing}`}></div>
+		        </div>
+		        <div className="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-0">
+			        <ul className="media-list">
+				        <li className="media">
+					        <div className="media-left media-top">
+						        <p className={styles.iconPlaces}></p>
+					        </div>
+					        <div className="media-body">
+						        <h4 className="media-heading text-uppercase"><strong className={`${styles.dblue}`}><em>* HẢI PHÒNG</em></strong></h4>
+					        </div>
+				        </li>
+				        <li className={`media ${styles.customMedia}`}>
+					        <div className="media-left media-top">
+						        <img src={require ('../../photos/201609/time.png')} className={styles.iconPlaces}/>
+					        </div>
+					        <div className="media-body">
+						        <h5 className="media-heading text-uppercase"><strong>Chủ nhật từ 9 giờ - 12 giờ</strong><br/>
+							        Ngày 02/10/2016</h5>
+					        </div>
+				        </li>
+				        <li className={`media ${styles.customMedia}`}>
+					        <div className="media-left media-top">
+						        <img src={require ('../../photos/201609/place.png')} className={styles.iconPlaces}/>
+					        </div>
+					        <div className="media-body">
+						        <h5 className="media-heading text-uppercase"><strong>Tại khách sạn Nam Cường</strong><br/>
+							        47 Lạch Tray</h5>
+					        </div>
+				        </li>
+			        </ul>
+		        </div>
+		        {/*form*/}
+		        <div className="row" id="registerForm">
+			        <div className={`col-xs-12 col-md-8 col-md-offset-2 text-center ${styles.sectionTitle}`}>
+				        <div className={styles.mediumSpacing}></div>
+				        <img src={require ('../../photos/201609/title-form.png')} className={styles.imgResponsive}/>
+			        </div>
+		        </div>
+		        <div className="">
+			        <form className="form-horizontal">
+				        <div className="form-group">
+					        <div className={`col-xs-12 col-md-4 ${styles.marginBottomXS} ${styles.marginBottomSM}`}>
+						        <input className={`form-control ${styles.customInput}`} type="text" placeholder="Họ và tên" {...this._handleChange('hovaten')}/>
+					        </div>
+					        <div className={`col-xs-12 col-sm-6 col-md-4 ${styles.marginBottomXS}`}>
+						        <input className={`form-control ${styles.customInput}`} placeholder="Số điện thoại"  {...this._handleChange('sodienthoai')}/>
+					        </div>
+					        <div className="col-xs-12 col-sm-6 col-md-4">
+						        <input className={`form-control ${styles.customInput}`} type="text" placeholder="Email"  {...this._handleChange('email')}/>
+					        </div>
+				        </div>
+				        <div className="form-group">
+					        <div className="col-xs-12">
+						        <select className={`form-control ${styles.customInput}`} {...this._handleChange('thamdutai')}>
+							        <option>Bạn sẽ tham dự triển lãm tại</option>
+							        <option value="TP HCM">Tp. Hồ Chí Minh, thứ 6 từ 16 giờ - 20 giờ, ngày 30/09/2016, tại khách sạn Liberty Central Saigon, 59-61 Pasteur - Quận 1</option>
+							        <option value="Hà Nội">Hà Nội, thứ 7 từ 14 giờ - 18 giờ, ngày 01/10/2016, tại Star Galaxy Convention, 87 Láng Hạ - Đống Đa </option>
+							        <option value="Hải Phòng">Hải Phòng, Chủ nhật từ 9 giờ - 12 giờ, ngày 02/10/2016, tại khách sạn Nam Cường, 47 Lạch Tray</option>
+						        </select>
+					        </div>
+				        </div>
+				        <div className="form-group">
+					        <div className={`col-xs-12 col-sm-6 col-md-4 ${styles.marginBottomXS}`}>
+						        <select className={`form-control ${styles.customInput}`}title="Bạn là" {...this._handleChange('nguoidangkyla')}>
+							        <option disabled>Bạn là</option>
+							        <option value="Học sinh THCS">Học sinh THCS</option>
+							        <option value="Học sinh THPT">Học sinh THPT</option>
+							        <option value="Sinh viên Đại học">Sinh viên đại học</option>
+							        <option value="Đã tốt nghiệp">Đã tốt nghiệp</option>
+							        <option value="Phụ huynh">Phụ huynh</option>
+							        <option value="Khác">Khác</option>
+						        </select>
+					        </div>
+					        <div className={`col-xs-12 col-sm-6 col-md-4 ${styles.marginBottomXS} ${styles.marginBottomSM}`}>
+						        <select className={`form-control ${styles.customInput}`} {...this._handleChange('thanhphodangsong')}>
+							        <option disabled>Nơi bạn đang sống</option>
+							        <option value="Hà Nội">Hà Nội</option>
+							        <option value="TP HCM">TP HCM</option>
+							        <option value="Hải Phòng">Hải Phòng</option>
+							        <option value="Đà Nẵng">Đà Nẵng</option>
+							        <option value="Cần Thơ">Cần Thơ</option>
+							        <option value="An Giang">An Giang</option>
+							        <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option>
+							        <option value="Bắc Giang">Bắc Giang</option>
+							        <option value="Bắc Kạn">Bắc Kạn</option>
+							        <option value="Bạc Liêu">Bạc Liêu</option>
+							        <option value="Bắc Ninh">Bắc Ninh</option>
+							        <option value="Bến Tre">Bến Tre</option>
+							        <option value="Bình Định">Bình Định</option>
+							        <option value="Bình Dương">Bình Dương</option>
+							        <option value="Bình Phước">Bình Phước</option>
+							        <option value="Bình Thuận">Bình Thuận</option>
+							        <option value="Cà Mau">Cà Mau</option>
+							        <option value="Cao Bằng">Cao Bằng</option>
+							        <option value="Đắk Lắk">Đắk Lắk</option>
+							        <option value="Đắk Nông">Đắk Nông</option>
+							        <option value="Điện Biên">Điện Biên</option>
+							        <option value="Đồng Nai">Đồng Nai</option>
+							        <option value="Đồng Tháp">Đồng Tháp</option>
+							        <option value="Gia Lai">Gia Lai</option>
+							        <option value="Hà Giang">Hà Giang</option>
+							        <option value="Hà Nam">Hà Nam</option>
+							        <option value="Hà Tĩnh">Hà Tĩnh</option>
+							        <option value="Hải Dương">Hải Dương</option>
+							        <option value="Hậu Giang">Hậu Giang</option>
+							        <option value="Hòa Bình">Hòa Bình</option>
+							        <option value="Hưng Yên">Hưng Yên</option>
+							        <option value="Khánh Hòa">Khánh Hòa</option>
+							        <option value="Kiên Giang">Kiên Giang</option>
+							        <option value="Kon Tum">Kon Tum</option>
+							        <option value="Lai Châu">Lai Châu</option>
+							        <option value="Lâm Đồng">Lâm Đồng</option>
+							        <option value="Lạng Sơn">Lạng Sơn</option>
+							        <option value="Lào Cai">Lào Cai</option>
+							        <option value="Long An">Long An</option>
+							        <option value="Nam Định">Nam Định</option>
+							        <option value="Nghệ An">Nghệ An</option>
+							        <option value="Ninh Bình">Ninh Bình</option>
+							        <option value="Ninh Thuận">Ninh Thuận</option>
+							        <option value="Phú Thọ">Phú Thọ</option>
+							        <option value="Phú Yên">Phú Yên</option>
+							        <option value="Quảng Bình">Quảng Bình</option>
+							        <option value="Quảng Nam">Quảng Nam</option>
+							        <option value="Quảng Ngãi">Quảng Ngãi</option>
+							        <option value="Quảng Ninh">Quảng Ninh</option>
+							        <option value="Quảng Trị">Quảng Trị</option>
+							        <option value="Sóc Trăng">Sóc Trăng</option>
+							        <option value="Sơn La">Sơn La</option>
+							        <option value="Tây Ninh">Tây Ninh</option>
+							        <option value="Thái Bình">Thái Bình</option>
+							        <option value="Thái Nguyên">Thái Nguyên</option>
+							        <option value="Thanh Hóa">Thanh Hóa</option>
+							        <option value="Thừa Thiên Huế">Thừa Thiên Huế</option>
+							        <option value="Tiền Giang">Tiền Giang</option>
+							        <option value="Trà Vinh">Trà Vinh</option>
+							        <option value="Tuyên Quang">Tuyên Quang</option>
+							        <option value="Vĩnh Long">Vĩnh Long</option>
+							        <option value="Vĩnh Phúc">Vĩnh Phúc</option>
+							        <option value="Yên Bái">Yên Bái</option>
+						        </select>
+					        </div>
+					        <div className={`col-xs-12 col-sm-6 col-md-4 ${styles.marginBottomXS} ${styles.marginBottomMD}`}>
+						        <select className={`form-control selectpicker`}
+						                multiple="multiple" name="duhoctai[]" title="Bạn dự định du học tại"
+						                data-selected-text-format="count>1" onChange={this._handle_Duhoctai}>
+							        <option disabled>Bạn dự định du học tại</option>
+							        <option value="Anh">Anh</option>
+							        <option value="Mỹ">Mỹ</option>
+							        <option value="Canada">Canada</option>
+							        <option value="Úc">Úc</option>
+							        <option value="New Zealand">New Zealand</option>
+							        <option value="Phần Lan">Phần Lan</option>
+							        <option value="Thụy Sỹ">Thụy Sỹ</option>
+							        <option value="Hà Lan">Hà Lan</option>
+							        <option value="Đức">Đức</option>
+							        <option value="Malaysia">Malaysia</option>
+							        <option value="Singapore">Singapore</option>
+							        <option value="Thái Lan">Thái Lan</option>
+							        <option value="Hàn Quốc">Hàn Quốc</option>
+							        <option value="Nhật Bản">Nhật Bản</option>
+							        <option value="Trung Quốc">Trung Quốc</option>
+							        <option value="Khác">Khác</option>
+						        </select>
+					        </div>
 
-                            <p className="bold"><i>* TP.HCM:</i></p>
+					        <div className={`col-xs-12 col-sm-6 col-md-4 ${styles.marginBottomXS} ${styles.marginBottomSM}`}>
+						        <select className={`form-control ${styles.customInput}`}  {...this._handleChange('thoigianduhoc')}>
+							        <option disabled>Thời gian dự định du học</option>
+							        <option value="Năm 2017">Năm 2017</option>
+							        <option value="Năm 2018">Năm 2018</option>
+						        </select>
+					        </div>
+					        <div className={`col-xs-12 col-sm-6 col-md-4 ${styles.marginBottomXS}`}>
+						        <select className={`form-control ${styles.customInput}`}  {...this._handleChange('nhucauhoc')}>
+							        <option disabled>Bạn có nhu cầu học</option>
+							        <option value="IELTS">IELTS</option>
+							        <option value="TOEFL">TOEFL</option>
+							        <option value="SAT">SAT</option>
+							        <option value="GMAT">GMAT</option>
+							        <option value="Không">Không</option>
+						        </select>
+					        </div>
+					        <div className="col-xs-12 col-sm-6 col-md-4">
+						        <select className={`form-control selectpicker`}
+						                multiple="multiple" name="kenh[]" title="Bạn biết chương trình này qua"
+						                data-selected-text-format="count>1" onChange={this._handle_Bietchuongtrinhquakenh}>
+							        <option value="Facebook SunriseVietnam">Facebook SunriseVietnam</option>
+							        <option value="Website SunriseVietnam">Website SunriseVietnam</option>
+							        <option value="Truyền hình Hải Phòng">Truyền hình Hải Phòng</option>
+							        <option value="Email">Email</option>
+							        <option value="Google">Google</option>
+							        <option value="Băng rôn">Băng rôn</option>
+							        <option value="Bạn bè giới thiệu">Bạn bè giới thiệu</option>
+							        <option value="Dân trí">Dân trí</option>
+							        <option value="Zing News">Zing News</option>
+							        <option value="VnExpress">VnExpress</option>
+							        <option value="Khác">Khác</option>
+						        </select>
+					        </div>
 
-                            <p>Thứ 6 từ 15h - 19h30 ngày 18/03/2016 tại Khách sạn Liberty Central Saigon, 59 - 61
-                                Pasteur - Quận 1</p>
-                            <hr className="bgorange"/>
-                            <p className="bold"><i>* HÀ NỘI:</i></p>
+					        <div className="col-xs-12">
+						        <div className={styles.smallSpacing}></div>
+						        <button className={`${styles.btnBlock}`} id={`${styles.btnRegister}`} type="button" onClick={this._sendForm}><h4>ĐĂNG KÝ</h4></button>
+					        </div>
+				        </div>
+			        </form>
+		        </div>
+	        </div>
+	        {/*opportunities*/}
+	        <a id="opportunities"><div className={styles.mediumSpacing}></div></a>
+	        <div className={`${styles.opportunities}`}>
+		        <div className="container">
+			        <div className={`col-xs-12 col-md-8 col-md-offset-2 ${styles.sectionTitle}`}>
+				        <div className={styles.mediumSpacing}></div>
+				        <img src={require ('../../photos/201609/title-opp.png')} className={styles.imgResponsive}/>
+			        </div>
+			        <div className="col-xs-12 col-sm-6">
+				        <div className="row">
+					        <div className="col-xs-4 col-xs-offset-4 col-sm-3 col-sm-offset-0 col-md-2 col-md-offset-2 text-right">
+						        <img src={require ('../../photos/201609/woman.png')} className={styles.imgResponsive}/>
+						        <div className={`visible-xs ${styles.smallSpacing}`}></div>
+					        </div>
+					        <div className="col-xs-12 col-sm-9 col-md-8">
+						        <h4><strong>TƯ VẤN TỔNG QUAN:</strong></h4>
 
-                            <p>Thứ 7 từ 13h - 17h30 ngày 19/03/2016 tại Star Galaxy Convention, 87 Láng Hạ - Đống
-                                Đa<br/><span className="size16">(Cạnh rạp chiếu phim Quốc gia - Hà Nội)</span></p>
-                            <hr className="bgorange"/>
-                            <p className="bold"><i>* HẢI PHÒNG:</i></p>
+						        <h5><strong>Trả lời câu hỏi du học</strong></h5>
+						        <h5><strong>Luyện thi IELTS/TOEFL từ A đến Z</strong></h5>
+						        <div className={`visible-xs ${styles.mediumSpacing}`}></div>
+					        </div>
+				        </div>
+			        </div>
+			        <div className="col-xs-12 col-sm-6">
+				        <div className="row">
+					        <div className="col-xs-4 col-xs-offset-4 col-sm-3 col-sm-offset-0 col-md-2 col-md-offset-2 text-right">
+						        <img src={require ('../../photos/201609/man.png')} className={styles.imgResponsive}/>
+						        <div className={`visible-xs ${styles.smallSpacing}`}></div>
+					        </div>
+					        <div className="col-xs-12 col-sm-9 col-md-8">
+						        <h4><strong>TƯ VẤN CHUYÊN SÂU:</strong></h4>
+						        <h5><strong>Gặp trực tiếp đại diện trường,</strong></h5>
+						        <h5><strong>nhận quà tại quầy trường</strong></h5>
+					        </div>
+				        </div>
+			        </div>
+			        <div className="col-xs-12">
+				        <div className="row">
+					        <div className={styles.mediumSpacing}></div>
+					        <div className="col-xs-4 col-xs-offset-4 col-sm-2 col-sm-offset-1 col-md-1 col-md-offset-3 text-right">
+						        <img src={require ('../../photos/201609/schoolships.png')} className={styles.imgResponsive}/>
+						        <div className={`visible-xs ${styles.smallSpacing}`}></div>
+					        </div>
+					        <div className="col-xs-12 col-sm-9 col-md-8">
+						        <h4><strong>HỌC BỔNG TẠI CHỖ:</strong></h4>
+						        <h5><strong>Phỏng vấn học bổng các bậc học, thi thử IELTS Speaking,</strong></h5>
+						        <h5><strong>Phỏng vấn thử visa Mỹ như thế nào nhỉ?</strong></h5>
+					        </div>
+				        </div>
+				        <a id="gifts"><div className={styles.mediumSpacing}></div></a>
+			        </div>
+		        </div>
+	        </div>
+	        {/*----------------------gifts----------------------*/}
+	        <div className={styles.smallSpacing}></div>
+	        <div className="container">
+		        <div className={`col-xs-12 col-md-8 col-md-offset-2 text-center ${styles.sectionTitle}`}>
+			        <img src={require('../../photos/201609/title-gifts.png')} className={styles.imgResponsive}/>
+		        </div>
+		        <div className="col-xs-8 col-xs-offset-2 col-sm-3 col-md-2 col-md-offset-1">
+			        <img src={require('../../photos/201609/tui-but-moc-khoa.png')} className={styles.imgResponsive}/>
+			        <div className={styles.smallSpacing}></div>
+			        <h5 className="text-center"><strong>TÚI, SỔ,<br className="visible-lg"/> BÚT, MÓC KHÓA</strong></h5>
+			        <div className={`visible-xs ${styles.mediumSpacing}`}></div>
+		        </div>
+		        <div className="col-xs-8 col-xs-offset-2 col-sm-3 col-md-2 col-md-offset-2">
+			        <img src={require('../../photos/201609/cam-nang.png')} className={styles.imgResponsive}/>
+			        <div className={styles.smallSpacing}></div>
+			        <h5 className="text-center"><strong>CẨM NANG DU HỌC</strong></h5>
+			        <div className={`visible-xs ${styles.mediumSpacing}`}></div>
+		        </div>
+		        <div className="col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-4 col-md-2 col-md-offset-2">
+			        <img src={require('../../photos/201609/IELTS.png')} className={styles.imgResponsive}/>
+			        <div className={styles.smallSpacing}></div>
+			        <h5 className="text-center"><strong>BỐC THĂM HỖ TRỢ<br className="visible-lg"/> LỆ PHÍ THI IELTS</strong></h5>
+		        </div>
+	        </div>
+	        {/*sharing*/}
+	        <a id="sharing"><div className={styles.largeSpacing}></div></a>
+	        <div className={`${styles.grayBg}`}>
+		        <div className="container">
+			        <div className={`col-xs-12 col-md-8 col-md-offset-2 text-center ${styles.sectionTitle}`}>
+				        <div className={styles.smallSpacing}></div>
+				        <img src={require('../../photos/201609/title-sharing.png')} className={styles.imgResponsive}/>
+			        </div>
+			        <div className="col-xs-12">
+				        <div className="row">
+					        <div className={`col-xs-12 visible-xs visible-sm ${styles.noPadding}`}>
+						        <img src={require('../../photos/201609/nguyen-minh-tuan.png')} className={styles.imgResponsive}/>
+					        </div>
+					        <div className="col-xs-12 col-md-6 col-lg-5 col-lg-offset-1">
+						        <div className={`visible-lg ${styles.largeSpacing}`}></div>
+						        <div className={`visible-xs visible-sm ${styles.smallSpacing}`}></div>
+						        <h4><strong>DU HỌC SINH TẠI MỸ</strong></h4>
+						        <h5 className="text-justify">Cuối cùng mình muốn nói là chuyến đi này là chuyến đi dài nhất và tốn
+							        kém nhất mình từng tham gia nên mình phảo tận dụng hết quỹ thời gian có thể để vừa học hỏi kiến
+							        thức vừa có thể thoả ước mơ đi du lịch của mình nữa. Các bạn trẻ có niềm đam mê du lịch hãy điền
+							        tên vào một chuyến đi dài ngày như mình xem sao, sẽ có rất nhiều điều hay ho phía trước đấy.</h5>
+						        <div className={`visible-xs visible-sm ${styles.mediumSpacing}`}></div>
+					        </div>
+					        <div className={`hidden-xs hidden-sm col-md-6 col-lg-5 ${styles.noPadding}`}>
+						        <img src={require('../../photos/201609/nguyen-minh-tuan.png')} className={styles.imgResponsive}/>
+					        </div>
+				        </div>
+			        </div>
+			        <div className="col-xs-12">
+				        <div className="row">
+					        <div className={`col-xs-12 col-md-6 col-lg-5 col-lg-offset-1 ${styles.noPadding}`}>
+						        <img src={require('../../photos/201609/dang-dieu-linh.png')} className={styles.imgResponsive}/>
+					        </div>
+					        <div className="col-xs-12 col-md-6 col-lg-5">
+						        <div className={`visible-lg ${styles.largeSpacing}`}></div>
+						        <div className={`visible-xs visible-sm ${styles.smallSpacing}`}></div>
+						        <h4><strong>DU HỌC SINH TẠI ANH</strong></h4>
+						        <h5 className="text-justify">Theo mình, "Du học" là một chuyến đi mà bạn sẽ được trang bị kiến thức, gặp gỡ người mới để mở
+							        mang tầm mắt. Nó còn là cơ hội để bạn trải nghiệm cuộc sống tự lập, học hỏi nhiều điều mới và thử
+							        thách khả năng của bản thân. </h5>
+					        </div>
+				        </div>
+			        </div>
+		        </div>
+		        <a id="schools"><div className={styles.largeSpacing}></div></a>
+	        </div>
 
-                            <p>Chủ Nhật từ 8h - 12h30 ngày 20/03/2016 tại khách sạn Nam Cường 47 Lạch Tray</p>
-                        </div>
-                        <div className="col-xs-12">
-                            <button type="button" className="visible-xs center-block btn btn-reg bgorange white"
-                                    onClick={this._openModal}><h2 className="semibold">ĐĂNG KÝ NGAY</h2></button>
-                        </div>
-                    </div>
-                </div>
-                <div className="space hidden-sm"></div>
-                <div className="smallspace visible-sm"></div>
-                <div id="bannerborder"></div>
-                <a name="cohoi" id="cohoi"></a>
-
-                <div>
-                    <img id="bottomintro" src={require("../../photos/bottombanner.png")}/>
-                </div>
-            </div>
-            <div className="smallspace"></div>
-            <div className="container">
-                <div className="row">
-                    <div className="col-xs-1 col-sm-2 hidden-xs"><h1 className="text-right"><img
-                        src={require("../../photos/arrow.png")}/></h1></div>
-                    <div className="col-xs-12 col-sm-8">
-                        <h1 className="orange text-center semibold">CƠ HỘI TẠI<br className="visible-xs"/> TRIỂN LÃM
-                        </h1>
-                    </div>
-                    <div className="col-xs-1 col-sm-2 hidden-xs"><h1><img src={require("../../photos/arrow.png")}/></h1>
-                    </div>
-                    <div className="col-xs-12 smallspace"></div>
-                    <div className="col-xs-10 col-xs-offset-1">
-                        <div className="btn-reg bgmblue white"><p className="text-center"><span
-                            className="size25 semibold">GẶP ĐẠI DIỆN TUYỂN SINH: </span><br className="visible-xs"/>XÉT
-                            HỒ SƠ DU HỌC, TƯ VẤN VIP <br className="visible-xs"/>TỪ A ĐẾN Z</p></div>
-                        <div className="smallspace"></div>
-                    </div>
-                    <div className="col-xs-10 col-xs-offset-1">
-                        <div className="btn-reg bgmblue white"><p className="text-center"><span
-                            className="size25 semibold">HỘI THẢO CHUYÊN ĐỀ: </span><br className="visible-xs"/>CHIA SẺ
-                            CỦA DU HỌC SINH, <br className="visible-xs"/>DỊCH VỤ NGÂN HÀNG</p></div>
-                        <div className="smallspace"></div>
-                    </div>
-                    <div className="col-xs-10 col-xs-offset-1">
-                        <div className="btn-reg bgmblue white"><p className="text-center size25 semibold">ĐĂNG KÝ HỌC
-                            BỔNG DU HỌC <br className="visible-xs"/>VÀ THI THỬ IELTS, TOEFL, SAT</p></div>
-                        <div className="smallspace"></div>
-                    </div>
-                </div>
-            </div>
-            <a name="qua" id="qua">
-                <div className="space"></div>
-            </a>
-
-            <div className="container-fluid gifts">
-                <div className="container">
-                    <div className="row">
-                        <div className="smallspace"></div>
-                        <div className="col-xs-1 hidden-xs"><h1 className="text-right"><img
-                            src={require("../../photos/white-arrow.png")}/></h1></div>
-                        <div className="col-xs-12 col-sm-10">
-                            <h1 className="text-center semibold">100% THAM DỰ TRIỂN LÃM<br/>NHẬN NGAY</h1>
-                        </div>
-                        <div className="col-xs-1 hidden-xs"><h1><img src={require("../../photos/white-arrow.png")}/>
-                        </h1></div>
-                        <div className="col-xs-12 smallspace"></div>
-                    </div>
-                    <div className="row">
-                        <div className="col-xs-6 col-sm-3">
-                            <div className="thumbnail">
-                                <img src={require("../../photos/gift1.png")}/>
-
-                                <div className="caption">
-                                    <p className="white">Túi, sổ, bút,<br/>móc khóa</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xs-6 col-sm-3">
-                            <div className="thumbnail">
-                                <img src={require("../../photos/gift2.png")}/>
-
-                                <div className="caption">
-                                    <p className="white">Cẩm nang <br className="visible-xs"/>du học</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xs-6 col-sm-3">
-                            <div className="thumbnail">
-                                <img src={require("../../photos/gift3.png")}/>
-
-                                <div className="caption">
-                                    <p className="white">Vé xem phim CGV</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xs-6 col-sm-3">
-                            <div className="thumbnail">
-                                <img src={require("../../photos/gift4.png")}/>
-
-                                <div className="caption">
-                                    <p className="white">Tặng gói tư vấn<br/> du học trọn đời</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-xs-6 col-sm-3 col-sm-offset-2">
-                            <div className="thumbnail">
-                                <img src={require("../../photos/gift5.png")}/>
-
-                                <div className="caption">
-                                    <p className="white">Vé máy bay 1 chiều *<br/>(Khi ký hợp đồng<br/> ngay tại triển
-                                        lãm)</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xs-6 col-sm-3 col-sm-offset-2">
-                            <div className="thumbnail">
-                                <img src={require("../../photos/gift6.png")}/>
-
-                                <div className="caption">
-                                    <p className="white">Bốc thăm hỗ trợ<br/>lệ phí thi IELTS</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-xs-12">
-                            <button type="button" className="center-block btn btn-reg bgorange white"
-                                    onClick={this._openModal}><h2 className="semibold">ĐĂNG KÝ NGAY</h2></button>
-                        </div>
-                    </div>
-                </div>
-                <a name="diengia" id="diengia">
-                    <div className="space"></div>
-                </a>
-            </div>
-            <div className="smallspace"></div>
-            <div className="container">
-                <div className="row">
-                    <div className="col-xs-1 col-sm-2 hidden-xs"><h1 className="text-right"><img
-                        src={require("../../photos/arrow.png")}/></h1></div>
-                    <div className="col-xs-12 col-sm-8">
-                        <h1 className="text-center semibold orange">DIỄN GIẢ TẠI TRIỂN LÃM</h1>
-                    </div>
-                    <div className="col-xs-1 col-sm-2 hidden-xs"><h1><img src={require("../../photos/arrow.png")}/></h1>
-                    </div>
-                    <div className="col-xs-12 smallspace"></div>
-                </div>
-                <div className="row">
-                    <div className="col-xs-12 col-sm-6 col-md-4 col-md-offset-1">
-                        <div className="thumbnail">
-                            <img src={require("../../photos/diengia1.png")}
-                                 className="img-responsive img-circle img-diengia img-diengia1"/>
-
-                            <div className="caption">
-                                <h3 className="mblue bold">HƯNG TRẦN</h3>
-
-                                <p className="semibold black">Cử nhân kinh tế Đại học<br/>Cambridge (Anh)</p>
-
-                                <p className="semibold black">Thạc sĩ chính sách quốc tế từ<br/>Đại học Stanford (Mỹ)
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-xs-12 col-sm-6 col-md-4 col-md-offset-2">
-                        <div className="thumbnail">
-                            <img src={require("../../photos/diengia2.png")}
-                                 className="img-responsive img-circle img-diengia img-diengia2"/>
-
-                            <div className="caption">
-                                <h3 className="mblue bold">LÊ THỊ XUÂN</h3>
-
-                                <p className="semibold black">Thạc sĩ</p>
-
-                                <p className="semibold black">Đại học Huddersfield (Anh)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a name="chiase" id="chiase">
-                <div className="space"></div>
-            </a>
-
-            <div className="container-fluid bglblue">
-                <div className="container">
-                    <div className="row row-chiase">
-                        <div className="col-xs-12 space"></div>
-                        <div className="col-xs-12 visible-xs">
-                            <h1 className="semibold text-center">CHIA SẺ CỦA DU HỌC SINH<br/>SUNRISE VIETNAM</h1>
-                        </div>
-                        <div className="col-xs-12 col-sm-5 col-md-4 col-md-offset-1">
-                            <h2><img src={require("../../photos/chiase1.png")} className="img-responsive chiaseimg"/>
-                            </h2>
-                        </div>
-                        <div className="col-xs-12 col-sm-7 col-md-6">
-                            <h2 className="semibold hidden-xs"><img
-                                src={require("../../photos/white-arrow.png")}/>&nbsp;&nbsp; CHIA SẺ CỦA DU HỌC SINH<br/>SUNRISE
-                                VIETNAM</h2>
-
-                            <div className="smallspace"></div>
-                            <p className="text-justify">Trước khi đi du học, em cũng có nhiều điều bỡ ngỡ trong việc làm
-                                thủ tục, tuy
-                                nhiên rất may mắn vì được các anh chị và nhất là cô Hương ở trung tâm Sunrise hướng dẫn
-                                chu đáo nên
-                                em và bố mẹ cũng cảm thấy yên tâm hơn. Trong suốt 2 năm vừa qua, bố mẹ em cũng nắm bắt
-                                rõ tình hình
-                                học tập sinh hoạt của em qua các báo cáo nhận xét mỗi kì của trường gửi về qua trung
-                                tâm.</p>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-xs-12 smallspace"></div>
-                        <div className="col-xs-12 visible-xs">
-                            <h2><img src={require("../../photos/chiase2.png")}
-                                     className="img-responsive chiaseimg chiase2"/></h2>
-                        </div>
-                        <div className="col-xs-12 col-sm-7 col-md-6 col-md-offset-1">
-                            <div className="space"></div>
-                            <p className="text-justify">Theo mình "Du học" là một chuyến đi mà bạn sẽ được trang bị kiến
-                                thức, gặp gỡ người mới để mở mang tầm mắt. Nó còn là cơ hội để bạn trải nghiệm cuộc sống
-                                tự lập học hỏi nhiều điều mới và thử thách khả năng của bản thân.</p>
-
-                            <div className="smallspace"></div>
-                            <button type="button" className="center-block btn btn-reg bgorange white"
-                                    onClick={this._openModal}><h2 className="semibold">ĐĂNG KÝ NGAY</h2></button>
-                        </div>
-                        <div className="col-sm-5 col-md-4 hidden-xs">
-                            <h2 className="text-right"><img src={require("../../photos/chiase2.png")}
-                                                            className="img-responsive chiase2"/></h2>
-                        </div>
-                    </div>
-                </div>
-                <a name="danhsach" id="danhsach">
-                    <div className="space"></div>
-                </a>
-            </div>
-            <div className="smallspace"></div>
-            <div className="container">
-                <div className="row">
-                    <div className="col-xs-2 hidden-xs"><h1 className="text-righ"><img
-                        src={require("../../photos/arrow.png")}/></h1></div>
-                    <div className="col-xs-12 col-sm-8">
-                        <h1 className="orange text-center semibold">DANH SÁCH CÁC TRƯỜNG <br/>TỔ CHỨC THAM GIA</h1>
-                    </div>
-                    <div className="col-xs-2 hidden-xs"><h1><img src={require("../../photos/arrow.png")}/></h1></div>
-                    <div className="col-xs-12 smallspace"></div>
-                    <div className="col-xs-12">
-                        <img width="100%" src={require("../../photos/uni.png")}
-                             className="img-responsive center-block"/>
-                    </div>
-                    <div className="col-xs-12">
-                        <div className="smallspace"></div>
-                        <button type="button" className="center-block btn btn-reg bgorange white"
-                                onClick={this._openModal}><h2 className="semibold">ĐĂNG KÝ NGAY</h2></button>
-                        <div className="smallspace"></div>
-                    </div>
-                    <div className="col-xs-12 text-center semibold">
-                        <h3 className="size40 orange">CHÚNG TÔI CHỜ ĐÓN BẠN <br className="visible-xs"/>TẠI TRIỂN LÃM!
-                        </h3>
-
-                        <div className="space"></div>
-                    </div>
-                </div>
-            </div>
+	        {/*----------------------schools----------------------*/}
+	        <div className={styles.schoolsContainer}>
+		        <div className="container">
+			        <div className="col-xs-12 col-md-8 col-md-offset-2 text-center">
+				        <div className={styles.mediumSpacing}></div>
+				        <img src={require('../../photos/201609/title-schools.png')} className={styles.imgResponsive}/>
+				        <div className={styles.mediumSpacing}></div>
+			        </div>
+			        <div className={`col-xs-12 text-center ${styles.schoolsGroup}`}>
+				        <h4><strong>ĐẠI DIỆN CÁC TRƯỜNG TRUNG HỌC, CAO ĐẲNG, ĐẠI HỌC<br/>
+					        TẠI ANH, ÚC, CANADA, MỸ, TRUNG QUỐC, SINGAPORE</strong></h4>
+				        <div className={styles.mediumSpacing}></div>
+				        {/*<SimpleSlider images={this.slider1} id='slider1_'/>*/}
+				        <div className={styles.largeSpacing}></div>
+			        </div>
+			        <div className={`col-xs-12 text-center ${styles.schoolsGroup}`}>
+				        <h4><strong>TỔ CHỨC GIÁO DỤC STUDY GROUP<br/>
+					        ĐẠI DIỆN TRƯỜNG TRUNG HỌC, ĐẠI HỌC<br/>
+					        TẠI ANH, ÚC, MỸ, HÀ LAN, CANADA, NEW ZEALAND</strong></h4>
+				        <div className={styles.mediumSpacing}></div>
+				        {/*<SimpleSlider images={this.slider2} id='slider2_'/>*/}
+				        <div className={styles.largeSpacing}></div>
+			        </div>
+			        <div className={`col-xs-12 text-center ${styles.schoolsGroup}`}>
+				        <h4><strong>TỔ CHỨC GIÁO DỤC KINGS EDUCATION<br/>
+					        ĐẠI DIỆN TRƯỜNG TRUNG HỌC, ĐẠI HỌC<br/>
+					        TẠI ANH, MỸ</strong></h4>
+				        <div className={styles.mediumSpacing}></div>
+				        {/*<SimpleSlider images={this.slider3} id='slider3_'/>*/}
+				        <div className={styles.largeSpacing}></div>
+			        </div>
+			        <div className={`col-xs-12 text-center ${styles.schoolsGroup}`}>
+				        <h4><strong>TỔ CHỨC GIÁO DỤC KAPLAN<br/>
+					        ĐẠI DIỆN TRƯỜNG TRUNG HỌC, ĐẠI HỌC<br/>
+					        TẠI ANH, ÚC, MỸ, IRELAND</strong></h4>
+				        <div className={styles.mediumSpacing}></div>
+				        {/*<SimpleSlider images={this.slider4} id='slider4_'/>*/}
+				        <div className={styles.largeSpacing}></div>
+			        </div>
+			        <div className="col-xs-12 text-center">
+				        <button className={`${styles.btnBlock}`} id={`${styles.btnToForm}`} href="#registerForm" type="button"><h4>ĐĂNG KÝ</h4></button>
+				        <div className={styles.mediumSpacing}></div>
+			        </div>
+		        </div>
+	        </div>
         </div>
     }
-})
+}
 
 const Header = React.createClass({
     displayName: 'Header',
@@ -720,39 +720,33 @@ const Header = React.createClass({
         });
     },
     render(){
-        return <header className="container-fluid bgdblue menu">
-            <div className="container">
-                <nav className="navbar navbar-default menubar">
-                    <div className="container-fluid bgdblue">
-                        <div className="navbar-header">
-                            <button type="button" className="navbar-toggle collapsed" data-toggle="collapse"
-                                    data-target="#smallmenu" aria-expanded="false">
-                                <span className="sr-only">Toggle navigation</span>
-                                <span className="icon-bar bgwhite"></span>
-                                <span className="icon-bar bgwhite"></span>
-                                <span className="icon-bar bgwhite"></span>
-                            </button>
-                            <a className="navbar-brand" href="#"><img src={require("../../photos/logo.png")}/></a>
-                        </div>
-                        <div className="collapse navbar-collapse white" id="smallmenu">
-                            <ul className="nav navbar-nav navbar-right">
-                                <li><Link className="white" id="menuhome" to="/">Trang Chủ</Link></li>
-                                <li><Link className="white" id="menucohoi" hash="#cohoi" to="/">Cơ Hội<br
-                                    className="hidden-xs"/>
-                                    Tại Triển Lãm</Link></li>
-                                <li><Link className="white" id="menuqua" hash="#qua" to="/">Quà Tặng<br
-                                    className="hidden-xs"/></Link></li>
-                                <li><Link className="white" id="menudg" hash="#diengia" to="/">Diễn Giả</Link></li>
-                                <li><Link className="white" id="menucs" hash="#chiase" to="/">Chia Sẻ Của<br
-                                    className="hidden-xs"/> Du Học Sinh</Link></li>
-                                <li><Link className="white" id="menuds" hash="#danhsach" to="/">Các Trường/ Tổ Chức<br
-                                    className="hidden-xs"/> Tham Gia</Link></li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </header>
+        return 				<nav className={`navbar navbar-fixed-top ${styles.navBarCustom}`}>
+	        <div className="container">
+		        <div className="container-fluid">
+			        <div className="navbar-header">
+				        <button type="button" className="navbar-toggle collapsed" data-toggle="collapse"
+				                data-target="#top-menu" aria-expanded="false">
+					        <span className="sr-only">Toggle navigation</span>
+					        <span className="icon-bar"></span>
+					        <span className="icon-bar"></span>
+					        <span className="icon-bar"></span>
+				        </button>
+			        </div>
+			        <div className={`collapse navbar-collapse text-center ${styles.centerMenu}`} id="top-menu">
+				        <ul className="nav navbar-nav">
+					        <li><a href="#" className={styles.customA}>TRANG CHỦ</a></li>
+					        <li><a href="#opportunities" className={styles.customA}>CƠ HỘI TẠI TRIỂN LÃM</a></li>
+					        <li><a href="#gifts" className={styles.customA}>QUÀ TẶNG</a></li>
+					        <li><a href="#sharing" className={styles.customA}>DU HỌC SINH CHIA SẺ</a></li>
+					        <li><a href="#schools" className={styles.customA}>CÁC TRƯỜNG TỔ CHỨC THAM GIA TRIỂN LÃM</a></li>
+				        </ul>
+				        <ul className="nav navbar-nav navbar-right">
+					        <li><a href="#schools"><img className="visible-lg visible-md" height="70" src={require ('../../photos/201609/logo.png')}/></a></li>
+				        </ul>
+			        </div>
+		        </div>
+	        </div>
+        </nav>
     }
 })
 
@@ -760,123 +754,121 @@ const Footer = React.createClass({
     displayName: 'Footer',
     render(){
         return (
-            <footer className="container-fluid bgddblue">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-xs-12 space"></div>
-                        <div className="col-sm-4 col-sm-offset-8 hidden-xs"><img className="img-responsive" id="bg-logo"
-                                                                                 src={require("../../photos/footerlogo.png")}/>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-xs-12 col-sm-4">
-                            <h4 className="bold">TRỤ SỞ CHÍNH SUNRISE VIETNAM</h4>
+	        <div className={styles.footer}>
+		        <div className="container">
+			        <div className={styles.smallSpacing}></div>
+			        <div className="col-xs-12">
+				        <h3 className="text-center"><strong>MỌI CHI TIẾT XIN LIÊN HỆ</strong></h3>
+				        <div className={styles.smallSpacing}></div>
+			        </div>
 
-                            <div className="media">
-                                <div className="media-left">
-                                    <img className="media-object" src={require("../../photos/adicon.png")}/>
-                                </div>
-                                <div className="media-body media-middle">
-                                    <p className="text-uppercase">86 Cửa Bắc - Ba Đình - Hà Nội</p>
-                                </div>
-                            </div>
-                            <div className="media">
-                                <div className="media-left">
-                                    <img className="media-object" src={require("../../photos/phoneicon.png")}/>
-                                </div>
-                                <div className="media-body media-middle">
-                                    <p>TEL: (84-4) 37224878 - 37224898</p>
-                                </div>
-                            </div>
-                            <div className="media">
-                                <div className="media-left">
-                                    <img className="media-object" src={require("../../photos/printicon.png")}/>
-                                </div>
-                                <div className="media-body media-middle">
-                                    <p>FAX: (84-4) 37224855</p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div className="col-xs-12 col-sm-4 col-lg-3">
-                            <h4 className="bold">VĂN PHÒNG HẢI PHÒNG</h4>
-
-                            <div className="media">
-                                <div className="media-left">
-                                    <img className="media-object" src={require("../../photos/adicon.png")}/>
-                                </div>
-                                <div className="media-body media-middle">
-                                    <p className="text-uppercase">29 Nguyễn Trãi - Ngô Quyền</p>
-                                </div>
-                            </div>
-                            <div className="media">
-                                <div className="media-left">
-                                    <img className="media-object" src={require("../../photos/phoneicon.png")}/>
-                                </div>
-                                <div className="media-body media-middle">
-                                    <p>TEL: (84-31) 2640689 - 3653269</p>
-                                </div>
-                            </div>
-                            <div className="media">
-                                <div className="media-left">
-                                    <img className="media-object" src={require("../../photos/printicon.png")}/>
-                                </div>
-                                <div className="media-body media-middle">
-                                    <p>FAX: (84-31) 3732895</p>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div className="col-xs-12 col-sm-4 col-lg-5">
-                            <h4 className="bold">VĂN PHÒNG HỒ CHÍ MINH</h4>
-
-                            <div className="media">
-                                <div className="media-left">
-                                    <img className="media-object" src={require("../../photos/adicon.png")}/>
-                                </div>
-                                <div className="media-body">
-                                    <p className="text-uppercase">Lầu 7, Tòa nhà Thanh Dung, số 179 Nguyễn Cư Trinh,
-                                        Q.1</p>
-                                </div>
-                            </div>
-                            <div className="media">
-                                <div className="media-left">
-                                    <img className="media-object" src={require("../../photos/phoneicon.png")}/>
-                                </div>
-                                <div className="media-body media-middle">
-                                    <p>TEL: (84-8) 38370176 - 38370226</p>
-                                </div>
-                            </div>
-                            <div className="media">
-                                <div className="media-left">
-                                    <img className="media-object" src={require("../../photos/printicon.png")}/>
-                                </div>
-                                <div className="media-body media-middle">
-                                    <p>FAX: (84-8) 38360940</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-xs-12 smallspace"></div>
-                        <div className="col-xs-12 col-sm-4">
-                            <a className="white" href="http://sunrisevietnam.com"
-                               target="_blank">www.sunrisevietnam.com</a>
-                        </div>
-                        <div className="col-xs-12 col-sm-4 col-lg-3">
-                            <p>Email: <a className="white" href="mailto:info@sunrisevietnam.com" target="_blank">info@sunrisevietnam.com</a>
-                            </p>
-                        </div>
-                        <div className="col-xs-12 col-sm-4 col-lg-5">
-                            <p>Facebook: <a className="white" href="http://fb.com/thaiduong.vietnam" target="_blank">www.facebook.com/thaiduong.vietnam</a>
-                            </p>
-                        </div>
-                        <div className="col-xs-12 space"></div>
-                    </div>
-
-
-                </div>
-            </footer>
+			        <div className="col-xs-12 col-sm-6 col-md-3">
+				        <p><strong className={styles.orange}>HÀ NỘI:</strong><br/></p>
+				        <ul className="media-list">
+					        <li className="media">
+						        <div className="media-left media-top">
+							        <img className="media-object" src={require ('../../photos/201609/place1.png')}/>
+						        </div>
+						        <div className="media-body">
+							        <p className="media-heading">86 CỬA BẮC, Q. BA ĐÌNH</p>
+						        </div>
+					        </li>
+					        <li className={`media ${styles.customMedia}`}>
+						        <div className="media-left media-top">
+							        <a href="#">
+								        <img className="media-object" width="16px" src={require ('../../photos/201609/phone.png')}/>
+							        </a>
+						        </div>
+						        <div className="media-body">
+							        <p className="media-heading">043.722.4898</p>
+						        </div>
+					        </li>
+				        </ul>
+			        </div>
+			        <div className="col-xs-12 col-sm-6 col-md-3">
+				        <p><strong className={styles.orange}>TIMES CITY:</strong><br/></p>
+				        <ul className="media-list">
+					        <li className="media">
+						        <div className="media-left media-top">
+							        <img className="media-object" src={require ('../../photos/201609/place1.png')}/>
+						        </div>
+						        <div className="media-body">
+							        <p className="media-heading">TẦNG 2, TOÀ NHÀ T5,<br/>
+								        KHU VĂN PHÒNG TIMES CITY<br/>
+								        458 MINH KHAI, Q. HAI BÀ TRƯNG, HÀ NỘI</p>
+						        </div>
+					        </li>
+					        <li className={`media ${styles.customMedia}`}>
+						        <div className="media-left media-top">
+							        <a href="#">
+								        <img className="media-object" width="16px" src={require ('../../photos/201609/phone.png')}/>
+							        </a>
+						        </div>
+						        <div className="media-body">
+							        <p className="media-heading">043.200.4743 * 043.204.8333</p>
+						        </div>
+					        </li>
+				        </ul>
+			        </div>
+			        <div className="col-xs-12 col-sm-6 col-md-3">
+				        <p><strong className={styles.orange}>HỒ CHÍ MINH:</strong><br/></p>
+				        <ul className="media-list">
+					        <li className="media">
+						        <div className="media-left media-top">
+							        <img className="media-object" src={require ('../../photos/201609/place1.png')}/>
+						        </div>
+						        <div className="media-body">
+							        <p className="media-heading">LẦU 7, TOÀ NHÀ THANH DUNG,<br/>
+								        179 NGUYỄN CƯ TRINH, QUẬN 1</p>
+						        </div>
+					        </li>
+					        <li className={`media ${styles.customMedia}`}>
+						        <div className="media-left media-top">
+							        <a href="#">
+								        <img className="media-object" width="16px" src={require ('../../photos/201609/phone.png')}/>
+							        </a>
+						        </div>
+						        <div className="media-body">
+							        <p className="media-heading">083.837.0226</p>
+						        </div>
+					        </li>
+				        </ul>
+			        </div>
+			        <div className="col-xs-12 col-sm-6 col-md-3">
+				        <p><strong className={styles.orange}>HẢI PHÒNG:</strong><br/></p>
+				        <ul className="media-list">
+					        <li className="media">
+						        <div className="media-left media-top">
+							        <img className="media-object" src={require ('../../photos/201609/place1.png')}/>
+						        </div>
+						        <div className="media-body">
+							        <p className="media-heading">29 NGUYỄN TRÃI, NGÔ QUYỀN</p>
+						        </div>
+					        </li>
+					        <li className={`media ${styles.customMedia}`}>
+						        <div className="media-left media-top">
+							        <a href="#">
+								        <img className="media-object" width="16px" src={require ('../../photos/201609/phone.png')}/>
+							        </a>
+						        </div>
+						        <div className="media-body">
+							        <p className="media-heading">031.365.3269</p>
+						        </div>
+					        </li>
+				        </ul>
+			        </div>
+			        <div className="col-xs-12 text-center">
+				        <div className={styles.smallSpacing}></div>
+				        <p>
+					        <span className={styles.lblue}>WEB:</span> SUNRISEVIETNAM.COM
+					        <span className="hidden-xs hidden-sm">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span><br className="hidden-md hidden-lg"/>
+					        <span className={styles.lblue}>EMAIL:</span> INFO@SUNRISEVIETNAM.COM<span className="hidden-xs hidden-sm">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span><br className="hidden-md hidden-lg"/>
+					        <span className={styles.lblue}>FACEBOOK:</span> WWW.FACEBOOK.COM/THAIDUONG.VIETNAM
+				        </p>
+				        <div className={styles.smallSpacing}></div>
+			        </div>
+		        </div>
+	        </div>
         )
     }
 })

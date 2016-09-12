@@ -1,0 +1,31 @@
+/*----fonts----*/
+@font-face {
+    font-family: "myriad";
+    src: url("./fonts/MYRIADPRO-REGULAR.otf")
+}
+
+@font-face {
+    font-family: "myriadbold";
+    src: url("./fonts/MYRIADPRO-BOLD.otf")
+}
+
+@font-face {
+    font-family: "myriadsemibold";
+    src: url("./fonts/MYRIADPRO-SEMIBOLD.otf")
+}
+
+body {
+    font-family: "myriad" !important;
+}
+
+.semibold {
+    font-family: "myriadsemibold";
+}
+
+.bold {
+    font-family: "myriadbold";
+}
+
+.bootstrap-select{
+    padding-bottom: 0px;
+}
