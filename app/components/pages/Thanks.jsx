@@ -2,12 +2,12 @@ import React from 'react';
 
 export default class Thanks extends React.Component {
     componentDidMount(){
-        fbq('track', 'Lead');
+	    fbq('track', 'CompleteRegistration');
         var goConversion = new Image();
         goConversion.onload = function(){
             console.info('google conversion...');
         }
-        goConversion.src = '//www.googleadservices.com/pagead/conversion/926969368/?label=x5h4CLuWlWQQmNyBugM&amp;guid=ON&amp;script=0';
+        goConversion.src = '//www.googleadservices.com/pagead/conversion/1017172282/?label=x5h4CLuWlWQQmNyBugM&amp;guid=ON&amp;script=0';
     }
     render() {
         return <div className="container-fluid">

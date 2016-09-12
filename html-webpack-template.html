@@ -42,7 +42,8 @@
                    src="https://www.facebook.com/tr?id={%=o.htmlWebpackPlugin.options.fbPixels[pixel]%}&ev=PageView&noscript=1"
             /></noscript>
 {% } %}
-
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
 </head>
 <body>
 {% if (o.htmlWebpackPlugin.options.unsupportedBrowser) { %}
@@ -96,9 +97,10 @@
 <!--------------------------------------------------
 Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
 --------------------------------------------------->
+{% for (var gaConversion in o.htmlWebpackPlugin.options.goConversions) { %}
 <script type="text/javascript">
     /* <![CDATA[ */
-    var google_conversion_id = 926969368;
+    var google_conversion_id = {%=o.htmlWebpackPlugin.options.goConversions[gaConversion]%};
     var google_custom_params = window.google_tag_params;
     var google_remarketing_only = true;
     /* ]]> */
@@ -107,8 +109,9 @@ Remarketing tags may not be associated with personally identifiable information 
 </script>
 <noscript>
     <div style="display:inline;">
-        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/926969368/?value=0&amp;guid=ON&amp;script=0"/>
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/{%=o.htmlWebpackPlugin.options.goConversions[gaConversion]%}/?value=0&amp;guid=ON&amp;script=0"/>
     </div>
 </noscript>
+{% } %}
 </body>
 </html>

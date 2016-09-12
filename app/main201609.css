@@ -29,3 +29,22 @@ body {
 .bootstrap-select{
     padding-bottom: 0px;
 }
+
+.form-group .bootstrap-select.btn-group {
+    height: 46px;
+}
+.bootstrap-select>.dropdown-toggle.bs-placeholder, .bootstrap-select.btn-group .dropdown-toggle {
+    background-color: #6e61ca !important;
+    border-radius: 8px !important;
+    padding: 12px 40px 12px 10px !important;
+    height: auto !important;
+    color: #fff !important;
+    font-size: 14px!important;
+}
+.bootstrap-select.btn-group .dropdown-menu {
+    background-color: #6e61ca !important;
+    color: #fff !important;
+}
+.dropdown-menu > li > a {
+    color: white;
+}

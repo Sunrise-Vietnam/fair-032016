@@ -66,8 +66,8 @@ var common = {
             ogImage : '/./photos/9f8474d4192fa108648293a162bc0d2.jpg',
             favicon : 'app/photos/favicon.ico',
             gaCodes : ['UA-67504902-1'],
-            goConversions : [],
-            fbPixels : ['782977391770286','1146167955411692']
+            goConversions : ['1017172282'],
+            fbPixels : ['6028882262599']
         }),
         new webpack.ProvidePlugin({
             $: "jquery",

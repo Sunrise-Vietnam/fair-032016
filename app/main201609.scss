@@ -1,17 +1,26 @@
 @media (max-width: 767px) {
-  .navBarCustom {
-    background-color: lightgray;
-  }
-
   .marginBottomXS {
     margin-bottom: 15px;
   }
-
+  .navbar {
+    width: 100%;
+  }
+  .navBarCustom {
+    width: 100%;
+  }
+  .centerMenu > ul > li > a.customA {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 
 @media (min-width: 768px) {
   .navBarCustom {
     background-color: white;
+  }
+  .centerMenu > ul > li > a.customA {
+    padding-top: 40px;
+    height: 100px;
   }
 }
 
@@ -45,9 +54,6 @@
 
 @media (min-width: 992px) and (max-width: 1199px) {
 
-}
-
-@media (min-width: 1200px) {
 }
 
 @media (min-width: 992px) {
@@ -145,6 +151,8 @@ body {
 #btnToForm {
   background-color: white;
   color: #282828;
+  max-width: 179.5px;
+  text-decoration: none;
 }
 
 .navBarCustom {

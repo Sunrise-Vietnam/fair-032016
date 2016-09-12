@@ -28,7 +28,7 @@ history.listen(location => {
             return;
         }
         var hash = location.hash;
-        //console.log(element, hash);
+        console.log(hash);
         if(hash){
             $('html, body').animate({
                 scrollTop: ($(hash).offset().top - 73)
