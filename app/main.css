@@ -1,0 +1,281 @@
+/*----fonts----*/
+@font-face {
+    font-family: "myriad";
+    src: url("./fonts/MYRIADPRO-REGULAR.otf")
+}
+@font-face {
+    font-family: "myriadbold";
+    src: url("./fonts/MYRIADPRO-BOLD.otf")}
+@font-face {
+    font-family: "myriadsemibold";
+    src: url("./fonts/MYRIADPRO-SEMIBOLD.otf")}
+body{
+    font-family: "myriad";
+}
+.semibold{
+    font-family: "myriadsemibold";
+}
+.bold{
+    font-family: "myriadbold";
+}
+/*----color----*/
+body,.white,.white:hover,.white:focus,.navbar-default .navbar-nav>li>a,.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>a:focus,.navbar-default .navbar-nav>li>a:active{
+    color:white;
+}
+.bgwhite{
+    background-color: white;
+}
+.red{
+    color: #fe0000;
+}
+.orange{
+    color: #fb7e46;
+}
+.dorange{
+    color: #fe5003;
+}
+.bgorange,.bgorange:hover,.bgorange:focus,.bgorange:active{
+    background-color: #fb8f41;
+}
+.bglblue{
+    background-color: #20a2a2;
+}
+.mblue{
+    color: #074c75;
+}
+.bgmblue{
+    background-color: #074c75;
+}
+.bgdblue{
+    background-color: #084179;
+}
+.bgddblue{
+    background-color: #232143;
+}
+.black{
+    color: #2b2b2b;
+}
+/*----common----*/
+h2{
+    margin: 0;
+}
+hr{
+    height: 2px;
+    border: none;
+}
+.container-fluid{
+    padding: 0;
+}
+.space{
+    height: 30px;
+}
+/*----menu----*/
+.menu{
+    z-index: 1039;
+    border-bottom: 7px solid #ffffff;
+}
+.menubar{
+    border: none;
+    margin: 0;
+}
+.navbar-default{
+    box-shadow: none;
+}
+.navbar-default .navbar-toggle,.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{
+    background-color: transparent;
+    border-color: white;
+}
+.navbar-default .navbar-toggle .icon-bar{
+    background-color: white;
+}
+.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>a:focus,.navbar-default .navbar-nav>li>a:active{
+    font-weight: bold;
+}
+#menucohoi:hover {
+    border-top: solid 3px #9e86d5;
+}
+#menuqua:hover,#menuqua:active {
+    border-top: solid 3px #fb8f41;
+}
+#menudg:hover {
+    border-top: solid 3px #20a2a2;
+}
+#menucs:hover {
+    border-top: solid 3px #ffd119;
+}
+#menuds:hover {
+    border-top: solid 3px #29cd6b;
+}
+/*----banner----*/
+#bannerborder{
+    height: 4px;
+    background-image: url("./photos/border.png");
+    background-repeat: repeat-x;
+}
+#btn-intro{
+    position: relative;
+}
+#bottomintro{
+    margin-top: 16px;
+    width: 100%;
+}
+/*----gifts----*/
+/*----gifts----*/
+.gifts{
+    background-image: url("./photos/blue.png");
+    background-size: cover;
+}
+.thumbnail{
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+    margin-bottom: 5px;
+}
+/*----diengia----*/
+.img-diengia{
+    padding: 3px;
+}
+.img-diengia1{
+    border: solid 7px #074c75;
+}
+.img-diengia2{
+    border: solid 7px #fb8f41;
+}
+/*----chiase----*/
+.row-chiase.col-xs-7>p{
+    vertical-align: middle;
+}
+/*----footer----*/
+#bg-logo{
+    z-index: 0;
+    position: absolute;
+}
+footer .media {
+    margin-top: 0;
+}
+/*----button----*/
+.btn-reg{
+    border-radius: 7px;
+    padding: 10px 20px 10px 20px
+}
+.btn-reg p{
+    margin: 5px 5px
+}
+/*----thanks----*/
+.img-links{
+    position: relative;
+    margin-top: -22px;
+}
+/*----separate----*/
+@media (max-width: 767px) {
+    .smallspace{
+        height: 15px;
+    }
+    .space {
+        height: 30px;
+    }
+    .chiaseimg{
+        text-align: center;
+        margin: auto;
+    }
+}
+@media (max-width: 991px) {
+    h1{font-size: 38px}
+    .size40{font-size: 33px}
+    h2,.size33{font-size: 26px}
+    h3,.size25{font-size: 18px}
+    h4,p{font-size: 16px}
+    .size16{font-size: 14px}
+    footer p, footer a{
+        font-size: 13px;
+    }
+    .navbar-default .navbar-nav>li>a{
+        font-size: 12px;
+    }
+    #btn-intro{
+        margin-top: 25px;
+    }
+}
+@media (min-width: 768px) {
+    .smallspace{
+        height: 25px;
+    }
+    .space{
+        height: 50px;
+    }
+    .navbar-header{
+        margin-top: 10px;
+    }
+    .navbar-default .navbar-nav>li,.navbar-default .navbar-nav>li>a{
+        height: 73px;
+    }
+    .navbar-default .navbar-nav>li>a{
+        border-top: solid 3px #084179;
+    }
+    #menuhome:hover{
+        border-top: solid 3px #ffffff;
+    }
+    #menucohoi:hover {
+        border-top: solid 3px #9e86d5;
+    }
+    #menuqua:hover,#menuqua:active {
+        border-top: solid 3px #fb8f41;
+    }
+    #menudg:hover {
+        border-top: solid 3px #20a2a2;
+    }
+    #menucs:hover {
+        border-top: solid 3px #ffd119;
+    }
+    #menuds:hover {
+        border-top: solid 3px #29cd6b;
+    }
+    .intro{
+        padding-top: 30px;
+    }
+    .chiase2{
+        float: right;
+    }
+}
+@media (min-width: 992px){
+    h1{font-size: 45px}
+    .size40{font-size: 40px}
+    h2,.size33{font-size: 33px}
+    h3,.size25{font-size: 25px}
+    h4,p{font-size: 18px}
+    .size16{font-size: 16px}
+    footer p, footer a{
+        font-size: 15px;
+    }
+    #btn-intro{
+        margin-top: -15px;
+    }
+}
+
+.form-control{
+    border-radius: 0px;
+}
+.input-group{
+    width: 100%;
+}
+
+#ModalHeader{
+    font-size: 30px;
+    color: #000011;
+}
+
+#ModalHeader span.subTitle{
+    display: block;
+    font-size: 15px;
+    color: #bc0000;
+    font-style: italic;
+}
+
+.dred, .dred:active, .dred:focus, .dred:hover {
+    color: #e4121a;
+}
+
+.dbluebg {
+    background-color: #06162f;
+}
