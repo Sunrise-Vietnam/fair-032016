@@ -58,17 +58,6 @@ var common = {
         ]
     },
     plugins : [
-        new HtmlwebpackPlugin({
-            template: 'html-webpack-template.html',
-            title : 'Triển lãm thế giới du học tháng 09/2016 | Sunrise Vietnam Co. , Ltd',
-            mobile : true,
-            appMountId: 'app',
-            ogImage : '/./photos/9f8474d4192fa108648293a162bc0d2.jpg',
-            favicon : 'app/photos/favicon.ico',
-            gaCodes : ['UA-67504902-1'],
-            goConversions : ['1017172282'],
-            fbPixels : ['6028882262599']
-        }),
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery",
@@ -94,7 +83,14 @@ if(TARGET === 'start' || !TARGET){
             port: process.env.PORT
         },
         plugins: [
-            new webpack.HotModuleReplacementPlugin()
+            new webpack.HotModuleReplacementPlugin(),
+            new HtmlwebpackPlugin({
+                template: 'html-webpack-template.html',
+                title : 'Triển lãm thế giới du học tháng 09/2016 | Sunrise Vietnam Co. , Ltd',
+                mobile : true,
+                appMountId: 'app',
+                ogImage : 'http://fair.sunrisevietnam.com/photos/73b8a701da059e47427c74fea69e5bde.jpg'
+            }),
         ]
     })
 }
@@ -107,6 +103,17 @@ if(TARGET === 'build') {
                 compress: {
                     warnings: false
                 }
+            }),
+            new HtmlwebpackPlugin({
+                template: 'html-webpack-template.html',
+                title : 'Triển lãm thế giới du học tháng 09/2016 | Sunrise Vietnam Co. , Ltd',
+                mobile : true,
+                appMountId: 'app',
+                ogImage : 'http://fair.sunrisevietnam.com/photos/73b8a701da059e47427c74fea69e5bde.jpg',
+                favicon : 'app/photos/favicon.ico',
+                gaCodes : ['UA-67504902-1'],
+                goConversions : ['1017172282'],
+                fbPixels : ['782977391770286']
             })
         ]
     });

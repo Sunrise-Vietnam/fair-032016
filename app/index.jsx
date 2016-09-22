@@ -4,7 +4,7 @@ require('./main201609.css');
 require('bootstrap-select');
 require('!style!css!bootstrap-select/dist/css/bootstrap-select.min.css');
 
-// require('./photos/world-study-fair032016.jpg');
+require('./photos/world-study-fair032016.jpg');
 
 import React from 'react';
 import ReactDom from 'react-dom';
@@ -31,7 +31,7 @@ history.listen(location => {
         console.log(hash);
         if(hash){
             $('html, body').animate({
-                scrollTop: ($(hash).offset().top - 73)
+                scrollTop: ($(hash).offset().top - 0)
             }, 1000);
         }else{
             window.scrollTo(0, 0);

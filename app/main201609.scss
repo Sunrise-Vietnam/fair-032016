@@ -2,15 +2,21 @@
   .marginBottomXS {
     margin-bottom: 15px;
   }
-  .navbar {
-    width: 100%;
-  }
+
   .navBarCustom {
     width: 100%;
   }
+
   .centerMenu > ul > li > a.customA {
     padding-top: 10px;
     padding-bottom: 10px;
+  }
+
+  .banner {
+    margin-top: 50px;
+  }
+  .customCheckbox label {
+    font-weight: normal;
   }
 }
 
@@ -18,9 +24,14 @@
   .navBarCustom {
     background-color: white;
   }
+
   .centerMenu > ul > li > a.customA {
     padding-top: 40px;
     height: 100px;
+  }
+
+  .banner {
+    margin-top: 95px;
   }
 }
 
@@ -48,12 +59,8 @@
   }
 
   h5 {
-    font-size: 17px;
+    font-size: 17px!important;
   }
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-
 }
 
 @media (min-width: 992px) {
@@ -74,7 +81,7 @@
   }
 
   h5 {
-    font-size: 16px;
+    font-size: 16px!important;
     line-height: 22px !important;
   }
 }
@@ -151,8 +158,8 @@ body {
 #btnToForm {
   background-color: white;
   color: #282828;
-  max-width: 179.5px;
   text-decoration: none;
+  display: inline-block;
 }
 
 .navBarCustom {
@@ -171,11 +178,6 @@ body {
   font-weight: bold;
 }
 
-.centerMenu > ul > li > a.customA {
-  padding-top: 40px;
-  height: 100px;
-}
-
 .centerMenu > ul > li > a:hover {
   background-color: white;
 }
@@ -183,10 +185,6 @@ body {
 .centerMenu > ul > li > a.customA:hover {
   background-image: linear-gradient(to right, #4d28b4, #7c20a3, #a41794);
   color: white;
-}
-
-.banner {
-  margin-top: 95px;
 }
 
 .bannerContent {
@@ -206,13 +204,24 @@ body {
   font-size: 17px !important;
 }
 
-.customInput, .selectpicker {
+.customInput {
   background-color: #6e61ca !important;
   border-radius: 8px !important;
-  padding: 12px 40px 12px 10px !important;
+  padding: 12px 40px 8px 12px !important;
   height: auto !important;
   color: #fff !important;
   font-size: 15px;
+}
+
+.customCheckbox {
+  background-color: #6e61ca !important;
+  border-radius: 8px !important;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 12px 0 12px 0 !important;
+  color: #fff !important;
+  font-size: 15px;
+  height: inherit;
 }
 
 input::-webkit-input-placeholder { /* Chrome */
@@ -235,10 +244,6 @@ input:-moz-placeholder { /* Firefox 4 - 18 */
   color: #fff !important;
   font-style: italic;
   opacity: 1;
-}
-
-.selectpicker {
-
 }
 
 .opportunities {

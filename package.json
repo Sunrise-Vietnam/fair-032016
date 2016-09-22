@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack"
+    "start": "webpack-dev-server --port 8000",
+    "clean": "rimraf ./build",
+    "build": "webpack",
+    "production": "npm run clean && npm run build"
   },
   "author": "",
   "license": "ISC",
@@ -46,6 +48,7 @@
     "raw-loader": "^0.5.1",
     "react-radio-group": "^2.2.0",
     "react-slick": "^0.9.3",
+    "rimraf": "^2.5.4",
     "sass-loader": "^3.2.3",
     "style-loader": "^0.13.0",
     "underscore": "^1.8.3",

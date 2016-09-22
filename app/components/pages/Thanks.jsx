@@ -3,11 +3,14 @@ import React from 'react';
 export default class Thanks extends React.Component {
     componentDidMount(){
 	    fbq('track', 'CompleteRegistration');
-        var goConversion = new Image();
-        goConversion.onload = function(){
-            console.info('google conversion...');
+        if(ga){
+            ga('send', 'event', 'Register', 'Register Completed', 'Success', 0);
         }
-        goConversion.src = '//www.googleadservices.com/pagead/conversion/1017172282/?label=x5h4CLuWlWQQmNyBugM&amp;guid=ON&amp;script=0';
+        //var goConversion = new Image();
+        //goConversion.onload = function(){
+        //    console.info('google conversion...');
+        //}
+        //goConversion.src = '//www.googleadservices.com/pagead/conversion/1017172282/?label=x5h4CLuWlWQQmNyBugM&amp;guid=ON&amp;script=0';
     }
     render() {
         return <div className="container-fluid">
@@ -92,6 +95,9 @@ export default class Thanks extends React.Component {
                     </div>
                 </footer>
                 <div className="smallspace"></div>
+            </div>
+            <div style={{display:'inline'}}>
+                <img height="1" width="1" style={{"border-style": "none"}} alt="" src="//www.googleadservices.com/pagead/conversion/1017172282/?label=f4XPCPLbkWoQuqKD5QM&amp;guid=ON&amp;script=0"/>
             </div>
         </div>
     }
