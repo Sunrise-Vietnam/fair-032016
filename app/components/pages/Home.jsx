@@ -1210,12 +1210,20 @@ const Footer = React.createClass({
 })
 
 const CallButton = React.createClass({
+	handleClickPhone(e){
+		e.preventDefault()
+		window.location.hash = '';
+		window.location.hash = '#registerForm';
+		if(ga){
+			ga('send', 'event', 'Click', 'Call button');
+		}
+	},
     render(){
         return (<div className="coccoc-alo-phone coccoc-alo-green coccoc-alo-show" id="coccoc-alo-phoneIcon"
-                     style={{"right": "0px", "top": "25.3px", "display": "block"}}>
+                     style={{"right": "0px", "display": "block"}}>
             <div className="coccoc-alo-ph-circle"></div>
             <div className="coccoc-alo-ph-circle-fill"></div>
-            <div className="coccoc-alo-ph-img-circle"></div>
+            <div className="coccoc-alo-ph-img-circle"  onClick={this.handleClickPhone}></div>
         </div>)
     }
 })

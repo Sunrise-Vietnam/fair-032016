@@ -1,6 +1,7 @@
 require('expose?$!expose?jQuery!jquery');
 require("bootstrap-webpack");
 require('./main201609.css');
+require('./callbutton.css');
 require('bootstrap-select');
 require('!style!css!bootstrap-select/dist/css/bootstrap-select.min.css');
 
@@ -28,7 +29,7 @@ history.listen(location => {
             return;
         }
         var hash = location.hash;
-        console.log(hash);
+        // console.log(hash);
         if(hash){
             $('html, body').animate({
                 scrollTop: ($(hash).offset().top - 0)
