@@ -1219,7 +1219,7 @@ const CallButton = React.createClass({
 		}
 	},
     render(){
-        return (<div className="coccoc-alo-phone coccoc-alo-green coccoc-alo-show" id="coccoc-alo-phoneIcon"
+        return (<div className="coccoc-alo-phone coccoc-alo-green coccoc-alo-show hidden-xs" id="coccoc-alo-phoneIcon"
                      style={{"right": "0px", "display": "block"}}>
             <div className="coccoc-alo-ph-circle"></div>
             <div className="coccoc-alo-ph-circle-fill"></div>

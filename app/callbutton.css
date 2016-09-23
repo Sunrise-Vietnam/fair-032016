@@ -2,8 +2,6 @@
     position: fixed;
     visibility: hidden;
     background-color: transparent;
-    width: 200px;
-    height: 200px;
     cursor: pointer;
     z-index: 200000 !important;
     -webkit-backface-visibility: hidden;
@@ -12,8 +10,7 @@
     -moz-transition: visibility .5s;
     -o-transition: visibility .5s;
     transition: visibility .5s;
-    right: 350px;
-    bottom: 30px !important;
+
 }
 
 @media (max-width:767px){
@@ -21,14 +18,22 @@
         top: 50px;
         width: 100px;
         height: 100px;
+        right: 150px!important;
+        bottom: 30px !important;
+    }
+    .coccoc-alo-ph-img-circle {
+        width: 50px!important;
+        height: 50px!important;
     }
 }
 
 @media (min-width:768px){
     .coccoc-alo-phone {
-        top: 50px;
         width: 100px;
         height: 100px;
+        right: 120px!important;
+        top: 110px!important;
+        bottom: 30px !important;
     }
 }
 
@@ -53,7 +58,7 @@
     -moz-border-radius: 100%;
     border-radius: 100%;
     border: 2px solid rgba(30, 30, 30, 0.4);
-    border: 2px solid #bfebfc 9;
+    border: 2px solid #bfebfc;
     opacity: .1;
     -webkit-animation: coccoc-alo-circle-anim 1.2s infinite ease-in-out;
     -moz-animation: coccoc-alo-circle-anim 1.2s infinite ease-in-out;
@@ -92,12 +97,12 @@
 .coccoc-alo-phone.coccoc-alo-green.coccoc-alo-hover .coccoc-alo-ph-circle,
 .coccoc-alo-phone.coccoc-alo-green:hover .coccoc-alo-ph-circle {
     border-color: #75eb50;
-    border-color: #baf5a7 9;
+    border-color: #baf5a7;
     opacity: .5
 }
 .coccoc-alo-phone.coccoc-alo-green .coccoc-alo-ph-circle {
     border-color: #00aff2;
-    border-color: #bfebfc 9;
+    border-color: #bfebfc;
     opacity: .5
 }
 .coccoc-alo-phone.coccoc-alo-gray.coccoc-alo-hover .coccoc-alo-ph-circle,
@@ -154,24 +159,24 @@
 .coccoc-alo-phone.coccoc-alo-hover .coccoc-alo-ph-circle-fill,
 .coccoc-alo-phone:hover .coccoc-alo-ph-circle-fill {
     background-color: rgba(0, 175, 242, 0.5);
-    background-color: #00aff2 9;
+    background-color: #00aff2;
     opacity: .75 !important
 }
 .coccoc-alo-phone.coccoc-alo-green.coccoc-alo-hover .coccoc-alo-ph-circle-fill,
 .coccoc-alo-phone.coccoc-alo-green:hover .coccoc-alo-ph-circle-fill {
     background-color: rgba(117, 235, 80, 0.5);
-    background-color: #baf5a7 9;
+    background-color: #baf5a7;
     opacity: .75 !important
 }
 .coccoc-alo-phone.coccoc-alo-green .coccoc-alo-ph-circle-fill {
     background-color: rgba(0, 175, 242, 0.5);
-    background-color: #a6e3fa 9;
+    background-color: #a6e3fa;
     opacity: .75 !important
 }
 .coccoc-alo-phone.coccoc-alo-gray.coccoc-alo-hover .coccoc-alo-ph-circle-fill,
 .coccoc-alo-phone.coccoc-alo-gray:hover .coccoc-alo-ph-circle-fill {
     background-color: rgba(204, 204, 204, 0.5);
-    background-color: #ccc 9;
+    background-color: #ccc;
     opacity: .75 !important
 }
 .coccoc-alo-phone.coccoc-alo-gray .coccoc-alo-ph-circle-fill {
@@ -222,11 +227,9 @@
 .coccoc-alo-phone.coccoc-alo-green.coccoc-alo-hover .coccoc-alo-ph-img-circle,
 .coccoc-alo-phone.coccoc-alo-green:hover .coccoc-alo-ph-img-circle {
     background-color: #75eb50;
-    background-color: #75eb50 9
 }
 .coccoc-alo-phone.coccoc-alo-green .coccoc-alo-ph-img-circle {
     background-color: #00aff2;
-    background-color: #00aff2 9
 }
 .coccoc-alo-phone.coccoc-alo-gray.coccoc-alo-hover .coccoc-alo-ph-img-circle,
 .coccoc-alo-phone.coccoc-alo-gray:hover .coccoc-alo-ph-img-circle {
