@@ -789,12 +789,12 @@ class Main extends React.Component {
                     <div className="col-xs-12 col-sm-6">
                         <div className="row">
                             <div
-                                className="col-xs-2 col-sm-3 col-md-2 col-md-offset-2 text-right">
+                                className="col-xs-4 col-xs-offset-4 col-sm-3 col-md-2 col-md-offset-2 text-right">
                                 <img src={require('../../photos/201609/woman.png')} className={styles.imgResponsive}/>
 
                                 <div className={`visible-xs ${styles.smallSpacing}`}></div>
                             </div>
-                            <div className="col-xs-10 col-sm-9 col-md-8">
+                            <div className="col-xs-12 col-sm-9 col-md-8">
                                 <h4><strong>TƯ VẤN TỔNG QUAN:</strong></h4>
 
                                 <h5><strong>Trả lời câu hỏi du học</strong></h5>
@@ -807,12 +807,12 @@ class Main extends React.Component {
                     <div className="col-xs-12 col-sm-6">
                         <div className="row">
                             <div
-                                className="col-xs-2 col-sm-3 col-md-2 col-md-offset-2 text-right">
+                                className="col-xs-4 col-xs-offset-4 col-sm-3 col-md-2 col-md-offset-2 text-right">
                                 <img src={require('../../photos/201609/man.png')} className={styles.imgResponsive}/>
 
                                 <div className={`visible-xs ${styles.smallSpacing}`}></div>
                             </div>
-                            <div className="col-xs-10 col-sm-9 col-md-8">
+                            <div className="col-xs-12 col-sm-9 col-md-8">
                                 <h4><strong>TƯ VẤN CHUYÊN SÂU:</strong></h4>
                                 <h5><strong>Gặp trực tiếp đại diện trường,</strong></h5>
                                 <h5><strong>nhận quà tại quầy trường</strong></h5>
@@ -823,13 +823,13 @@ class Main extends React.Component {
                         <div className="row">
                             <div className={styles.mediumSpacing}></div>
                             <div
-                                className="col-xs-2 col-sm-2 col-sm-offset-2 col-md-1 col-md-offset-4 text-right">
+                                className="col-xs-4 col-xs-offset-4 col-sm-2 col-sm-offset-2 col-md-1 col-md-offset-4 text-right">
                                 <img src={require('../../photos/201609/schoolships.png')}
                                      className={styles.imgResponsive}/>
 
                                 <div className={`visible-xs ${styles.smallSpacing}`}></div>
                             </div>
-                            <div className="col-xs-10 col-sm-8 col-md-7">
+                            <div className="col-xs-12 col-sm-8 col-md-7">
                                 <h4><strong>HỌC BỔNG TẠI CHỖ:</strong></h4>
                                 <h5><strong>Phỏng vấn học bổng các bậc học, thi thử IELTS Speaking,</strong></h5>
                                 <h5><strong>Phỏng vấn thử visa Mỹ như thế nào nhỉ?</strong></h5>
@@ -847,42 +847,57 @@ class Main extends React.Component {
                 <div className={`col-xs-12 col-md-8 col-md-offset-2 text-center ${styles.sectionTitle}`}>
                     <img src={require('../../photos/201609/title-gifts.png')} className={styles.imgResponsive}/>
                 </div>
-                <div className="col-xs-12 col-sm-4">
+                <div className="col-xs-12 col-sm-3">
+                    <div className="row">
+                        <div className="col-xs-6 col-xs-offset-3 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                            <img src={require('../../photos/201609/scholarship.png')}
+                                 className={styles.imgResponsive}/>
+
+                            <div className={`hidden-xs ${styles.smallSpacing}`}></div>
+                        </div>
+                        <div className="col-xs-12">
+                            <h4 className="text-center"><strong>CƠ HỘI<br className="visible-lg"/> HỌC BỔNG TỚI 70%</strong></h4>
+
+                            <div className={`visible-xs ${styles.smallSpacing}`}></div>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-xs-12 col-sm-3">
                     <div className="row">
                         <div className="col-xs-6 col-xs-offset-3 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
                             <img src={require('../../photos/201609/tui-but-moc-khoa.png')}
                                  className={styles.imgResponsive}/>
 
-                            <div className={styles.smallSpacing}></div>
+                            <div className={`hidden-xs ${styles.smallSpacing}`}></div>
                         </div>
                         <div className="col-xs-12">
                             <h4 className="text-center"><strong>TÚI, SỔ,<br className="visible-lg"/> BÚT, MÓC
                                 KHÓA</strong></h4>
 
-                            <div className={`visible-xs ${styles.mediumSpacing}`}></div>
+                            <div className={`visible-xs ${styles.smallSpacing}`}></div>
                         </div>
                     </div>
                 </div>
-                <div className="col-xs-12 col-sm-4">
+                <div className="col-xs-12 col-sm-3">
                     <div className="row">
                         <div className="col-xs-6 col-xs-offset-3 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
                             <img src={require('../../photos/201609/cam-nang.png')} className={styles.imgResponsive}/>
 
-                            <div className={styles.smallSpacing}></div>
+                            <div className={`hidden-xs ${styles.smallSpacing}`}></div>
                         </div>
                         <div className="col-xs-12">
                             <h4 className="text-center"><strong>CẨM NANG DU HỌC</strong></h4>
 
-                            <div className={`visible-xs ${styles.mediumSpacing}`}></div>
+                            <div className={`visible-xs ${styles.smallSpacing}`}></div>
                         </div>
                     </div>
                 </div>
-                <div className="col-xs-12 col-sm-4">
+                <div className="col-xs-12 col-sm-3">
                     <div className="row">
                         <div className="col-xs-6 col-xs-offset-3 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
                             <img src={require('../../photos/201609/IELTS.png')} className={styles.imgResponsive}/>
 
-                            <div className={styles.smallSpacing}></div>
+                            <div className={`hidden-xs ${styles.smallSpacing}`}></div>
                         </div>
                         <div className="col-xs-12">
                             <h4 className="text-center"><strong>BỐC THĂM HỖ TRỢ<br className="visible-lg"/> LỆ PHÍ THI
@@ -904,13 +919,13 @@ class Main extends React.Component {
                     </div>
                     <div className="col-xs-12">
                         <div className="row">
-                            <div className={`col-xs-12 visible-xs visible-sm ${styles.noPadding}`}>
+                            <div className={`col-xs-12 visible-xs ${styles.noPadding}`}>
                                 <img src={require('../../photos/201609/nguyen-minh-tuan.png')}
                                      className={styles.imgResponsive}/>
                             </div>
-                            <div className="col-xs-12 col-md-6 col-lg-5 col-lg-offset-1">
+                            <div className="col-xs-12 col-sm-6 col-lg-5 col-lg-offset-1">
                                 <div className={`visible-lg ${styles.largeSpacing}`}></div>
-                                <div className={`visible-xs visible-sm ${styles.smallSpacing}`}></div>
+                                <div className={`hidden-lg ${styles.smallSpacing}`}></div>
                                 <h4><strong>DU HỌC SINH TẠI MỸ</strong></h4>
                                 <h5 className="text-justify">Cuối cùng mình muốn nói là chuyến đi này là chuyến đi dài
                                     nhất và tốn
@@ -921,9 +936,9 @@ class Main extends React.Component {
                                     tên vào một chuyến đi dài ngày như mình xem sao, sẽ có rất nhiều điều hay ho phía
                                     trước đấy.</h5>
 
-                                <div className={`visible-xs visible-sm ${styles.mediumSpacing}`}></div>
+                                <div className={`visible-xs ${styles.mediumSpacing}`}></div>
                             </div>
-                            <div className={`hidden-xs hidden-sm col-md-6 col-lg-5 ${styles.noPadding}`}>
+                            <div className={`hidden-xs col-sm-6 col-lg-5 ${styles.noPadding}`}>
                                 <img src={require('../../photos/201609/nguyen-minh-tuan.png')}
                                      className={styles.imgResponsive}/>
                             </div>
@@ -931,13 +946,13 @@ class Main extends React.Component {
                     </div>
                     <div className="col-xs-12">
                         <div className="row">
-                            <div className={`col-xs-12 col-md-6 col-lg-5 col-lg-offset-1 ${styles.noPadding}`}>
+                            <div className={`col-xs-12 col-sm-6 col-lg-5 col-lg-offset-1 ${styles.noPadding}`}>
                                 <img src={require('../../photos/201609/dang-dieu-linh.png')}
                                      className={styles.imgResponsive}/>
                             </div>
-                            <div className="col-xs-12 col-md-6 col-lg-5">
+                            <div className="col-xs-12 col-sm-6 col-lg-5">
                                 <div className={`visible-lg ${styles.largeSpacing}`}></div>
-                                <div className={`visible-xs visible-sm ${styles.smallSpacing}`}></div>
+                                <div className={`hidden-lg ${styles.smallSpacing}`}></div>
                                 <h4><strong>DU HỌC SINH TẠI ANH</strong></h4>
                                 <h5 className="text-justify">Theo mình, "Du học" là một chuyến đi mà bạn sẽ được trang
                                     bị kiến thức, gặp gỡ người mới để mở
@@ -1087,7 +1102,7 @@ const Footer = React.createClass({
                     <div className={styles.smallSpacing}></div>
                     <div className="col-xs-12">
                         <h3 className="text-center"><strong>MỌI CHI TIẾT XIN LIÊN HỆ</strong></h3>
-
+                        <h4 className="text-center"><span className={styles.orange}>HOTLINE:</span> 098 846 5300</h4>
                         <div className={styles.smallSpacing}></div>
                     </div>
                     <div className="col-xs-12 col-sm-6 col-md-3">
