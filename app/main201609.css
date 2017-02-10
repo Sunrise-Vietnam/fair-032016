@@ -34,15 +34,15 @@ body {
     height: 46px;
 }
 .bootstrap-select>.dropdown-toggle.bs-placeholder, .bootstrap-select.btn-group .dropdown-toggle {
-    background-color: #6e61ca !important;
+    background-color: #F4820E !important;
     border-radius: 8px !important;
     padding: 12px 40px 12px 10px !important;
     height: auto !important;
-    color: #fff !important;
+    color: #FFF !important;
     font-size: 14px!important;
 }
 .bootstrap-select.btn-group .dropdown-menu {
-    background-color: #6e61ca !important;
+    background-color: #F4820E !important;
     color: #fff !important;
 }
 .dropdown-menu > li > a {
@@ -50,9 +50,9 @@ body {
 }
 @media (max-width:767px){
     .navbar-toggle {
-        border-color: #6e61ca
+        border-color: #F4820E
     }
     .icon-bar {
-        background-color: #6e61ca
+        background-color: #F4820E
     }
 }

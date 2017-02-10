@@ -111,8 +111,7 @@ class DefaultForm extends React.Component {
         onChange: e => {
             this.setState({[key]: $(e.target).selectpicker('val')})
         }
-
-    })
+    });
 
     render() {
         return (
@@ -137,14 +136,15 @@ class DefaultForm extends React.Component {
                             <select
                                 className="form-control selectpicker"
                                 title="Bạn sẽ tham dự triển lãm tại" {...this._handleChange('thamdutai')} mobile="true">
-                                <option value="TP HCM">Tp. Hồ Chí Minh, thứ 6 từ 16 giờ - 20 giờ, ngày 30/09/2016,
-                                    tại khách sạn Liberty Central Saigon, 59-61 Pasteur - Quận 1
-                                </option>
-                                <option value="Hà Nội">Hà Nội, thứ 7 từ 14 giờ - 18 giờ, ngày 01/10/2016, tại Star
+
+                                <option value="Hà Nội">Hà Nội, thứ 6 từ 17 giờ - 20 giờ, ngày 17/03/2017, tại Star
                                     Galaxy Convention, 87 Láng Hạ - Đống Đa
                                 </option>
-                                <option value="Hải Phòng">Hải Phòng, Chủ nhật từ 9 giờ - 12 giờ, ngày 02/10/2016,
-                                    tại khách sạn Nam Cường, 47 Lạch Tray
+                                <option value="Hải Phòng">Hải Phòng, thứ 7 từ 14 giờ - 17 giờ, ngày 18/03/2017,
+                                    tại khách sạn Nam Cường, 47 Lạch Tray - Ngô Quyền
+                                </option>
+                                <option value="TP HCM">Tp. Hồ Chí Minh, chủ nhật từ 14 giờ - 17 giờ, ngày 19/03/2017,
+                                    tại khách sạn Liberty Central Riverside Saigon, 17 Tôn Đức Thắng - Quận 1
                                 </option>
                             </select>
                         </div>
@@ -311,7 +311,6 @@ class DefaultForm extends React.Component {
         )
     }
 }
-;
 
 class SpecialForm extends React.Component {
     constructor(props) {
@@ -385,14 +384,14 @@ class SpecialForm extends React.Component {
                                 className={`form-control ${styles.customInput}`} {...this._handleChange('thamdutai')}
                                 mobile="true">
                                 <option disabled>Bạn sẽ tham dự triển lãm tại</option>
-                                <option value="TP HCM">Tp. Hồ Chí Minh, thứ 6 từ 16 giờ - 20 giờ, ngày 30/09/2016,
-                                    tại khách sạn Liberty Central Saigon, 59-61 Pasteur - Quận 1
-                                </option>
-                                <option value="Hà Nội">Hà Nội, thứ 7 từ 14 giờ - 18 giờ, ngày 01/10/2016, tại Star
+                                <option value="Hà Nội">Hà Nội, thứ 6 từ 17 giờ - 20 giờ, ngày 17/03/2017, tại Star
                                     Galaxy Convention, 87 Láng Hạ - Đống Đa
                                 </option>
-                                <option value="Hải Phòng">Hải Phòng, Chủ nhật từ 9 giờ - 12 giờ, ngày 02/10/2016,
-                                    tại khách sạn Nam Cường, 47 Lạch Tray
+                                <option value="Hải Phòng">Hải Phòng, thứ 7 từ 14 giờ - 17 giờ, ngày 18/03/2017,
+                                    tại khách sạn Nam Cường, 47 Lạch Tray - Ngô Quyền
+                                </option>
+                                <option value="TP HCM">Tp. Hồ Chí Minh, chủ nhật từ 14 giờ - 17 giờ, ngày 19/03/2017,
+                                    tại khách sạn Liberty Central Riverside Saigon, 17 Tôn Đức Thắng - Quận 1
                                 </option>
                             </select>
                         </div>
@@ -543,7 +542,6 @@ class SpecialForm extends React.Component {
         )
     }
 }
-;
 
 class SimpleSlider extends React.Component {
     render() {
@@ -576,6 +574,69 @@ class SimpleSlider extends React.Component {
         );
     }
 }
+
+const Header = React.createClass({
+    displayName: 'Header',
+    componentDidMount(){
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 73) {
+                $('.menu').css({
+                    position: 'fixed',
+                    top: '0px',
+                    width: '100%'
+                });
+            } else {
+                $('.menu').css({
+                    position: 'static',
+                    top: '0px'
+                });
+            }
+        });
+    },
+    render(){
+        return <nav className={`navbar navbar-fixed-top ${styles.navBarCustom}`}>
+            <div className="container">
+                <div className="container-fluid">
+                    <div className="navbar-header">
+                        <button type="button" className="navbar-toggle collapsed" data-toggle="collapse"
+                                data-target="#top-menu" aria-expanded="false">
+                            <span className="sr-only">Toggle navigation</span>
+                            <span className="icon-bar"></span>
+                            <span className="icon-bar"></span>
+                            <span className="icon-bar"></span>
+                        </button>
+
+                        <a className="navbar-brand visible-xs" href="#"><img
+                            src={require('../../photos/201609/small-logo.png')}/></a>
+
+                    </div>
+                    <div className={`collapse navbar-collapse text-center ${styles.centerMenu}`} id="top-menu">
+                        <ul className="nav navbar-nav">
+                            <li><Link className={styles.customA} id="menuhome" to="/">TRANG CHỦ</Link></li>
+                            <li><Link to="/" hash="#places" className={`visible-xs ${styles.customA}`}>ĐỊA ĐIỂM TRIỂN
+                                LÃM</Link></li>
+                            <li><Link to="/" hash="#registerForm" className={`visible-xs ${styles.customA}`}>ĐĂNG KÝ
+                                THAM DỰ</Link></li>
+                            <li><Link to="/" hash="#opportunities" className={styles.customA}>CƠ HỘI TẠI<br
+                                className="hidden-xs hidden-lg"/> TRIỂN LÃM</Link></li>
+                            <li><Link to="/" hash="#gifts" className={styles.customA}>QUÀ TẶNG</Link></li>
+                            <li><Link to="/" hash="#sharing" className={styles.customA}>DU HỌC SINH<br
+                                className="hidden-xs hidden-lg"/> CHIA SẺ</Link></li>
+                            <li><Link to="/" hash="#schools" className={styles.customA}>CÁC TRƯỜNG/TỔ CHỨC<br
+                                className="hidden-xs hidden-lg"/> THAM GIA TRIỂN LÃM</Link>
+                            </li>
+                        </ul>
+                        <ul className="nav navbar-nav navbar-right hidden-xs">
+                            <li><a href="http://www.sunrisevietnam.com/" target="_blank"><img height="70"
+                                                                                              src={require('../../photos/201609/logo.png')}/></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    }
+});
 
 class Main extends React.Component {
     constructor(props) {
@@ -645,12 +706,12 @@ class Main extends React.Component {
         const displayForm = (is_android) ? <SpecialForm onRegister={this.props.onRegister}/> :
             <DefaultForm onRegister={this.props.onRegister}/>
         return <div>
-            {/*banner*/}
+            {/*----------------------banner----------------------*/}
             <div className={`${styles.banner}`}>
                 <img className="hidden-xs" src={require('../../photos/201609/cover.png')} width="100%"/>
                 <img className="visible-xs" src={require('../../photos/201609/small-banner.png')} width="100%"/>
             </div>
-            {/*places*/}
+            {/*----------------------places----------------------*/}
             <a id="places" className="visible-xs"></a>
 
             <div className="container">
@@ -668,40 +729,6 @@ class Main extends React.Component {
                             </div>
                             <div className="media-body">
                                 <h4 className="media-heading text-uppercase"><strong className={`${styles.dblue}`}><em>*
-                                    TP.HCM</em></strong></h4>
-                            </div>
-                        </li>
-                        <li className={`media ${styles.customMedia}`}>
-                            <div className="media-left media-top">
-                                <img src={require('../../photos/201609/time.png')} className={styles.iconPlaces}/>
-                            </div>
-                            <div className="media-body">
-                                <h5 className="media-heading text-uppercase"><strong>THỨ 6, TỪ 16 GIỜ - 20
-                                    GIỜ</strong><br/>
-                                    Ngày 30/09/2016</h5>
-                            </div>
-                        </li>
-                        <li className={`media ${styles.customMedia}`}>
-                            <div className="media-left media-top">
-                                <img src={require('../../photos/201609/place.png')} className={styles.iconPlaces}/>
-                            </div>
-                            <div className="media-body">
-                                <h5 className="media-heading text-uppercase"><strong>Tại KS Liberty Central
-                                    Saigon</strong><br/>
-                                    59-61 Pasteur - Quận 1</h5>
-                            </div>
-                        </li>
-                    </ul>
-                    <div className={`visible-xs ${styles.smallSpacing}`}></div>
-                </div>
-                <div className="col-xs-12 col-sm-6 col-md-4">
-                    <ul className="media-list">
-                        <li className="media">
-                            <div className="media-left media-top">
-                                <p className={styles.iconPlaces}></p>
-                            </div>
-                            <div className="media-body">
-                                <h4 className="media-heading text-uppercase"><strong className={`${styles.dblue}`}><em>*
                                     HÀ NỘI</em></strong></h4>
                             </div>
                         </li>
@@ -710,10 +737,8 @@ class Main extends React.Component {
                                 <img src={require('../../photos/201609/time.png')} className={styles.iconPlaces}/>
                             </div>
                             <div className="media-body">
-                                <h5 className="media-heading text-uppercase"><strong>Thứ 7 từ 14 giờ - 18
-                                    giờ</strong><br/>
-                                    <span className={styles.spaceImg}></span>Ngày
-                                    01/10/2016</h5>
+                                <h5 className="media-heading text-uppercase"><strong>Thứ 6, từ 17 giờ - 20 giờ</strong><br/>
+                                    <span className={styles.spaceImg}></span>Ngày 17/03/2017</h5>
                             </div>
                         </li>
                         <li className={`media ${styles.customMedia}`}>
@@ -729,7 +754,7 @@ class Main extends React.Component {
                     </ul>
                     <div className={`visible-xs visible-sm ${styles.smallSpacing}`}></div>
                 </div>
-                <div className="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-0">
+                <div className="col-xs-12 col-sm-6 col-md-4">
                     <ul className="media-list">
                         <li className="media">
                             <div className="media-left media-top">
@@ -745,8 +770,8 @@ class Main extends React.Component {
                                 <img src={require('../../photos/201609/time.png')} className={styles.iconPlaces}/>
                             </div>
                             <div className="media-body">
-                                <h5 className="media-heading text-uppercase"><strong>Chủ nhật từ 9 giờ - 12 giờ</strong><br/>
-                                    Ngày 02/10/2016</h5>
+                                <h5 className="media-heading text-uppercase"><strong>Thứ 7, từ 14 giờ - 17 giờ</strong><br/>
+                                    Ngày 18/03/2017</h5>
                             </div>
                         </li>
                         <li className={`media ${styles.customMedia}`}>
@@ -756,10 +781,43 @@ class Main extends React.Component {
                             <div className="media-body">
                                 <h5 className="media-heading text-uppercase"><strong>Tại khách sạn Nam
                                     Cường</strong><br/>
-                                    47 Lạch Tray</h5>
+                                    47 Lạch Tray - Ngô Q</h5>
                             </div>
                         </li>
                     </ul>
+                </div>
+                <div className="col-xs-12 col-sm-6 col-md-4">
+                    <ul className="media-list">
+                        <li className="media">
+                            <div className="media-left media-top">
+                                <p className={styles.iconPlaces}></p>
+                            </div>
+                            <div className="media-body">
+                                <h4 className="media-heading text-uppercase"><strong className={`${styles.dblue}`}><em>*
+                                    Hồ Chí Minh</em></strong></h4>
+                            </div>
+                        </li>
+                        <li className={`media ${styles.customMedia}`}>
+                            <div className="media-left media-top">
+                                <img src={require('../../photos/201609/time.png')} className={styles.iconPlaces}/>
+                            </div>
+                            <div className="media-body">
+                                <h5 className="media-heading text-uppercase"><strong>Chủ nhật, TỪ 14 GIỜ - 17
+                                    GIỜ</strong><br/>
+                                    Ngày 19/03/2017</h5>
+                            </div>
+                        </li>
+                        <li className={`media ${styles.customMedia}`}>
+                            <div className="media-left media-top">
+                                <img src={require('../../photos/201609/place.png')} className={styles.iconPlaces}/>
+                            </div>
+                            <div className="media-body">
+                                <h5 className="media-heading text-uppercase"><strong>Tại KS Liberty Central Riverside Saigon</strong><br/>
+                                    17 Tôn Đức Thắng - Quận 1</h5>
+                            </div>
+                        </li>
+                    </ul>
+                    <div className={`visible-xs ${styles.smallSpacing}`}></div>
                 </div>
                 {/*----------------------form----------------------*/}
                 <div className="row">
@@ -1029,69 +1087,6 @@ class Main extends React.Component {
         </div>
     }
 }
-
-const Header = React.createClass({
-    displayName: 'Header',
-    componentDidMount(){
-        $(window).scroll(function () {
-            if ($(window).scrollTop() > 73) {
-                $('.menu').css({
-                    position: 'fixed',
-                    top: '0px',
-                    width: '100%'
-                });
-            } else {
-                $('.menu').css({
-                    position: 'static',
-                    top: '0px'
-                });
-            }
-        });
-    },
-    render(){
-        return <nav className={`navbar navbar-fixed-top ${styles.navBarCustom}`}>
-            <div className="container">
-                <div className="container-fluid">
-                    <div className="navbar-header">
-                        <button type="button" className="navbar-toggle collapsed" data-toggle="collapse"
-                                data-target="#top-menu" aria-expanded="false">
-                            <span className="sr-only">Toggle navigation</span>
-                            <span className="icon-bar"></span>
-                            <span className="icon-bar"></span>
-                            <span className="icon-bar"></span>
-                        </button>
-
-                        <a className="navbar-brand visible-xs" href="#"><img
-                            src={require('../../photos/201609/small-logo.png')}/></a>
-
-                    </div>
-                    <div className={`collapse navbar-collapse text-center ${styles.centerMenu}`} id="top-menu">
-                        <ul className="nav navbar-nav">
-                            <li><Link className={styles.customA} id="menuhome" to="/">TRANG CHỦ</Link></li>
-                            <li><Link to="/" hash="#places" className={`visible-xs ${styles.customA}`}>ĐỊA ĐIỂM TRIỂN
-                                LÃM</Link></li>
-                            <li><Link to="/" hash="#registerForm" className={`visible-xs ${styles.customA}`}>ĐĂNG KÝ
-                                THAM DỰ</Link></li>
-                            <li><Link to="/" hash="#opportunities" className={styles.customA}>CƠ HỘI TẠI<br
-                                className="hidden-xs hidden-lg"/> TRIỂN LÃM</Link></li>
-                            <li><Link to="/" hash="#gifts" className={styles.customA}>QUÀ TẶNG</Link></li>
-                            <li><Link to="/" hash="#sharing" className={styles.customA}>DU HỌC SINH<br
-                                className="hidden-xs hidden-lg"/> CHIA SẺ</Link></li>
-                            <li><Link to="/" hash="#schools" className={styles.customA}>CÁC TRƯỜNG TỔ CHỨC<br
-                                className="hidden-xs hidden-lg"/> THAM GIA TRIỂN LÃM</Link>
-                            </li>
-                        </ul>
-                        <ul className="nav navbar-nav navbar-right hidden-xs">
-                            <li><a href="http://www.sunrisevietnam.com/" target="_blank"><img height="70"
-                                                                                              src={require('../../photos/201609/logo.png')}/></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    }
-})
 
 const Footer = React.createClass({
     displayName: 'Footer',
