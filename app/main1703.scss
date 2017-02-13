@@ -264,11 +264,12 @@ input:-moz-placeholder { /* Firefox 4 - 18 */
 }
 
 .schoolsContainer {
-  background-image: url('./photos/201609/background-schools.png');
+  background-image: url('./photos/schools-map-bg.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
+  min-height: 805px;
 }
 
 .schoolsContainer h4 {

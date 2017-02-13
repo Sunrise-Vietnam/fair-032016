@@ -1,0 +1,13 @@
+.hoverinfo{
+    color: black;
+}
+
+.hoverinfo strong{
+
+}
+
+.hoverinfo ul{
+    margin: 0px !important;
+    padding: 0px !important;
+    list-style-type: none;
+}

@@ -4,6 +4,8 @@ import _ from 'lodash';
 import DDP from 'ddp.js';
 import styles from '../../main1703.scss';
 import Slider from 'react-slick';
+
+import WorldMap from '../elements/Map'
 import ScrollUpView from './ScrollUpView.js';
 
 
@@ -891,60 +893,21 @@ class Main extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className="col-xs-12 col-sm-6 col-md-3">
-                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer1}`}>
-                            <div className={`col-xs-12 ${styles.imgMainContent}`}>
-                                <h3 className={`${styles.white} ${styles.captionCustom}`}>Thumbnail label</h3>
-                                <hr className={`${styles.hrCustom} ${styles.lblueBg} ${styles.captionCustom}`}/>
-                                <p className={`${styles.white} ${styles.captionCustom}`}>This is a paragraph. This is a paragraph. This is a paragraph.</p>
-                            </div>
-                        </div>
+
+                </div>
+                <a id="schools">
+                    <div className={styles.largeSpacing}></div>
+                </a>
+            </div>
+
+            {/*----------------------schools----------------------*/}
+            <div className={styles.schoolsContainer}>
+                <div className="container">
+                    <div className="col-xs-12 col-md-8 col-md-offset-2 text-center">
+                        <img src={require('../../photos/schools-title.png')} className={styles.imgResponsive}/>
+                        <div className={styles.mediumSpacing}></div>
                     </div>
-                    <div className="col-xs-12 col-sm-6 col-md-3">
-                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer1}`}>
-                            <div className={`col-xs-12 ${styles.imgMainContent}`}>
-                                <h3 className={`${styles.white} ${styles.captionCustom}`}>Thumbnail label</h3>
-                                <hr className={`${styles.hrCustom} ${styles.yellowBg} ${styles.captionCustom}`}/>
-                                <p className={`${styles.white} ${styles.captionCustom}`}>This is a paragraph. This is a paragraph. This is a paragraph.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-xs-12 col-sm-6 col-md-3">
-                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer1}`}>
-                            <div className={`col-xs-12 ${styles.imgMainContent}`}>
-                                <h3 className={`${styles.white} ${styles.captionCustom}`}>Thumbnail label</h3>
-                                <hr className={`${styles.hrCustom} ${styles.orangeBg} ${styles.captionCustom}`}/>
-                                <p className={`${styles.white} ${styles.captionCustom}`}>This is a paragraph. This is a paragraph. This is a paragraph.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-xs-12 col-sm-6 col-md-3">
-                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer1}`}>
-                            <div className={`col-xs-12 ${styles.imgMainContent}`}>
-                                <h3 className={`${styles.white} ${styles.captionCustom}`}>Thumbnail label</h3>
-                                <hr className={`${styles.hrCustom} ${styles.lblueBg} ${styles.captionCustom}`}/>
-                                <p className={`${styles.white} ${styles.captionCustom}`}>This is a paragraph. This is a paragraph. This is a paragraph.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-xs-12 col-sm-6 col-md-3">
-                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer1}`}>
-                            <div className={`col-xs-12 ${styles.imgMainContent}`}>
-                                <h3 className={`${styles.white} ${styles.captionCustom}`}>Thumbnail label</h3>
-                                <hr className={`${styles.hrCustom} ${styles.yellowBg} ${styles.captionCustom}`}/>
-                                <p className={`${styles.white} ${styles.captionCustom}`}>This is a paragraph. This is a paragraph. This is a paragraph.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-xs-12 col-sm-6 col-md-3">
-                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer1}`}>
-                            <div className={`col-xs-12 ${styles.imgMainContent}`}>
-                                <h3 className={`${styles.white} ${styles.captionCustom}`}>Thumbnail label</h3>
-                                <hr className={`${styles.hrCustom} ${styles.lgreenBg} ${styles.captionCustom}`}/>
-                                <p className={`${styles.white} ${styles.captionCustom}`}>This is a paragraph. This is a paragraph. This is a paragraph.</p>
-                            </div>
-                        </div>
-                    </div>
+	                <WorldMap className="col-xs-12 world-map"/>
                 </div>
                 <div className={styles.mediumSpacing}></div>
             </div>
