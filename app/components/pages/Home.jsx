@@ -4,7 +4,7 @@ import _ from 'lodash';
 import DDP from 'ddp.js';
 import styles from '../../main201609.scss';
 import Slider from 'react-slick';
-
+import WorldMap from '../elements/Map'
 const _formObj = {
     hovaten: '',
     sodienthoai: '',
@@ -1030,56 +1030,10 @@ class Main extends React.Component {
             <div className={styles.schoolsContainer}>
                 <div className="container">
                     <div className="col-xs-12 col-md-8 col-md-offset-2 text-center">
-                        <div className={styles.mediumSpacing}></div>
-                        <img src={require('../../photos/201609/title-schools.png')} className={styles.imgResponsive}/>
-
+                        <img src={require('../../photos/schools-title.png')} className={styles.imgResponsive}/>
                         <div className={styles.mediumSpacing}></div>
                     </div>
-                    <div className={`col-xs-12 text-center ${styles.schoolsGroup}`}>
-                        <h3><strong>ĐẠI DIỆN CÁC TRƯỜNG TRUNG HỌC, CAO ĐẲNG, ĐẠI HỌC<br/>
-                            TẠI ANH, ÚC, CANADA, MỸ, TRUNG QUỐC, SINGAPORE</strong></h3>
-
-                        <div className={styles.mediumSpacing}></div>
-                        <SimpleSlider images={this.slider1} id='slider1_'/>
-
-                        <div className={styles.largeSpacing}></div>
-                    </div>
-                    <div className={`col-xs-12 text-center ${styles.schoolsGroup}`}>
-                        <h3><strong>TỔ CHỨC GIÁO DỤC STUDY GROUP<br/>
-                            ĐẠI DIỆN TRƯỜNG TRUNG HỌC, ĐẠI HỌC<br/>
-                            TẠI ANH, ÚC, MỸ, HÀ LAN, CANADA, NEW ZEALAND</strong></h3>
-
-                        <div className={styles.mediumSpacing}></div>
-                        <SimpleSlider images={this.slider2} id='slider2_'/>
-
-                        <div className={styles.largeSpacing}></div>
-                    </div>
-                    <div className={`col-xs-12 text-center ${styles.schoolsGroup}`}>
-                        <h3><strong>TỔ CHỨC GIÁO DỤC KINGS EDUCATION<br/>
-                            ĐẠI DIỆN TRƯỜNG TRUNG HỌC, ĐẠI HỌC<br/>
-                            TẠI ANH, MỸ</strong></h3>
-
-                        <div className={styles.mediumSpacing}></div>
-                        <SimpleSlider images={this.slider3} id='slider3_'/>
-
-                        <div className={styles.largeSpacing}></div>
-                    </div>
-                    <div className={`col-xs-12 text-center ${styles.schoolsGroup}`}>
-                        <h3><strong>TỔ CHỨC GIÁO DỤC SHORELIGHT<br/>
-                            ĐẠI DIỆN TRƯỜNG TRUNG HỌC, ĐẠI HỌC<br/>
-                            TẠI MỸ</strong></h3>
-
-                        <div className={styles.mediumSpacing}></div>
-                        <SimpleSlider images={this.slider4} id='slider4_'/>
-
-                        <div className={styles.largeSpacing}></div>
-                    </div>
-                    <div className="col-xs-12 text-center">
-                        <Link to="/" className={`${styles.btnBlock}`} id={`${styles.btnToForm}`} hash="#registerForm"
-                              type="button"><h4>ĐĂNG KÝ</h4></Link>
-
-                        <div className={styles.mediumSpacing}></div>
-                    </div>
+	                <WorldMap className="col-xs-12 world-map"/>
                 </div>
             </div>
 
