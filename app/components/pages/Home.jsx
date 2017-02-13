@@ -2,9 +2,13 @@ import React from 'react';
 import {Link} from 'react-router';
 import _ from 'lodash';
 import DDP from 'ddp.js';
-import styles from '../../main201609.scss';
+import styles from '../../main1703.scss';
 import Slider from 'react-slick';
+
 import WorldMap from '../elements/Map'
+import ScrollUpView from './ScrollUpView.js';
+
+
 const _formObj = {
     hovaten: '',
     sodienthoai: '',
@@ -617,14 +621,13 @@ const Header = React.createClass({
                                 LÃM</Link></li>
                             <li><Link to="/" hash="#registerForm" className={`visible-xs ${styles.customA}`}>ĐĂNG KÝ
                                 THAM DỰ</Link></li>
-                            <li><Link to="/" hash="#opportunities" className={styles.customA}>CƠ HỘI TẠI<br
-                                className="hidden-xs hidden-lg"/> TRIỂN LÃM</Link></li>
-                            <li><Link to="/" hash="#gifts" className={styles.customA}>QUÀ TẶNG</Link></li>
-                            <li><Link to="/" hash="#sharing" className={styles.customA}>DU HỌC SINH<br
-                                className="hidden-xs hidden-lg"/> CHIA SẺ</Link></li>
                             <li><Link to="/" hash="#schools" className={styles.customA}>CÁC TRƯỜNG/TỔ CHỨC<br
                                 className="hidden-xs hidden-lg"/> THAM GIA TRIỂN LÃM</Link>
                             </li>
+                            <li><Link to="/" hash="#opportunities" className={styles.customA}>CƠ HỘI TẠI<br
+                                className="hidden-xs hidden-lg"/> TRIỂN LÃM</Link></li>
+                            <li><Link to="/" hash="#sharing" className={styles.customA}>DU HỌC SINH<br
+                                className="hidden-xs hidden-lg"/> CHIA SẺ</Link></li>
                         </ul>
                         <ul className="nav navbar-nav navbar-right hidden-xs">
                             <li><a href="http://www.sunrisevietnam.com/" target="_blank"><img height="70"
@@ -642,62 +645,6 @@ class Main extends React.Component {
     constructor(props) {
         super(props);
 
-        this.slider1 = [
-            require('../../photos/201609/schools-1/Abbey2.png'),
-            require('../../photos/201609/schools-1/BlueMoutains2.png'),
-            require('../../photos/201609/schools-1/Chase-Grammar-School2.png'),
-            require('../../photos/201609/schools-1/Dimension2.png'),
-            require('../../photos/201609/schools-1/JCU2.png'),
-            require('../../photos/201609/schools-1/Knox-School2.png'),
-            require('../../photos/201609/schools-1/Le_Cordon_Bleu2.png'),
-            require('../../photos/201609/schools-1/St-Paul-International-College2.png'),
-            require('../../photos/201609/schools-1/The-Oxford-International-Group2.png'),
-            require('../../photos/201609/schools-1/Toronto2.png'),
-            require('../../photos/201609/schools-1/mk.png'),
-        ];
-        this.slider2 = [
-            require('../../photos/201609/Study Group/Bellerbys-College.png'),
-            require('../../photos/201609/Study Group/James-Madison.png'),
-            require('../../photos/201609/Study Group/Lancaster-University.png'),
-            require('../../photos/201609/Study Group/LongIsland-University.png'),
-            require('../../photos/201609/Study Group/Maine.png'),
-            require('../../photos/201609/Study Group/roosevelt.png'),
-            require('../../photos/201609/Study Group/Taylors-College.png'),
-            require('../../photos/201609/Study Group/The-University-of-Vermont.png'),
-            require('../../photos/201609/Study Group/University-of-Huddersfield.png'),
-            require('../../photos/201609/Study Group/University-of-Leicerter.png'),
-            require('../../photos/201609/Study Group/University-of-Sussex.png'),
-            require('../../photos/201609/Study Group/Widener-University.png'),
-        ];
-        this.slider3 = [
-            require('../../photos/201609/Kings/canisius-college.png'),
-            require('../../photos/201609/Kings/Kings.png'),
-            require('../../photos/201609/Kings/Kings-New-York.png'),
-            require('../../photos/201609/Kings/Boston.png'),
-            require('../../photos/201609/Kings/Bournemouth.png'),
-            require('../../photos/201609/Kings/Kings-New-York-(Concordia).png'),
-            require('../../photos/201609/Kings/London.png'),
-            require('../../photos/201609/Kings/Los-Angeles-(Hollywood).png'),
-            require('../../photos/201609/Kings/Los-Angeles-(Marymount).png'),
-            require('../../photos/201609/Kings/New-Jersey-(Rider).png'),
-            require('../../photos/201609/Kings/New-York-State-(Canisius).png'),
-            require('../../photos/201609/Kings/Oxford.png'),
-            require('../../photos/201609/Kings/Marymount-California-University.png'),
-            require('../../photos/201609/Kings/Rider-University.png'),
-            require('../../photos/201609/Kings/University-of-Southern-California.png'),
-        ];
-        this.slider4 = [
-            require('../../photos/201609/Kaplan/UIC.png'),
-            require('../../photos/201609/Kaplan/Pacific.png'),
-            require('../../photos/201609/Kaplan/USC.png'),
-            require('../../photos/201609/Kaplan/Central.png'),
-            require('../../photos/201609/Kaplan/Adelphi.png'),
-            require('../../photos/201609/Kaplan/LSU.png'),
-            require('../../photos/201609/Kaplan/KU.png'),
-            require('../../photos/201609/Kaplan/FIU.png'),
-            require('../../photos/201609/Kaplan/Auburn.png'),
-            require('../../photos/201609/Kaplan/American-U.png'),
-        ]
     }
 
     render() {
@@ -708,9 +655,10 @@ class Main extends React.Component {
         return <div>
             {/*----------------------banner----------------------*/}
             <div className={`${styles.banner}`}>
-                <img className="hidden-xs" src={require('../../photos/201609/cover.png')} width="100%"/>
+                <img className="hidden-xs" src={require('../../photos/201703/banner.png')} width="100%"/>
                 <img className="visible-xs" src={require('../../photos/201609/small-banner.png')} width="100%"/>
             </div>
+
             {/*----------------------places----------------------*/}
             <a id="places" className="visible-xs"></a>
 
@@ -781,7 +729,7 @@ class Main extends React.Component {
                             <div className="media-body">
                                 <h5 className="media-heading text-uppercase"><strong>Tại khách sạn Nam
                                     Cường</strong><br/>
-                                    47 Lạch Tray - Ngô Q</h5>
+                                    47 Lạch Tray - Ngô Quyền</h5>
                             </div>
                         </li>
                     </ul>
@@ -833,138 +781,90 @@ class Main extends React.Component {
                 </div>
                 {displayForm}
             </div>
-            {/*----------------------opportunities----------------------*/}
-            <a id="opportunities">
-                <div className={styles.mediumSpacing}></div>
+
+            {/*----------------------schools----------------------*/}
+            <a id="schools">
+                <div className={styles.smallSpacing}></div>
             </a>
 
-            <div className={`${styles.opportunities}`}>
-                <div className="container">
-                    <div className={`col-xs-12 col-md-8 col-md-offset-2 ${styles.sectionTitle}`}>
-                        <div className={styles.mediumSpacing}></div>
-                        <img src={require('../../photos/201609/title-opp.png')} className={styles.imgResponsive}/>
-                    </div>
-                    <div className="col-xs-12 col-sm-6">
-                        <div className="row">
-                            <div
-                                className="col-xs-4 col-xs-offset-4 col-sm-3 col-md-2 col-md-offset-2 text-right">
-                                <img src={require('../../photos/201609/woman.png')} className={styles.imgResponsive}/>
+            {/*----------------------opportunities----------------------*/}
+            <a id="opportunities">
+                <div className={styles.smallSpacing}></div>
+            </a>
 
-                                <div className={`visible-xs ${styles.smallSpacing}`}></div>
-                            </div>
-                            <div className="col-xs-12 col-sm-9 col-md-8">
-                                <h4><strong>TƯ VẤN TỔNG QUAN:</strong></h4>
-
-                                <h5><strong>Trả lời câu hỏi du học</strong></h5>
-                                <h5><strong>Luyện thi IELTS/TOEFL từ A đến Z</strong></h5>
-
-                                <div className={`visible-xs ${styles.mediumSpacing}`}></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-xs-12 col-sm-6">
-                        <div className="row">
-                            <div
-                                className="col-xs-4 col-xs-offset-4 col-sm-3 col-md-2 col-md-offset-2 text-right">
-                                <img src={require('../../photos/201609/man.png')} className={styles.imgResponsive}/>
-
-                                <div className={`visible-xs ${styles.smallSpacing}`}></div>
-                            </div>
-                            <div className="col-xs-12 col-sm-9 col-md-8">
-                                <h4><strong>TƯ VẤN CHUYÊN SÂU:</strong></h4>
-                                <h5><strong>Gặp trực tiếp đại diện trường,</strong></h5>
-                                <h5><strong>nhận quà tại quầy trường</strong></h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-xs-12">
-                        <div className="row">
-                            <div className={styles.mediumSpacing}></div>
-                            <div
-                                className="col-xs-4 col-xs-offset-4 col-sm-2 col-sm-offset-2 col-md-1 col-md-offset-4 text-right">
-                                <img src={require('../../photos/201609/schoolships.png')}
-                                     className={styles.imgResponsive}/>
-
-                                <div className={`visible-xs ${styles.smallSpacing}`}></div>
-                            </div>
-                            <div className="col-xs-12 col-sm-8 col-md-7">
-                                <h4><strong>HỌC BỔNG TẠI CHỖ:</strong></h4>
-                                <h5><strong>Phỏng vấn học bổng các bậc học, thi thử IELTS Speaking,</strong></h5>
-                                <h5><strong>Phỏng vấn thử visa Mỹ như thế nào nhỉ?</strong></h5>
-                            </div>
-                        </div>
-                        <a id="gifts">
-                            <div className={styles.mediumSpacing}></div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            {/*----------------------gifts----------------------*/}
-            <div className={styles.smallSpacing}></div>
             <div className="container">
-                <div className={`col-xs-12 col-md-8 col-md-offset-2 text-center ${styles.sectionTitle}`}>
-                    <img src={require('../../photos/201609/title-gifts.png')} className={styles.imgResponsive}/>
+                <div className={`col-xs-12 col-md-8 col-md-offset-2 ${styles.sectionTitle}`}>
+                    <div className={styles.mediumSpacing}></div>
+                    <img src={require('../../photos/201609/title-opp.png')} className={styles.imgResponsive}/>
                 </div>
-                <div className="col-xs-12 col-sm-3">
+                <div className={`col-xs-12 col-sm-6 ${styles.module}`}>
                     <div className="row">
-                        <div className="col-xs-6 col-xs-offset-3 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-                            <img src={require('../../photos/201609/scholarship.png')}
+                        <div
+                            className="col-xs-4 col-xs-offset-4 col-sm-3 col-md-2 col-md-offset-2 text-right">
+                            <img src={require('../../photos/201703/woman.png')} className={styles.imgResponsive}/>
+
+                            <div className={`visible-xs ${styles.smallSpacing}`}></div>
+                        </div>
+                        <div className="col-xs-12 col-sm-9 col-md-8">
+                            <h3><strong>TƯ VẤN TỔNG QUAN:</strong></h3>
+                            <h5><strong>Trả lời câu hỏi du học &</strong></h5>
+                            <h5><strong>luyện thi IELTS/TOEFL từ A đến Z</strong></h5>
+                            <div className={`visible-xs ${styles.mediumSpacing}`}></div>
+                        </div>
+                    </div>
+                </div>
+                <div className={`col-xs-12 col-sm-6 ${styles.module}`}>
+                    <div className="row">
+                        <div
+                            className="col-xs-4 col-xs-offset-4 col-sm-3 col-md-2 col-md-offset-2 text-right">
+                            <img src={require('../../photos/201703/man.png')} className={styles.imgResponsive}/>
+
+                            <div className={`visible-xs ${styles.smallSpacing}`}></div>
+                        </div>
+                        <div className="col-xs-12 col-sm-9 col-md-8">
+                            <h3><strong>TƯ VẤN CHUYÊN SÂU:</strong></h3>
+                            <h5><strong>Gặp trực tiếp đại diện trường,</strong></h5>
+                            <h5><strong>nhận quà tại quầy trường</strong></h5>
+                        </div>
+                    </div>
+                </div>
+                <div className={`col-xs-12 col-sm-6 ${styles.module}`}>
+                    <div className="row">
+                        <div className={styles.mediumSpacing}></div>
+                        <div
+                            className="col-xs-4 col-xs-offset-4 col-sm-3 col-md-2 col-md-offset-2 text-right">
+                            <img src={require('../../photos/201703/scholarship.png')}
                                  className={styles.imgResponsive}/>
 
-                            <div className={`hidden-xs ${styles.smallSpacing}`}></div>
-                        </div>
-                        <div className="col-xs-12">
-                            <h4 className="text-center"><strong>CƠ HỘI<br className="visible-lg"/> HỌC BỔNG TỚI 70%</strong></h4>
-
                             <div className={`visible-xs ${styles.smallSpacing}`}></div>
+                        </div>
+                        <div className="col-xs-12 col-sm-9 col-md-8">
+                            <h3><strong>HỌC BỔNG TẠI CHỖ:</strong></h3>
+                            <h5><strong>Phỏng vấn học bổng các bậc học,</strong></h5>
+                            <h5><strong>thi thử IELTS Speaking,</strong></h5>
                         </div>
                     </div>
                 </div>
-                <div className="col-xs-12 col-sm-3">
+                <div className={`col-xs-12 col-sm-6 ${styles.module}`}>
                     <div className="row">
-                        <div className="col-xs-6 col-xs-offset-3 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-                            <img src={require('../../photos/201609/tui-but-moc-khoa.png')}
+                        <div className={styles.mediumSpacing}></div>
+                        <div
+                            className="col-xs-4 col-xs-offset-4 col-sm-3 col-md-2 col-md-offset-2 text-right">
+                            <img src={require('../../photos/201703/gift.png')}
                                  className={styles.imgResponsive}/>
 
-                            <div className={`hidden-xs ${styles.smallSpacing}`}></div>
-                        </div>
-                        <div className="col-xs-12">
-                            <h4 className="text-center"><strong>TÚI, SỔ,<br className="visible-lg"/> BÚT, MÓC
-                                KHÓA</strong></h4>
-
                             <div className={`visible-xs ${styles.smallSpacing}`}></div>
                         </div>
-                    </div>
-                </div>
-                <div className="col-xs-12 col-sm-3">
-                    <div className="row">
-                        <div className="col-xs-6 col-xs-offset-3 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-                            <img src={require('../../photos/201609/cam-nang.png')} className={styles.imgResponsive}/>
-
-                            <div className={`hidden-xs ${styles.smallSpacing}`}></div>
-                        </div>
-                        <div className="col-xs-12">
-                            <h4 className="text-center"><strong>CẨM NANG DU HỌC</strong></h4>
-
-                            <div className={`visible-xs ${styles.smallSpacing}`}></div>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-xs-12 col-sm-3">
-                    <div className="row">
-                        <div className="col-xs-6 col-xs-offset-3 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-                            <img src={require('../../photos/201609/IELTS.png')} className={styles.imgResponsive}/>
-
-                            <div className={`hidden-xs ${styles.smallSpacing}`}></div>
-                        </div>
-                        <div className="col-xs-12">
-                            <h4 className="text-center"><strong>BỐC THĂM HỖ TRỢ<br className="visible-lg"/> LỆ PHÍ THI
-                                IELTS</strong></h4>
+                        <div className="col-xs-12 col-sm-9 col-md-8">
+                            <h3><strong>QUÀ TẶNG KHI THAM GIA:</strong></h3>
+                            <h5><strong>Túi, bút, sổ, móc khóa</strong></h5>
+                            <h5><strong>Cẩm nang du học</strong></h5>
+                            <h5><strong>Bốc thăm hỗ trợ lệ phí thi IELTS</strong></h5>
                         </div>
                     </div>
                 </div>
             </div>
-            {/*sharing*/}
+            {/*----------------------sharing----------------------*/}
             <a id="sharing">
                 <div className={styles.largeSpacing}></div>
             </a>
@@ -975,51 +875,25 @@ class Main extends React.Component {
                         <div className={styles.smallSpacing}></div>
                         <img src={require('../../photos/201609/title-sharing.png')} className={styles.imgResponsive}/>
                     </div>
-                    <div className="col-xs-12">
-                        <div className="row">
-                            <div className={`col-xs-12 visible-xs ${styles.noPadding}`}>
-                                <img src={require('../../photos/201609/nguyen-minh-tuan.png')}
-                                     className={styles.imgResponsive}/>
+                    <div className="col-xs-12 col-sm-6 col-md-3">
+                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer1}`}>
+                            <div className={`col-xs-12 ${styles.imgMainContent}`}>
+                                <h3 className={`${styles.white} ${styles.captionCustom}`}>Thumbnail label</h3>
+                                <hr className={`${styles.hrCustom} ${styles.lgreenBg} ${styles.captionCustom}`}/>
+                                <p className={`${styles.white} ${styles.captionCustom}`}>This is a paragraph. This is a paragraph. This is a paragraph.</p>
                             </div>
-                            <div className="col-xs-12 col-sm-6 col-lg-5 col-lg-offset-1">
-                                <div className={`visible-lg ${styles.largeSpacing}`}></div>
-                                <div className={`hidden-lg ${styles.smallSpacing}`}></div>
-                                <h4><strong>DU HỌC SINH TẠI MỸ</strong></h4>
-                                <h5 className="text-justify">Cuối cùng mình muốn nói là chuyến đi này là chuyến đi dài
-                                    nhất và tốn
-                                    kém nhất mình từng tham gia nên mình phảo tận dụng hết quỹ thời gian có thể để vừa
-                                    học hỏi kiến
-                                    thức vừa có thể thoả ước mơ đi du lịch của mình nữa. Các bạn trẻ có niềm đam mê du
-                                    lịch hãy điền
-                                    tên vào một chuyến đi dài ngày như mình xem sao, sẽ có rất nhiều điều hay ho phía
-                                    trước đấy.</h5>
+                        </div>
+                    </div>
+                    <div className="col-xs-12 col-sm-6 col-md-3">
+                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer1}`}>
+                            <div className={`col-xs-12 ${styles.imgMainContent}`}>
+                                <h3 className={`${styles.white} ${styles.captionCustom}`}>Thumbnail label</h3>
+                                <hr className={`${styles.hrCustom} ${styles.orangeBg} ${styles.captionCustom}`}/>
+                                <p className={`${styles.white} ${styles.captionCustom}`}>This is a paragraph. This is a paragraph. This is a paragraph.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                                <div className={`visible-xs ${styles.mediumSpacing}`}></div>
-                            </div>
-                            <div className={`hidden-xs col-sm-6 col-lg-5 ${styles.noPadding}`}>
-                                <img src={require('../../photos/201609/nguyen-minh-tuan.png')}
-                                     className={styles.imgResponsive}/>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-xs-12">
-                        <div className="row">
-                            <div className={`col-xs-12 col-sm-6 col-lg-5 col-lg-offset-1 ${styles.noPadding}`}>
-                                <img src={require('../../photos/201609/dang-dieu-linh.png')}
-                                     className={styles.imgResponsive}/>
-                            </div>
-                            <div className="col-xs-12 col-sm-6 col-lg-5">
-                                <div className={`visible-lg ${styles.largeSpacing}`}></div>
-                                <div className={`hidden-lg ${styles.smallSpacing}`}></div>
-                                <h4><strong>DU HỌC SINH TẠI ANH</strong></h4>
-                                <h5 className="text-justify">Theo mình, "Du học" là một chuyến đi mà bạn sẽ được trang
-                                    bị kiến thức, gặp gỡ người mới để mở
-                                    mang tầm mắt. Nó còn là cơ hội để bạn trải nghiệm cuộc sống tự lập, học hỏi nhiều
-                                    điều mới và thử
-                                    thách khả năng của bản thân. </h5>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <a id="schools">
                     <div className={styles.largeSpacing}></div>
@@ -1035,6 +909,7 @@ class Main extends React.Component {
                     </div>
 	                <WorldMap className="col-xs-12 world-map"/>
                 </div>
+                <div className={styles.mediumSpacing}></div>
             </div>
 
             <CallButton/>
@@ -1073,7 +948,7 @@ const Footer = React.createClass({
                                     </a>
                                 </div>
                                 <div className="media-body">
-                                    <p className="media-heading">043.722.4898</p>
+                                    <p className="media-heading">043 722 4898</p>
                                 </div>
                             </li>
                         </ul>
@@ -1099,7 +974,7 @@ const Footer = React.createClass({
                                     </a>
                                 </div>
                                 <div className="media-body">
-                                    <p className="media-heading">043.200.4743 * 043.204.8333</p>
+                                    <p className="media-heading">043 200 4743 * 043 204 8333</p>
                                 </div>
                             </li>
                         </ul>
@@ -1124,7 +999,7 @@ const Footer = React.createClass({
                                     </a>
                                 </div>
                                 <div className="media-body">
-                                    <p className="media-heading">083.837.0226</p>
+                                    <p className="media-heading">083 837 0226</p>
                                 </div>
                             </li>
                         </ul>
@@ -1148,7 +1023,7 @@ const Footer = React.createClass({
                                     </a>
                                 </div>
                                 <div className="media-body">
-                                    <p className="media-heading">031.365.3269</p>
+                                    <p className="media-heading">031 365 3269</p>
                                 </div>
                             </li>
                         </ul>
@@ -1171,7 +1046,7 @@ const Footer = React.createClass({
             </div>
         )
     }
-})
+});
 
 const CallButton = React.createClass({
 	handleClickPhone(e){
@@ -1190,4 +1065,4 @@ const CallButton = React.createClass({
             <div className="coccoc-alo-ph-img-circle"  onClick={this.handleClickPhone}></div>
         </div>)
     }
-})
+});

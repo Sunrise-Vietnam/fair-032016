@@ -90,10 +90,6 @@ body {
   color: #3c3c3c;
 }
 
-.noPadding {
-  padding: 0 !important;
-}
-
 .white, .customInput {
   color: #fff;
 }
@@ -107,8 +103,24 @@ body {
   font-weight: 800;
 }
 
+.orangeBg {
+  background-color: #ed7618;
+}
+
+.yellowBg {
+  background-color: #FFC00D;
+}
+
+.lgreenBg {
+  background-color: #14CC80;
+}
+
 .lblue {
   color: #26a4fb;
+}
+
+.lblueBg {
+  background-color: #26a4fb;
 }
 
 .dblue {
@@ -119,8 +131,16 @@ body {
   font-weight: 800;
 }
 
-.upperText {
-  text-transform: uppercase;
+.noPadding {
+  padding: 0 !important;
+}
+
+.hrCustom {
+  width: 40%;
+  height: 2px;
+  border: none;
+  display: inline-block;
+  margin: 10px 0 10px 0;
 }
 
 .imgResponsive {
@@ -183,7 +203,8 @@ body {
 }
 
 .centerMenu > ul > li > a.customA:hover {
-  background-image: linear-gradient(to right, #4d28b4, #7c20a3, #a41794);
+  background-color: black;
+  //background-image: linear-gradient(to right, #4d28b4, #7c20a3, #a41794);
   color: white;
 }
 
@@ -242,14 +263,6 @@ input:-moz-placeholder { /* Firefox 4 - 18 */
   opacity: 1;
 }
 
-.opportunities {
-  background-image: url('./photos/201609/background-co-hoi.png');
-  background-size: cover;
-  color: white;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
 .schoolsContainer {
   background-image: url('./photos/schools-map-bg.png');
   background-position: center;
@@ -263,6 +276,73 @@ input:-moz-placeholder { /* Firefox 4 - 18 */
   line-height: 28px !important;
 }
 
+.module {
+  display: inline-block;
+}
+
+.come-in {
+  transform: translateX(-150px);
+  animation: come-in 1.0s ease forwards;
+}
+
+.come-in:nth-child(odd) {
+  animation-duration: .8s;
+}
+
+.already-visible {
+  transform: translateX(0);
+  animation: none;
+}
+
+@keyframes come-in {
+  to { transform: translateX(0); }
+}
+
+.imgMainContainer {
+  background-size: cover;
+  height: 350px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.imgContainer1 {
+  background-image: url('./photos/201703/winner.jpeg');
+}
+
+.imgContainer2 {
+  background-image: url('./photos/201703/winner.jpeg');
+}
+
+.imgContainer3 {
+  background-image: url('./photos/201703/winner.jpeg');
+}
+
+.imgContainer4 {
+  background-image: url('./photos/201703/winner.jpeg');
+}
+
+.imgContainer5 {
+  background-image: url('./photos/201703/winner.jpeg');
+}
+
+.imgMainContent {
+  height: inherit;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  transition: background-color .4s linear;
+  -webkit-transition: background-color .4s ease-in-out;
+  -moz-transition: background-color .4s ease-in-out;
+  -o-transition:background-color .4s ease-in-out;
+}
+.imgMainContent:hover {
+  background-color: rgba(0,0,0,0.5);
+}
+.imgMainContent .captionCustom {
+  visibility: hidden;
+}
+.imgMainContent:hover .captionCustom {
+  visibility: visible;
+}
 .footer {
   background-image: url('./photos/201609/background-lien-he.png');
   background-position: center;
