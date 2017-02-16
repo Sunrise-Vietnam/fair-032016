@@ -41,7 +41,7 @@ export default class Thanks extends React.Component {
                 <div className="row">
                     <div className="col-xs-12 bold">
                         <h3 className="text-center black">Cảm ơn bạn đã đăng ký tham gia triển lãm <br
-                            className="visible-xs"/><span className="size33 orange">THẾ GIỚI DU HỌC 2016</span></h3>
+                            className="visible-xs"/><span className="size33 orange">THẾ GIỚI DU HỌC 2017</span></h3>
 
                         <h3 className="text-center black">Trước khi sự kiện diễn ra 1 tuần, SUNRISE VIETNAM sẽ gọi
                             điện hoặc email tới bạn để xác nhận lại.</h3>

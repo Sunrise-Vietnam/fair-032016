@@ -6,7 +6,6 @@ import styles from '../../main1703.scss';
 import Slider from 'react-slick';
 
 import WorldMap from '../elements/Map'
-import ScrollUpView from './ScrollUpView.js';
 
 
 const _formObj = {
@@ -20,9 +19,9 @@ const _formObj = {
     thoigianduhoc: '',
     nhucauhoc: '',
     bietchuongtrinhquakenh: []
-}
+};
 
-const _eventCode = 'WPwoyeHuDBFYXdBYM3C6CW0XUQGGrwVgqKPEpuWu';
+const _eventCode = '0ZqeEB7mJvlnnb0uvHSu';
 
 export default class Home extends React.Component {
     constructor(props) {
@@ -39,6 +38,58 @@ export default class Home extends React.Component {
         this.ddp.on("connected", function () {
             console.info("Connected to Server...");
         });
+        (function($) {
+            /**
+             * Copyright 2012, Digital Fusion
+             * Licensed under the MIT license.
+             * http://teamdf.com/jquery-plugins/license/
+             *
+             * @author Sam Sehnert
+             * @desc A small plugin that checks whether elements are within
+             *     the user visible viewport of a web browser.
+             *     only accounts for vertical position, not horizontal.
+             */
+
+            $.fn.visible = function(partial) {
+
+                var $t            = $(this),
+                    $w            = $(window),
+                    viewTop       = $w.scrollTop(),
+                    viewBottom    = viewTop + $w.height(),
+                    _top          = $t.offset().top,
+                    _bottom       = _top + $t.height(),
+                    compareTop    = partial === true ? _bottom : _top,
+                    compareBottom = partial === true ? _top : _bottom;
+
+                return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+
+            };
+
+        })(jQuery);
+
+        setTimeout(function () {
+            var win = $(window);
+
+            var allMods = $(".module");
+
+            allMods.each(function(i, el) {
+                var el = $(el);
+                if (el.visible(true)) {
+                    el.addClass("already-visible");
+                }
+            });
+
+            win.scroll(function(event) {
+
+                allMods.each(function(i, el) {
+                    var el = $(el);
+                    if (el.visible(true)) {
+                        el.addClass("come-in");
+                    }
+                });
+
+            });
+        }, 100)
     }
 
     _saveAndThankYou(obj) {
@@ -61,22 +112,6 @@ export default class Home extends React.Component {
         </div>
     }
 }
-
-const LeftNavButton = React.createClass({
-    render() {
-        return (
-            <img {...this.props} src={require('../../photos/201609/Arrow_L.png')}/>
-        )
-    }
-})
-
-const RightNavButton = React.createClass({
-    render() {
-        return (
-            <img {...this.props} src={require('../../photos/201609/Arrow_R.png')}/>
-        )
-    }
-});
 
 class DefaultForm extends React.Component {
     constructor(props) {
@@ -547,38 +582,6 @@ class SpecialForm extends React.Component {
     }
 }
 
-class SimpleSlider extends React.Component {
-    render() {
-        const settings = {
-            dots: true,
-            className: 'center',
-            centerPadding: '60px',
-            infinite: true,
-            speed: 500,
-            slidesToShow: 6,
-            slidesToScroll: 6,
-            responsive: [
-                {breakpoint: 390, settings: {slidesToShow: 1, slidesToScroll: 1}},
-                {breakpoint: 580, settings: {slidesToShow: 2, slidesToScroll: 2}},
-                {breakpoint: 768, settings: {slidesToShow: 3, slidesToScroll: 3}},
-                {breakpoint: 992, settings: {slidesToShow: 4, slidesToScroll: 4}},
-                {breakpoint: 1200, settings: {slidesToShow: 5, slidesToScroll: 5}},
-                {breakpoint: 100000, settings: {slidesToShow: 6, slidesToScroll: 6}}
-            ]
-        };
-        const images = this.props.images;
-        const prefix = this.props.id;
-        return (
-            <Slider {...settings} prevArrow={LeftNavButton} nextArrow={RightNavButton}>
-                {images && images.map((src)=> {
-                    const id = _.uniqueId(prefix)
-                    return <div key={id}><img src={src}/></div>
-                })}
-            </Slider>
-        );
-    }
-}
-
 const Header = React.createClass({
     displayName: 'Header',
     componentDidMount(){
@@ -611,7 +614,7 @@ const Header = React.createClass({
                         </button>
 
                         <a className="navbar-brand visible-xs" href="#"><img
-                            src={require('../../photos/201609/small-logo.png')}/></a>
+                            src={require('../../photos/201609/small-logo.png')} className="img-responsive"/></a>
 
                     </div>
                     <div className={`collapse navbar-collapse text-center ${styles.centerMenu}`} id="top-menu">
@@ -656,20 +659,21 @@ class Main extends React.Component {
             {/*----------------------banner----------------------*/}
             <div className={`${styles.banner}`}>
                 <img className="hidden-xs" src={require('../../photos/201703/banner.png')} width="100%"/>
-                <img className="visible-xs" src={require('../../photos/201609/small-banner.png')} width="100%"/>
+                <img className="visible-xs" src={require('../../photos/201703/small-banner.png')} width="100%"/>
             </div>
 
             {/*----------------------places----------------------*/}
-            <a id="places" className="visible-xs"></a>
+            <a id="places" className="visible-xs">
+                <div className={styles.smallSpacing}></div>
+            </a>
 
             <div className="container">
                 <div className="col-xs-12 col-md-8 col-md-offset-2 text-center">
                     <div className={styles.mediumSpacing}></div>
                     <img src={require('../../photos/201609/title-places.png')} className={styles.imgResponsive}/>
-
                     <div className={styles.smallSpacing}></div>
                 </div>
-                <div className="col-xs-12 col-sm-6 col-md-4">
+                <div className="col-xs-12 col-sm-6 col-md-4 module">
                     <ul className="media-list">
                         <li className="media">
                             <div className="media-left media-top">
@@ -702,7 +706,7 @@ class Main extends React.Component {
                     </ul>
                     <div className={`visible-xs visible-sm ${styles.smallSpacing}`}></div>
                 </div>
-                <div className="col-xs-12 col-sm-6 col-md-4">
+                <div className="col-xs-12 col-sm-6 col-md-4 module">
                     <ul className="media-list">
                         <li className="media">
                             <div className="media-left media-top">
@@ -734,7 +738,7 @@ class Main extends React.Component {
                         </li>
                     </ul>
                 </div>
-                <div className="col-xs-12 col-sm-6 col-md-4">
+                <div className="col-xs-12 col-sm-6 col-md-4 module">
                     <ul className="media-list">
                         <li className="media">
                             <div className="media-left media-top">
@@ -765,108 +769,119 @@ class Main extends React.Component {
                             </div>
                         </li>
                     </ul>
-                    <div className={`visible-xs ${styles.smallSpacing}`}></div>
                 </div>
                 {/*----------------------form----------------------*/}
                 <div className="row">
                     <div className={`col-xs-12 col-md-8 col-md-offset-2 text-center ${styles.sectionTitle}`}>
                         <a id="registerForm">
-                            <div className={styles.smallSpacing}></div>
+                            <div className={`hidden-lg ${styles.smallSpacing}`}></div>
                         </a>
-
-                        <div className={`hidden-lg ${styles.largeSpacing}`}></div>
+                        <div className={`hidden-xs ${styles.largeSpacing}`}></div>
+                        <div className={`visible-xs ${styles.mediumSpacing}`}></div>
                         <img src={require('../../photos/201609/title-form.png')} className={styles.imgResponsive}/>
 
                     </div>
                 </div>
                 {displayForm}
+                <a id="schools">
+                    <div className={styles.mediumSpacing}></div>
+                </a>
             </div>
-
             {/*----------------------schools----------------------*/}
-            <a id="schools">
-                <div className={styles.smallSpacing}></div>
-            </a>
-
+            <div className={styles.schoolsContainer}>
+                <div className={`container ${styles.noPadding}`}>
+                    <div className="col-xs-12 col-md-8 col-md-offset-2 text-center">
+                        <div className={styles.mediumSpacing}></div>
+                        <img src={require('../../photos/201703/title-schools.png')} className={styles.imgResponsive}/>
+                        <div className={styles.smallSpacing}></div>
+                        <h5 className="hidden-xs hidden-sm"><i>(Di chuột để tìm hiểu thêm)</i></h5>
+                        <p className="hidden-md hidden-lg"><i>(Chọn quốc gia để tìm hiểu thêm)</i></p>
+                    </div>
+                    <WorldMap className="col-xs-12 world-map"/>
+                </div>
+            </div>
             {/*----------------------opportunities----------------------*/}
             <a id="opportunities">
                 <div className={styles.smallSpacing}></div>
             </a>
 
             <div className="container">
-                <div className={`col-xs-12 col-md-8 col-md-offset-2 ${styles.sectionTitle}`}>
-                    <div className={styles.mediumSpacing}></div>
-                    <img src={require('../../photos/201609/title-opp.png')} className={styles.imgResponsive}/>
+                <div className={`col-xs-12 col-md-8 col-md-offset-2 ${styles.sectionTitle} ${styles.noPadding}`}>
+                    <div className={styles.smallSpacing}></div>
+                    <img src={require('../../photos/201703/title-opp.png')} className={styles.imgResponsive}/>
                 </div>
-                <div className={`col-xs-12 col-sm-6 ${styles.module}`}>
+                <div className={`col-xs-12 col-sm-6 module ${styles.noPadding}`}>
                     <div className="row">
                         <div
-                            className="col-xs-4 col-xs-offset-4 col-sm-3 col-md-2 col-md-offset-2 text-right">
+                            className="col-xs-4 col-xs-offset-4 col-md-2 col-md-offset-2 text-right">
                             <img src={require('../../photos/201703/woman.png')} className={styles.imgResponsive}/>
 
                             <div className={`visible-xs ${styles.smallSpacing}`}></div>
                         </div>
-                        <div className="col-xs-12 col-sm-9 col-md-8">
-                            <h3><strong>TƯ VẤN TỔNG QUAN:</strong></h3>
-                            <h5><strong>Trả lời câu hỏi du học &</strong></h5>
-                            <h5><strong>luyện thi IELTS/TOEFL từ A đến Z</strong></h5>
+                        <div className="col-xs-12 col-md-8">
+                            <h3 className={styles.xsCenter}><strong>TƯ VẤN TỔNG QUAN:</strong></h3>
+                            <h5 className={styles.xsCenter}><strong>Trả lời câu hỏi du học, luyện thi IELTS/TOEFL từ A đến Z</strong></h5>
+                            <h5 className={styles.xsCenter}><strong>Tìm hiểu thủ tục chuẩn bị tài chính du học với Ngân hàng Quân Đội</strong></h5>
                             <div className={`visible-xs ${styles.mediumSpacing}`}></div>
                         </div>
                     </div>
                 </div>
-                <div className={`col-xs-12 col-sm-6 ${styles.module}`}>
+                <div className={`col-xs-12 col-sm-6 module ${styles.noPadding}`}>
                     <div className="row">
                         <div
-                            className="col-xs-4 col-xs-offset-4 col-sm-3 col-md-2 col-md-offset-2 text-right">
+                            className="col-xs-4 col-xs-offset-4 col-md-2 col-md-offset-2 text-right">
                             <img src={require('../../photos/201703/man.png')} className={styles.imgResponsive}/>
 
                             <div className={`visible-xs ${styles.smallSpacing}`}></div>
                         </div>
-                        <div className="col-xs-12 col-sm-9 col-md-8">
-                            <h3><strong>TƯ VẤN CHUYÊN SÂU:</strong></h3>
-                            <h5><strong>Gặp trực tiếp đại diện trường,</strong></h5>
-                            <h5><strong>nhận quà tại quầy trường</strong></h5>
+                        <div className="col-xs-12 col-md-8">
+                            <h3 className={styles.xsCenter}><strong>TƯ VẤN CHUYÊN SÂU:</strong></h3>
+                            <h5 className={styles.xsCenter}><strong>Gặp trực tiếp đại diện trường,</strong></h5>
+                            <h5 className={styles.xsCenter}><strong>nhận quà tại quầy trường</strong><br/><br /><br className="hidden-lg" /><br className="hidden-lg" /></h5>
                         </div>
                     </div>
                 </div>
-                <div className={`col-xs-12 col-sm-6 ${styles.module}`}>
+                <div className={`col-xs-12 col-sm-6 module ${styles.noPadding}`}>
                     <div className="row">
                         <div className={styles.mediumSpacing}></div>
                         <div
-                            className="col-xs-4 col-xs-offset-4 col-sm-3 col-md-2 col-md-offset-2 text-right">
+                            className="col-xs-4 col-xs-offset-4 col-md-2 col-md-offset-2 text-right">
                             <img src={require('../../photos/201703/scholarship.png')}
                                  className={styles.imgResponsive}/>
 
                             <div className={`visible-xs ${styles.smallSpacing}`}></div>
                         </div>
-                        <div className="col-xs-12 col-sm-9 col-md-8">
-                            <h3><strong>HỌC BỔNG TẠI CHỖ:</strong></h3>
-                            <h5><strong>Phỏng vấn học bổng các bậc học,</strong></h5>
-                            <h5><strong>thi thử IELTS Speaking,</strong></h5>
+                        <div className="col-xs-12 col-md-8">
+                            <h3 className={styles.xsCenter}><strong>HỌC BỔNG TẠI CHỖ:</strong></h3>
+                            <h5 className={styles.xsCenter}><strong>Phỏng vấn học bổng các bậc học,</strong></h5>
+                            <h5 className={styles.xsCenter}><strong>thi thử IELTS Speaking,</strong></h5>
+                            <h5 className={styles.xsCenter}><strong>Phỏng vấn thử visa Mỹ</strong></h5>
                         </div>
                     </div>
                 </div>
-                <div className={`col-xs-12 col-sm-6 ${styles.module}`}>
+                <div className={`col-xs-12 col-sm-6 module ${styles.noPadding}`}>
                     <div className="row">
                         <div className={styles.mediumSpacing}></div>
                         <div
-                            className="col-xs-4 col-xs-offset-4 col-sm-3 col-md-2 col-md-offset-2 text-right">
+                            className="col-xs-4 col-xs-offset-4 col-md-2 col-md-offset-2 text-right">
                             <img src={require('../../photos/201703/gift.png')}
                                  className={styles.imgResponsive}/>
 
                             <div className={`visible-xs ${styles.smallSpacing}`}></div>
                         </div>
-                        <div className="col-xs-12 col-sm-9 col-md-8">
-                            <h3><strong>QUÀ TẶNG KHI THAM GIA:</strong></h3>
-                            <h5><strong>Túi, bút, sổ, móc khóa</strong></h5>
-                            <h5><strong>Cẩm nang du học</strong></h5>
-                            <h5><strong>Bốc thăm hỗ trợ lệ phí thi IELTS</strong></h5>
+                        <div className="col-xs-12 col-md-8">
+                            <h3 className={styles.xsCenter}><strong>QUÀ TẶNG KHI THAM GIA:</strong></h3>
+                            <h5 className={styles.xsCenter}><strong>Túi, bút, sổ, móc khóa</strong></h5>
+                            <h5 className={styles.xsCenter}><strong>Cẩm nang du học</strong></h5>
+                            <h5 className={styles.xsCenter}><strong>Bốc thăm hỗ trợ lệ phí thi IELTS</strong></h5>
+                            <h5 className={styles.xsCenter}><strong>Tặng voucher vé máy bay (Khi ký ngay hợp đồng tại triển lãm)</strong></h5>
                         </div>
                     </div>
                 </div>
             </div>
             {/*----------------------sharing----------------------*/}
             <a id="sharing">
-                <div className={styles.largeSpacing}></div>
+                <div className={styles.mediumSpacing}></div>
             </a>
 
             <div className={`${styles.grayBg}`}>
@@ -875,41 +890,156 @@ class Main extends React.Component {
                         <div className={styles.smallSpacing}></div>
                         <img src={require('../../photos/201609/title-sharing.png')} className={styles.imgResponsive}/>
                     </div>
-                    <div className="col-xs-12 col-sm-6 col-md-3">
+                    <div className="hidden-xs hidden-sm col-md-3">
                         <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer1}`}>
                             <div className={`col-xs-12 ${styles.imgMainContent}`}>
-                                <h3 className={`${styles.white} ${styles.captionCustom}`}>Thumbnail label</h3>
+                                <h3 className={`${styles.white} ${styles.captionCustom}`}>Nguyễn Mai Đức</h3>
                                 <hr className={`${styles.hrCustom} ${styles.lgreenBg} ${styles.captionCustom}`}/>
-                                <p className={`${styles.white} ${styles.captionCustom}`}>This is a paragraph. This is a paragraph. This is a paragraph.</p>
+                                <p className={`${styles.white} ${styles.captionCustom}`}>Em nghĩ trước khi du học Anh các bạn học sinh cần cải thiện tốt kỹ năng ngoại ngữ.</p>
                             </div>
                         </div>
                     </div>
-                    <div className="col-xs-12 col-sm-6 col-md-3">
-                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer1}`}>
+                    <div className="hidden-xs hidden-sm col-md-3">
+                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer2}`}>
                             <div className={`col-xs-12 ${styles.imgMainContent}`}>
-                                <h3 className={`${styles.white} ${styles.captionCustom}`}>Thumbnail label</h3>
+                                <h3 className={`${styles.white} ${styles.captionCustom}`}>Nguyễn Thùy My</h3>
                                 <hr className={`${styles.hrCustom} ${styles.orangeBg} ${styles.captionCustom}`}/>
-                                <p className={`${styles.white} ${styles.captionCustom}`}>This is a paragraph. This is a paragraph. This is a paragraph.</p>
+                                <p className={`${styles.white} ${styles.captionCustom}`}>Theo học Cao Đẳng Cộng Đồng, cái đầu tiên em có được chính là kiến thức.</p>
                             </div>
+                        </div>
+                    </div>
+                    <div className="hidden-xs hidden-sm col-md-3">
+                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer3}`}>
+                            <div className={`col-xs-12 ${styles.imgMainContent}`}>
+                                <h3 className={`${styles.white} ${styles.captionCustom}`}>Nguyễn Hoàng Nhật Anh</h3>
+                                <hr className={`${styles.hrCustom} ${styles.lblueBg} ${styles.captionCustom}`}/>
+                                <p className={`${styles.white} ${styles.captionCustom}`}>Sau khi đi du học nhất là 3 năm tại trường Stony Brook, em đã cảm nhận được mình đã trưởng thành hơn rất nhiều.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="hidden-xs hidden-sm col-md-3">
+                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer4}`}>
+                            <div className={`col-xs-12 ${styles.imgMainContent}`}>
+                                <h3 className={`${styles.white} ${styles.captionCustom}`}>Phạm Duy Đức</h3>
+                                <hr className={`${styles.hrCustom} ${styles.yellowBg} ${styles.captionCustom}`}/>
+                                <p className={`${styles.white} ${styles.captionCustom}`}>Trước khi đi du học hãy chuẩn bị tâm lý thật vững vàng.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="hidden-xs hidden-sm col-md-3">
+                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer5}`}>
+                            <div className={`col-xs-12 ${styles.imgMainContent}`}>
+                                <h3 className={`${styles.white} ${styles.captionCustom}`}>Diệp Khánh Linh</h3>
+                                <hr className={`${styles.hrCustom} ${styles.orangeBg} ${styles.captionCustom}`}/>
+                                <p className={`${styles.white} ${styles.captionCustom}`}>Trên con đường du học của mình đừng lo lắng, đừng sợ hãi, mà hãy biết cách học hỏi.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="hidden-xs hidden-sm col-md-3">
+                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer6}`}>
+                            <div className={`col-xs-12 ${styles.imgMainContent}`}>
+                                <h3 className={`${styles.white} ${styles.captionCustom}`}>Nguyễn Thành Long</h3>
+                                <hr className={`${styles.hrCustom} ${styles.lblueBg} ${styles.captionCustom}`}/>
+                                <p className={`${styles.white} ${styles.captionCustom}`}>Đi du học khiến mình tự lập hơn, biết lo nghĩ về sự nghiệp và cuộc sống.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="hidden-xs hidden-sm col-md-3">
+                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer7}`}>
+                            <div className={`col-xs-12 ${styles.imgMainContent}`}>
+                                <h3 className={`${styles.white} ${styles.captionCustom}`}>Đặng Diệu Linh</h3>
+                                <hr className={`${styles.hrCustom} ${styles.yellowBg} ${styles.captionCustom}`}/>
+                                <p className={`${styles.white} ${styles.captionCustom}`}>Du học là một chuyến đi mà bạn được trang bị kiến thức, gặp gỡ người mới để mở mang tầm mắt.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="hidden-xs hidden-sm col-md-3">
+                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer8}`}>
+                            <div className={`col-xs-12 ${styles.imgMainContent}`}>
+                                <h3 className={`${styles.white} ${styles.captionCustom}`}>Nguyễn Minh Tuấn</h3>
+                                <hr className={`${styles.hrCustom} ${styles.lgreenBg} ${styles.captionCustom}`}/>
+                                <p className={`${styles.white} ${styles.captionCustom}`}>Du học là chuyến hành trình dài nhất mà mình từng tham gia.</p>
+                            </div>
+                        </div>
+                    </div>
+                    {/*-------sharing - mobile-------*/}
+                    <div className="hidden-md hidden-lg col-xs-12 col-sm-6">
+                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer1}`}></div>
+                        <div className={`col-xs-12 ${styles.lgreenBg}`}>
+                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Nguyễn Mai Đức</h3>
+                            <hr className={`${styles.hrCustom} ${styles.grayBg} ${styles.captionCustom}`}/>
+                            <p className={`${styles.white} ${styles.captionCustom}`}>Em nghĩ trước khi du học Anh các bạn học sinh cần cải thiện tốt kỹ năng ngoại ngữ.</p>
                         </div>
                     </div>
 
+                    <div className="hidden-md hidden-lg col-xs-12 col-sm-6">
+                        <div className={`visible-xs ${styles.mediumSpacing}`}></div>
+                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer2}`}>
+                        </div>
+                        <div className={`col-xs-12 ${styles.orangeBg}`}>
+                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Nguyễn Thùy My</h3>
+                            <hr className={`${styles.hrCustom} ${styles.grayBg} ${styles.captionCustom}`}/>
+                            <p className={`${styles.white} ${styles.captionCustom}`}>Theo học Cao Đẳng Cộng Đồng, cái đầu tiên em có được chính là kiến thức.</p>
+                        </div>
+                    </div>
+                    <div className="hidden-md hidden-lg col-xs-12 col-sm-6">
+                        <div className={`visible-xs ${styles.mediumSpacing}`}></div>
+                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer3}`}></div>
+                        <div className={`col-xs-12 ${styles.lblueBg}`}>
+                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Nguyễn Hoàng Nhật Anh</h3>
+                            <hr className={`${styles.hrCustom} ${styles.grayBg} ${styles.captionCustom}`}/>
+                            <p className={`${styles.white} ${styles.captionCustom}`}>Sau khi đi du học nhất là 3 năm tại trường Stony Brook, em đã cảm nhận được mình đã trưởng thành hơn rất nhiều.</p>
+                        </div>
+                    </div>
+                    <div className="hidden-md hidden-lg col-xs-12 col-sm-6">
+                        <div className={`visible-xs ${styles.mediumSpacing}`}></div>
+                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer4}`}></div>
+                        <div className={`col-xs-12 ${styles.yellowBg}`}>
+                            <h3 className={`${styles.captionCustom}`}>Phạm Duy Đức</h3>
+                            <hr className={`${styles.hrCustom} ${styles.blackBg} ${styles.captionCustom}`}/>
+                            <p className={`${styles.captionCustom}`}>Trước khi đi du học hãy chuẩn bị tâm lý thật vững vàng.<br/><br/></p>
+                        </div>
+                    </div>
+                    <div className="hidden-md hidden-lg col-xs-12 col-sm-6">
+                        <div className={`visible-xs ${styles.mediumSpacing}`}></div>
+                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer5}`}></div>
+                        <div className={`col-xs-12 ${styles.lgreenBg}`}>
+                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Diệp Khánh Linh</h3>
+                            <hr className={`${styles.hrCustom} ${styles.grayBg} ${styles.captionCustom}`}/>
+                            <p className={`${styles.white} ${styles.captionCustom}`}>Trên con đường du học của mình đừng lo lắng, đừng sợ hãi, mà hãy biết cách học hỏi.</p>
+                        </div>
+                    </div>
+                    <div className="hidden-md hidden-lg col-xs-12 col-sm-6">
+                        <div className={`visible-xs ${styles.mediumSpacing}`}></div>
+                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer6}`}></div>
+                        <div className={`col-xs-12 ${styles.orangeBg}`}>
+                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Nguyễn Thành Long</h3>
+                            <hr className={`${styles.hrCustom} ${styles.grayBg} ${styles.captionCustom}`}/>
+                            <p className={`${styles.white} ${styles.captionCustom}`}>Đi du học khiến mình tự lập hơn, biết lo nghĩ về sự nghiệp và cuộc sống.</p>
+                        </div>
+                    </div>
+                    <div className="hidden-md hidden-lg col-xs-12 col-sm-6">
+                        <div className={`visible-xs ${styles.mediumSpacing}`}></div>
+                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer7}`}></div>
+                        <div className={`col-xs-12 ${styles.lblueBg}`}>
+                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Đặng Diệu Linh</h3>
+                            <hr className={`${styles.hrCustom} ${styles.grayBg} ${styles.captionCustom}`}/>
+                            <p className={`${styles.white} ${styles.captionCustom}`}>Du học là một chuyến đi mà bạn được trang bị kiến thức, gặp gỡ người mới để mở mang tầm mắt.</p>
+                        </div>
+                    </div>
+                    <div className="hidden-md hidden-lg col-xs-12 col-sm-6">
+                        <div className={`visible-xs ${styles.mediumSpacing}`}></div>
+                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer8}`}></div>
+                        <div className={`col-xs-12 ${styles.yellowBg}`}>
+                            <h3 className={`${styles.captionCustom}`}>Nguyễn Minh Tuấn</h3>
+                            <hr className={`${styles.hrCustom} ${styles.blackBg} ${styles.captionCustom}`}/>
+                            <p className={`${styles.captionCustom}`}>Du học là chuyến hành trình dài nhất mà mình từng tham gia.</p>
+                        </div>
+                    </div>
                 </div>
                 <a id="schools">
-                    <div className={styles.largeSpacing}></div>
+                    <div className={styles.mediumSpacing}></div>
                 </a>
-            </div>
-
-            {/*----------------------schools----------------------*/}
-            <div className={styles.schoolsContainer}>
-                <div className="container">
-                    <div className="col-xs-12 col-md-8 col-md-offset-2 text-center">
-                        <img src={require('../../photos/schools-title.png')} className={styles.imgResponsive}/>
-                        <div className={styles.mediumSpacing}></div>
-                    </div>
-	                <WorldMap className="col-xs-12 world-map"/>
-                </div>
-                <div className={styles.mediumSpacing}></div>
             </div>
 
             <CallButton/>
@@ -1050,7 +1180,7 @@ const Footer = React.createClass({
 
 const CallButton = React.createClass({
 	handleClickPhone(e){
-		e.preventDefault()
+		e.preventDefault();
 		window.location.hash = '';
 		window.location.hash = '#registerForm';
 		if(ga){
@@ -1060,7 +1190,7 @@ const CallButton = React.createClass({
     render(){
         return (<div className="coccoc-alo-phone coccoc-alo-green coccoc-alo-show hidden-xs" id="coccoc-alo-phoneIcon"
                      style={{"right": "0px", "display": "block"}}>
-            <div className="coccoc-alo-ph-circle"></div>
+            {/*<div className="coccoc-alo-ph-circle"></div>*/}
             <div className="coccoc-alo-ph-circle-fill"></div>
             <div className="coccoc-alo-ph-img-circle"  onClick={this.handleClickPhone}></div>
         </div>)

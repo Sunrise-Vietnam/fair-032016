@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --port 8000",
+    "start": "webpack-dev-server --port 8000 --host 10.0.0.91",
     "clean": "rimraf ./build",
     "build": "webpack",
     "production": "npm run clean && npm run build"

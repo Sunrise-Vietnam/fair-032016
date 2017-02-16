@@ -49,10 +49,31 @@ body {
     color: white;
 }
 @media (max-width:767px){
+    .navbar-brand {
+        padding: 5px 0 0 0 !important;
+    }
     .navbar-toggle {
         border-color: #F4820E
     }
     .icon-bar {
         background-color: #F4820E
     }
+}
+
+.come-in {
+    transform: translateX(-150px);
+    animation: come-in 2.0s ease forwards;
+}
+
+.come-in:nth-child(odd) {
+    animation-duration: 1.2s;
+}
+
+.already-visible {
+    transform: translateX(0);
+    animation: none;
+}
+
+@keyframes come-in {
+    to { transform: translateX(0); }
 }

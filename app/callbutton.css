@@ -96,22 +96,18 @@
 }
 .coccoc-alo-phone.coccoc-alo-green.coccoc-alo-hover .coccoc-alo-ph-circle,
 .coccoc-alo-phone.coccoc-alo-green:hover .coccoc-alo-ph-circle {
-    border-color: #75eb50;
-    border-color: #baf5a7;
     opacity: .5
 }
 .coccoc-alo-phone.coccoc-alo-green .coccoc-alo-ph-circle {
-    border-color: #00aff2;
-    border-color: #bfebfc;
     opacity: .5
 }
 .coccoc-alo-phone.coccoc-alo-gray.coccoc-alo-hover .coccoc-alo-ph-circle,
 .coccoc-alo-phone.coccoc-alo-gray:hover .coccoc-alo-ph-circle {
-    border-color: #ccc;
+
     opacity: .5
 }
 .coccoc-alo-phone.coccoc-alo-gray .coccoc-alo-ph-circle {
-    border-color: #75eb50;
+
     opacity: .5
 }
 .coccoc-alo-ph-circle-fill {
@@ -189,12 +185,12 @@
     top: 70px;
     left: 70px;
     position: absolute;
-    background: rgba(30, 30, 30, 0.1) url("./photos/201609/call.png") no-repeat center center;
+    background: rgba(30, 30, 30, 0.1) url("./photos/201703/call.png") no-repeat center center;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
     border: 2px solid transparent;
-    opacity: .7;
+    opacity: 1;
     -webkit-animation: coccoc-alo-circle-img-anim 1s infinite ease-in-out;
     -moz-animation: coccoc-alo-circle-img-anim 1s infinite ease-in-out;
     -ms-animation: coccoc-alo-circle-img-anim 1s infinite ease-in-out;
@@ -222,21 +218,21 @@
 }
 .coccoc-alo-phone.coccoc-alo-hover .coccoc-alo-ph-img-circle,
 .coccoc-alo-phone:hover .coccoc-alo-ph-img-circle {
-    background-color: #00aff2
+    background-color: transparent;
 }
 .coccoc-alo-phone.coccoc-alo-green.coccoc-alo-hover .coccoc-alo-ph-img-circle,
 .coccoc-alo-phone.coccoc-alo-green:hover .coccoc-alo-ph-img-circle {
-    background-color: #75eb50;
+
 }
 .coccoc-alo-phone.coccoc-alo-green .coccoc-alo-ph-img-circle {
-    background-color: #00aff2;
+    background-color: transparent;
 }
 .coccoc-alo-phone.coccoc-alo-gray.coccoc-alo-hover .coccoc-alo-ph-img-circle,
 .coccoc-alo-phone.coccoc-alo-gray:hover .coccoc-alo-ph-img-circle {
-    background-color: #ccc
+    background-color: transparent;
 }
 .coccoc-alo-phone.coccoc-alo-gray .coccoc-alo-ph-img-circle {
-    background-color: #75eb50
+
 }
 @-moz-keyframes coccoc-alo-circle-anim {
     0% {

@@ -1,4 +1,8 @@
 @media (max-width: 767px) {
+  .xsCenter {
+    text-align: center;
+  }
+
   .marginBottomXS {
     margin-bottom: 15px;
   }
@@ -15,8 +19,13 @@
   .banner {
     margin-top: 50px;
   }
+
   .customCheckbox label {
     font-weight: normal;
+  }
+
+  .imgMainContainer {
+    height: 250px;
   }
 }
 
@@ -33,9 +42,40 @@
   .banner {
     margin-top: 95px;
   }
+
+  .imgMainContainer {
+    height: 300px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .imgMainContent {
+    height: inherit;
+    padding-top: 40%;
+    padding-bottom: 20px;
+    transition: background-color .4s linear;
+    -webkit-transition: background-color .4s ease-in-out;
+    -moz-transition: background-color .4s ease-in-out;
+    -o-transition:background-color .4s ease-in-out;
+  }
+
+  .imgMainContent:hover {
+    background-color: rgba(0,0,0,0.5);
+  }
+
+  .imgMainContent .captionCustom {
+    visibility: hidden;
+  }
+
+  .imgMainContent:hover .captionCustom {
+    visibility: visible;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+  .xsCenter {
+    text-align: center;
+  }
   .marginBottomSM {
     margin-bottom: 15px;
   }
@@ -82,12 +122,15 @@
 
   h5 {
     font-size: 16px!important;
-    line-height: 22px !important;
   }
 }
 
 body {
   color: #3c3c3c;
+}
+
+h4, h5 {
+  line-height: 25px!important;
 }
 
 .white, .customInput {
@@ -127,8 +170,8 @@ body {
   color: #0965cc;
 }
 
-.bold {
-  font-weight: 800;
+.blackBg {
+  background-color: #000;
 }
 
 .noPadding {
@@ -264,12 +307,11 @@ input:-moz-placeholder { /* Firefox 4 - 18 */
 }
 
 .schoolsContainer {
-  background-image: url('./photos/schools-map-bg.png');
+  background-image: url('./photos/201703/schools-map-bg.png');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
-  min-height: 805px;
 }
 
 .schoolsContainer h4 {
@@ -280,69 +322,43 @@ input:-moz-placeholder { /* Firefox 4 - 18 */
   display: inline-block;
 }
 
-.come-in {
-  transform: translateX(-150px);
-  animation: come-in 1.0s ease forwards;
-}
-
-.come-in:nth-child(odd) {
-  animation-duration: .8s;
-}
-
-.already-visible {
-  transform: translateX(0);
-  animation: none;
-}
-
-@keyframes come-in {
-  to { transform: translateX(0); }
-}
-
 .imgMainContainer {
   background-size: cover;
-  height: 350px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+
 }
 
 .imgContainer1 {
-  background-image: url('./photos/201703/winner.jpeg');
+  background-image: url('./photos/201703/sharing-1.png');
 }
 
 .imgContainer2 {
-  background-image: url('./photos/201703/winner.jpeg');
+  background-image: url('./photos/201703/sharing-2.png');
 }
 
 .imgContainer3 {
-  background-image: url('./photos/201703/winner.jpeg');
+  background-image: url('./photos/201703/sharing-3.png');
 }
 
 .imgContainer4 {
-  background-image: url('./photos/201703/winner.jpeg');
+  background-image: url('./photos/201703/sharing-4.png');
 }
 
 .imgContainer5 {
-  background-image: url('./photos/201703/winner.jpeg');
+  background-image: url('./photos/201703/sharing-5.png');
 }
 
-.imgMainContent {
-  height: inherit;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  transition: background-color .4s linear;
-  -webkit-transition: background-color .4s ease-in-out;
-  -moz-transition: background-color .4s ease-in-out;
-  -o-transition:background-color .4s ease-in-out;
+.imgContainer6 {
+  background-image: url('./photos/201703/sharing-6.png');
 }
-.imgMainContent:hover {
-  background-color: rgba(0,0,0,0.5);
+
+.imgContainer7 {
+  background-image: url('./photos/201703/sharing-7.png');
 }
-.imgMainContent .captionCustom {
-  visibility: hidden;
+
+.imgContainer8 {
+  background-image: url('./photos/201703/sharing-8.png');
 }
-.imgMainContent:hover .captionCustom {
-  visibility: visible;
-}
+
 .footer {
   background-image: url('./photos/201609/background-lien-he.png');
   background-position: center;
