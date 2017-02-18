@@ -806,75 +806,84 @@ class Main extends React.Component {
             </a>
 
             <div className="container">
-                <div className={`col-xs-12 col-md-8 col-md-offset-2 ${styles.sectionTitle} ${styles.noPadding}`}>
-                    <div className={styles.smallSpacing}></div>
-                    <img src={require('../../photos/201703/title-opp.png')} className={styles.imgResponsive}/>
+                <div className="row">
+                    <div className={`col-xs-12 col-md-8 col-md-offset-2 ${styles.sectionTitle} ${styles.noPadding}`}>
+                        <div className={styles.smallSpacing}></div>
+                        <img src={require('../../photos/201703/title-opp.png')} className={styles.imgResponsive}/>
+                    </div>
                 </div>
-                <div className={`col-xs-12 col-sm-6 module ${styles.noPadding}`}>
-                    <div className="row">
-                        <div
-                            className="col-xs-4 col-xs-offset-4 col-md-2 col-md-offset-2 text-right">
-                            <img src={require('../../photos/201703/woman.png')} className={styles.imgResponsive}/>
+                <div className="row">
+                    <div className={`col-xs-12 col-sm-6 module ${styles.noPadding}`}>
+                        <div className="row">
+                            <div
+                                className="col-xs-4 col-xs-offset-4 col-md-2 col-md-offset-2 text-right">
+                                <img src={require('../../photos/201703/woman.png')} className={styles.imgResponsive}/>
 
-                            <div className={`visible-xs ${styles.smallSpacing}`}></div>
+                                <div className={`visible-xs ${styles.smallSpacing}`}></div>
+                            </div>
+                            <div className="col-xs-12 col-md-8">
+                                <h3 className={styles.xsCenter}><strong>TƯ VẤN TỔNG QUAN:</strong></h3>
+                                <h5 className={styles.xsCenter}><strong>Trả lời câu hỏi du học, luyện thi IELTS/TOEFL từ
+                                    A đến Z</strong></h5>
+                                <h5 className={styles.xsCenter}><strong>Tìm hiểu thủ tục chuẩn bị tài chính du học với
+                                    Ngân hàng Quân Đội</strong></h5>
+                                <div className={`visible-xs ${styles.mediumSpacing}`}></div>
+                            </div>
                         </div>
-                        <div className="col-xs-12 col-md-8">
-                            <h3 className={styles.xsCenter}><strong>TƯ VẤN TỔNG QUAN:</strong></h3>
-                            <h5 className={styles.xsCenter}><strong>Trả lời câu hỏi du học, luyện thi IELTS/TOEFL từ A đến Z</strong></h5>
-                            <h5 className={styles.xsCenter}><strong>Tìm hiểu thủ tục chuẩn bị tài chính du học với Ngân hàng Quân Đội</strong></h5>
-                            <div className={`visible-xs ${styles.mediumSpacing}`}></div>
+                    </div>
+                    <div className={`col-xs-12 col-sm-6 module ${styles.noPadding}`}>
+                        <div className="row">
+                            <div
+                                className="col-xs-4 col-xs-offset-4 col-md-2 col-md-offset-2 text-right">
+                                <img src={require('../../photos/201703/man.png')} className={styles.imgResponsive}/>
+
+                                <div className={`visible-xs ${styles.smallSpacing}`}></div>
+                            </div>
+                            <div className="col-xs-12 col-md-8">
+                                <h3 className={styles.xsCenter}><strong>TƯ VẤN CHUYÊN SÂU:</strong></h3>
+                                <h5 className={styles.xsCenter}><strong>Gặp trực tiếp đại diện trường,</strong></h5>
+                                <h5 className={styles.xsCenter}><strong>nhận quà tại quầy trường</strong></h5>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div className={`col-xs-12 col-sm-6 module ${styles.noPadding}`}>
-                    <div className="row">
-                        <div
-                            className="col-xs-4 col-xs-offset-4 col-md-2 col-md-offset-2 text-right">
-                            <img src={require('../../photos/201703/man.png')} className={styles.imgResponsive}/>
+                <div className="row">
+                    <div className={`col-xs-12 col-sm-6 module ${styles.noPadding}`}>
+                        <div className="row">
+                            <div className={styles.mediumSpacing}></div>
+                            <div
+                                className="col-xs-4 col-xs-offset-4 col-md-2 col-md-offset-2 text-right">
+                                <img src={require('../../photos/201703/scholarship.png')}
+                                     className={styles.imgResponsive}/>
 
-                            <div className={`visible-xs ${styles.smallSpacing}`}></div>
-                        </div>
-                        <div className="col-xs-12 col-md-8">
-                            <h3 className={styles.xsCenter}><strong>TƯ VẤN CHUYÊN SÂU:</strong></h3>
-                            <h5 className={styles.xsCenter}><strong>Gặp trực tiếp đại diện trường,</strong></h5>
-                            <h5 className={styles.xsCenter}><strong>nhận quà tại quầy trường</strong><br/><br /><br className="hidden-lg" /><br className="hidden-lg" /></h5>
+                                <div className={`visible-xs ${styles.smallSpacing}`}></div>
+                            </div>
+                            <div className="col-xs-12 col-md-8">
+                                <h3 className={styles.xsCenter}><strong>HỌC BỔNG TẠI CHỖ:</strong></h3>
+                                <h5 className={styles.xsCenter}><strong>Phỏng vấn học bổng các bậc học,</strong></h5>
+                                <h5 className={styles.xsCenter}><strong>thi thử IELTS Speaking,</strong></h5>
+                                <h5 className={styles.xsCenter}><strong>Phỏng vấn thử visa Mỹ</strong></h5>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className={`col-xs-12 col-sm-6 module ${styles.noPadding}`}>
-                    <div className="row">
-                        <div className={styles.mediumSpacing}></div>
-                        <div
-                            className="col-xs-4 col-xs-offset-4 col-md-2 col-md-offset-2 text-right">
-                            <img src={require('../../photos/201703/scholarship.png')}
-                                 className={styles.imgResponsive}/>
+                    <div className={`col-xs-12 col-sm-6 module ${styles.noPadding}`}>
+                        <div className="row">
+                            <div className={styles.mediumSpacing}></div>
+                            <div
+                                className="col-xs-4 col-xs-offset-4 col-md-2 col-md-offset-2 text-right">
+                                <img src={require('../../photos/201703/gift.png')}
+                                     className={styles.imgResponsive}/>
 
-                            <div className={`visible-xs ${styles.smallSpacing}`}></div>
-                        </div>
-                        <div className="col-xs-12 col-md-8">
-                            <h3 className={styles.xsCenter}><strong>HỌC BỔNG TẠI CHỖ:</strong></h3>
-                            <h5 className={styles.xsCenter}><strong>Phỏng vấn học bổng các bậc học,</strong></h5>
-                            <h5 className={styles.xsCenter}><strong>thi thử IELTS Speaking,</strong></h5>
-                            <h5 className={styles.xsCenter}><strong>Phỏng vấn thử visa Mỹ</strong></h5>
-                        </div>
-                    </div>
-                </div>
-                <div className={`col-xs-12 col-sm-6 module ${styles.noPadding}`}>
-                    <div className="row">
-                        <div className={styles.mediumSpacing}></div>
-                        <div
-                            className="col-xs-4 col-xs-offset-4 col-md-2 col-md-offset-2 text-right">
-                            <img src={require('../../photos/201703/gift.png')}
-                                 className={styles.imgResponsive}/>
-
-                            <div className={`visible-xs ${styles.smallSpacing}`}></div>
-                        </div>
-                        <div className="col-xs-12 col-md-8">
-                            <h3 className={styles.xsCenter}><strong>QUÀ TẶNG KHI THAM GIA:</strong></h3>
-                            <h5 className={styles.xsCenter}><strong>Túi, bút, sổ, móc khóa</strong></h5>
-                            <h5 className={styles.xsCenter}><strong>Cẩm nang du học</strong></h5>
-                            <h5 className={styles.xsCenter}><strong>Bốc thăm hỗ trợ lệ phí thi IELTS</strong></h5>
-                            <h5 className={styles.xsCenter}><strong>Tặng voucher vé máy bay (Khi ký ngay hợp đồng tại triển lãm)</strong></h5>
+                                <div className={`visible-xs ${styles.smallSpacing}`}></div>
+                            </div>
+                            <div className="col-xs-12 col-md-8">
+                                <h3 className={styles.xsCenter}><strong>QUÀ TẶNG KHI THAM GIA:</strong></h3>
+                                <h5 className={styles.xsCenter}><strong>Túi, bút, sổ, móc khóa</strong></h5>
+                                <h5 className={styles.xsCenter}><strong>Cẩm nang du học</strong></h5>
+                                <h5 className={styles.xsCenter}><strong>Bốc thăm hỗ trợ lệ phí thi IELTS</strong></h5>
+                                <h5 className={styles.xsCenter}><strong>Tặng voucher vé máy bay (Khi ký ngay hợp đồng
+                                    tại triển lãm)</strong></h5>
+                            </div>
                         </div>
                     </div>
                 </div>
