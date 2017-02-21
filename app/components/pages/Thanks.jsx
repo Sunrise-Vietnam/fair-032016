@@ -97,7 +97,7 @@ export default class Thanks extends React.Component {
                 <div className="smallspace"></div>
             </div>
             <div style={{display:'inline'}}>
-                <img height="1" width="1" style={{"border-style": "none"}} alt="" src="//www.googleadservices.com/pagead/conversion/1017172282/?label=f4XPCPLbkWoQuqKD5QM&amp;guid=ON&amp;script=0"/>
+                <img height="1" width="1" style={{"borderStyle": "none"}} alt="" src="//www.googleadservices.com/pagead/conversion/1017172282/?label=f4XPCPLbkWoQuqKD5QM&amp;guid=ON&amp;script=0"/>
             </div>
         </div>
     }
