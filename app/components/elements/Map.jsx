@@ -131,6 +131,25 @@ const defaultData = {
 				'Webster University - USA'
 			]
 		}
+	],
+	VNM: [
+		{
+			name: 'Sunrise Vietnam',
+			schools: [
+				`<b>Văn phòng Hà Nội</b><br/>
+				86 Cửa Bắc, Ba Đình<br/>
+				043 722 4878<br/><br/>
+				T5-L2-01 Times City, 458 Minh Khai, Hai Bà Trưng<br/>
+				043 204 8333<br/><br/>`,
+				`<b>Văn phòng Hải Phòng</b><br/>
+				29 Nguyễn Trãi, Ngô Quyền<br/>
+				031 365 3269<br/><br/>`,
+				`<b>Văn phòng Hồ Chí Minh</b><br/>
+				Lầu 7 tòa nhà Thanh Dung, 179 Nguyễn Cư Trinh, Quận 1<br/>
+				083 837 0176`
+
+			]
+		}
 	]
 };
 
