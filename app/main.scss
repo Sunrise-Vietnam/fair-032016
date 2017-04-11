@@ -1,0 +1,315 @@
+/*------------fonts------------*/
+.semiBold {
+  font-family: "myriadsemibold";
+}
+.semiBoldIt {
+  font-family: "myriadsemiboldit";
+}
+.bold {
+  font-family: "myriadbold";
+}
+.boldCond {
+  font-family: "myriadboldcond";
+}
+.boldCondIt {
+  font-family: "myriadboldcondit";
+}
+.boldIt {
+  font-family: "myriadboldit";
+}
+.cond {
+  font-family: "myriadcond";
+}
+.condIt {
+  font-family: "myriadcondIt";
+}
+/*------------common------------*/
+h4, h5 {
+  line-height: 25px!important;
+}
+.noPadding {
+  padding: 0 !important;
+}
+.sectionTitle {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.hrTitle{
+  background-color: #4c2c06;
+  border: none;
+  height: 3px!important;
+  width: 80% !important;
+}
+.hrCustom {
+  border: none;
+  display: inline-block;
+  margin: 10px 0 10px 0;
+  height: 2px;
+  width: 55%;
+}
+/*------------color------------*/
+body {
+  color: #000;
+}
+.blackBg {
+  background-color: #000;
+}
+.bblackBg {
+  background-color: #3d3b3c;
+}
+.white, .white:hover, .white:focus{
+  color: #fff;
+}
+.grayBg {
+  background-color: #f4f4f4
+}
+.yellowBg {
+  background-color: #FFC00D;
+}
+.orange {
+  color: #FF530D;
+}
+.orangeBg {
+  background-color: #ed7618;
+}
+.brown {
+  color: #4c2c06;
+}
+.brownBg{
+  background-color: #4c2c06;
+}
+.lgreenBg {
+  background-color: #29A81A;
+  /*background-color: #14CC80;*/
+}
+.lblue {
+  color: #26a4fb;
+}
+.lblueBg {
+  background-color: #26a4fb;
+}
+
+/*------------menu------------*/
+.navBarCustom {
+  background-color: white;
+  margin-bottom: 0 !important;
+  text-align: center;
+  border: 0 !important
+}
+.navBarCustom .container-fluid .centerMenu {
+  display: inline-block !important;
+}
+.centerMenu > ul > li > a {
+  text-align: center;
+  color: black;
+  font-weight: bold;
+}
+.centerMenu > ul > li > a.customA:hover {
+  background-color: black;
+  color: white;
+}
+/*------------come-in effect (places)------------*/
+.module {
+  display: inline-block;
+}
+/*------------form------------*/
+.customInput {
+  background-color: #fde6ce !important;
+  border: none !important;
+  border-radius: 8px !important;
+  color: #4c2c06 !important;
+  font-size: 15px;
+  height: auto !important;
+  padding: 12px 40px 6px 12px !important;
+}
+.customCheckbox {
+  background-color: #fde6ce !important;
+  border: none !important;
+  border-radius: 8px !important;
+  color: #4c2c06 !important;
+  font-size: 15px;
+  height: inherit;
+  padding: 12px 0 12px 0 !important;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+input::-webkit-input-placeholder { /* Chrome */
+  color: #726b64 !important;
+}
+input:-ms-input-placeholder { /* IE 10+ */
+  color: #726b64 !important;
+}
+input::-moz-placeholder { /* Firefox 19+ */
+  color: #726b64 !important;
+  opacity: 1;
+}
+input:-moz-placeholder { /* Firefox 4 - 18 */
+  color: #726b64 !important;
+  opacity: 1;
+}
+/*------------button - form------------*/
+.btnBlock {
+  margin: 20px auto 10px auto;
+  display: block;
+  padding: 14px 55px 8px 55px;
+  border-radius: 10px !important;
+  box-shadow: none;
+  border: none;
+}
+#btnRegister {
+  background-color: #000;
+  color: white;
+}
+#btnRegister:hover {
+  background-color: #3d3b3c;
+}
+/*------------sharing------------*/
+.imgMainContainer {
+  background-size: cover;
+  background-position: center;
+}
+.imgContainer1 {
+  background-image: url('./photos/sharing-1.png');
+}
+.imgContainer2 {
+  background-image: url('./photos/sharing-2.png');
+}
+.imgContainer3 {
+  background-image: url('./photos/sharing-3.png');
+}
+.imgContainer4 {
+  background-image: url('./photos/sharing-4.png');
+}
+.imgContainer5 {
+  background-image: url('./photos/sharing-5.png');
+}
+.imgContainer6 {
+  background-image: url('./photos/sharing-6.png');
+}
+/*------------footer------------*/
+.footer {
+  background-image: url('./photos/background-footer.png');
+  background-position: center;
+  background-size: contain;
+  color: white;
+}
+.customMedia {
+  margin-top: 10px !important;
+}
+.customMedia h5 {
+  font-size: 17px !important;
+}
+/*------------size of page------------*/
+@media (max-width: 767px) {
+  .navBarCustom {
+    width: 100%;
+  }
+  .centerMenu > ul > li > a.customA {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .banner {
+    margin-top: 50px;
+  }
+  .marginBottomXS {
+    margin-bottom: 15px;
+  }
+  .customCheckbox label {
+    font-weight: normal;
+  }
+  .imgMainContainer {
+    height: 270px;
+  }
+}
+@media (min-width: 768px) {
+  .centerMenu > ul > li > a.customA {
+    height: 100px;
+  }
+  .banner {
+    margin-top: 95px;
+  }
+  .imgMainContainer {
+    height: 300px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .centerMenu > ul > li > a.customA {
+    padding-top: 30px;
+  }
+  .marginBottomSM {
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 991px) {
+  .smallSpacing {
+    height: 17px;
+  }
+  .mediumSpacing {
+    height: 40px;
+  }
+  .largeSpacing {
+    height: 70px;
+  }
+  h5 {
+    font-size: 17px!important;
+  }
+  .footer p, .footer a {
+    font-size: 13px;
+  }
+  .borderHorizontal {
+    border-left: solid 15px white;
+    border-right: solid 15px white;
+  }
+}
+@media (min-width: 992px) {
+  .smallSpacing {
+    height: 20px;
+  }
+  .mediumSpacing {
+    height: 50px;
+  }
+  .largeSpacing {
+    height: 80px;
+  }
+  .centerMenu > ul > li > a.customA {
+    padding-top: 32px;
+  }
+  .marginBottomMD {
+    margin-bottom: 15px;
+  }
+  .imgMainContent {
+    font-size: 13px;
+    height: inherit;
+    padding: 15px;
+    transition: background-color .4s linear;
+    -webkit-transition: background-color .4s ease-in-out;
+    -moz-transition: background-color .4s ease-in-out;
+    -o-transition:background-color .4s ease-in-out;
+  }
+  .imgMainContent:hover {
+    background-color: rgba(0,0,0,0.7);
+  }
+  .imgMainContent .captionCustom {
+    visibility: hidden;
+  }
+  .imgMainContent:hover .captionCustom {
+    visibility: visible;
+  }
+  .captionCustom {
+    font-size: 15px;
+  }
+  h5 {
+    font-size: 16px!important;
+  }
+  .footer p, .footer a {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1200px) {
+  .centerMenu > ul > li > a.customA {
+    padding-top: 40px;
+  }
+  .imgMainContent {
+    padding: 20px;
+  }
+}

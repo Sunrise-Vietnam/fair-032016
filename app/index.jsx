@@ -1,11 +1,11 @@
 require('expose?$!expose?jQuery!jquery');
 require("bootstrap-webpack");
-require('./main1703.css');
+require('./main.css');
 require('./callbutton.css');
 require('bootstrap-select');
 require('!style!css!bootstrap-select/dist/css/bootstrap-select.min.css');
 
-require('./photos/world-study-fair032016.jpg');
+//require('./photos/world-study-fair032016.jpg');
 
 import React from 'react';
 import ReactDom from 'react-dom';
@@ -45,7 +45,7 @@ ReactDom.render((
     <Router history={history}>
         <Route component={App}>
             <Route path="/" component={Home}/>
-            <Route path="/thanks-you" component={Thanks}/>
+            <Route path="/thank-you" component={Thanks}/>
         </Route>
     </Router>
 ), document.getElementById('app'))

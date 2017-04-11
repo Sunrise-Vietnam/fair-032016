@@ -1,281 +1,160 @@
-/*----fonts----*/
+/*------------fonts------------*/
 @font-face {
     font-family: "myriad";
     src: url("./fonts/MYRIADPRO-REGULAR.otf")
 }
 @font-face {
     font-family: "myriadbold";
-    src: url("./fonts/MYRIADPRO-BOLD.otf")}
+    src: url("./fonts/MYRIADPRO-BOLD.otf")
+}
+@font-face {
+    font-family: "myriadboldcond";
+    src: url("./fonts/MYRIADPRO-BOLDCOND.otf")
+}
+@font-face {
+    font-family: "myriadboldcondit";
+    src: url("./fonts/MYRIADPRO-BOLDCONDIT.otf")
+}
+@font-face {
+    font-family: "myriadboldit";
+    src: url("./fonts/MYRIADPRO-BOLDIT.otf")
+}
+@font-face {
+    font-family: "myriadcond";
+    src: url("./fonts/MYRIADPRO-COND.otf")
+}
+@font-face {
+    font-family: "myriadcondit";
+    src: url("./fonts/MYRIADPRO-CONDIT.otf")
+}
 @font-face {
     font-family: "myriadsemibold";
-    src: url("./fonts/MYRIADPRO-SEMIBOLD.otf")}
-body{
-    font-family: "myriad";
+    src: url("./fonts/MYRIADPRO-SEMIBOLD.otf")
 }
-.semibold{
-    font-family: "myriadsemibold";
+@font-face {
+    font-family: "myriadboldit";
+    src: url("./fonts/MYRIADPRO-SEMIBOLDIT.otf")
 }
-.bold{
-    font-family: "myriadbold";
+/*------------font-size------------*/
+body {
+    font-family: "myriad" !important;
 }
-/*----color----*/
-body,.white,.white:hover,.white:focus,.navbar-default .navbar-nav>li>a,.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>a:focus,.navbar-default .navbar-nav>li>a:active{
-    color:white;
-}
-.bgwhite{
-    background-color: white;
-}
-.red{
-    color: #fe0000;
-}
-.orange{
-    color: #fb7e46;
-}
-.dorange{
-    color: #fe5003;
-}
-.bgorange,.bgorange:hover,.bgorange:focus,.bgorange:active{
-    background-color: #fb8f41;
-}
-.bglblue{
-    background-color: #20a2a2;
-}
-.mblue{
-    color: #074c75;
-}
-.bgmblue{
-    background-color: #074c75;
-}
-.bgdblue{
-    background-color: #084179;
-}
-.bgddblue{
-    background-color: #232143;
-}
-.black{
-    color: #2b2b2b;
-}
-/*----common----*/
+/*------------common------------*/
 h2{
     margin: 0;
-}
-hr{
-    height: 2px;
-    border: none;
 }
 .container-fluid{
     padding: 0;
 }
-.space{
-    height: 30px;
+/*------------color------------*/
+.red{
+    color: red;
 }
-/*----menu----*/
-.menu{
-    z-index: 1039;
-    border-bottom: 7px solid #ffffff;
+.mblue {
+    color: #0965cc;
 }
-.menubar{
-    border: none;
-    margin: 0;
+/*------------menu------------*/
+.navbar-nav>li>a{
+    border-bottom: solid 3px #ffffff;
 }
-.navbar-default{
-    box-shadow: none;
+/*------------come-in effect (places)------------*/
+.come-in {
+    transform: translateX(-150px);
+    animation: come-in 2.0s ease forwards;
 }
-.navbar-default .navbar-toggle,.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{
-    background-color: transparent;
-    border-color: white;
+.come-in:nth-child(odd) {
+    animation-duration: 1.2s;
 }
-.navbar-default .navbar-toggle .icon-bar{
-    background-color: white;
+.already-visible {
+    transform: translateX(0);
+    animation: none;
 }
-.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-nav>li>a:focus,.navbar-default .navbar-nav>li>a:active{
-    font-weight: bold;
+@keyframes come-in {
+    to { transform: translateX(0); }
 }
-#menucohoi:hover {
-    border-top: solid 3px #9e86d5;
+/*------------default form------------*/
+.form-control{
+    border-radius: 8px;
 }
-#menuqua:hover,#menuqua:active {
-    border-top: solid 3px #fb8f41;
+.bootstrap-select{
+    padding-bottom: 0px;
 }
-#menudg:hover {
-    border-top: solid 3px #20a2a2;
+.form-group .bootstrap-select.btn-group {
+    height: 38px;
 }
-#menucs:hover {
-    border-top: solid 3px #ffd119;
+.bootstrap-select>.dropdown-toggle.bs-placeholder, .bootstrap-select.btn-group .dropdown-toggle {
+    background-color: #fde6ce !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 12px 40px 6px 12px !important;
+    height: auto !important;
+    color: #4c2c06 !important;
+    font-size: 14px!important;
 }
-#menuds:hover {
-    border-top: solid 3px #29cd6b;
+.bootstrap-select.btn-group .dropdown-menu {
+    background-color: #fde6ce !important;
+    color: #4c2c06 !important;
 }
-/*----banner----*/
-#bannerborder{
-    height: 4px;
-    background-image: url("./photos/border.png");
-    background-repeat: repeat-x;
+.dropdown-menu > li > a:hover {
+    background-color: #4c2c06;
+    color: white;
 }
-#btn-intro{
-    position: relative;
-}
-#bottomintro{
-    margin-top: 16px;
-    width: 100%;
-}
-/*----gifts----*/
-/*----gifts----*/
-.gifts{
-    background-image: url("./photos/blue.png");
-    background-size: cover;
-}
-.thumbnail{
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    text-align: center;
-    margin-bottom: 5px;
-}
-/*----diengia----*/
-.img-diengia{
-    padding: 3px;
-}
-.img-diengia1{
-    border: solid 7px #074c75;
-}
-.img-diengia2{
-    border: solid 7px #fb8f41;
-}
-/*----chiase----*/
-.row-chiase.col-xs-7>p{
-    vertical-align: middle;
-}
-/*----footer----*/
-#bg-logo{
-    z-index: 0;
-    position: absolute;
-}
-footer .media {
-    margin-top: 0;
-}
-/*----button----*/
-.btn-reg{
-    border-radius: 7px;
-    padding: 10px 20px 10px 20px
-}
-.btn-reg p{
-    margin: 5px 5px
-}
-/*----thanks----*/
+/*------------thank-you page------------*/
 .img-links{
     position: relative;
     margin-top: -22px;
 }
-/*----separate----*/
-@media (max-width: 767px) {
-    .smallspace{
-        height: 15px;
+/*------------size of page------------*/
+@media (max-width:767px){
+    .navbar-brand {
+        padding: 5px 20px 0 20px !important;
     }
-    .space {
-        height: 30px;
+    .navbar-toggle {
+        border-color: red
     }
-    .chiaseimg{
-        text-align: center;
-        margin: auto;
-    }
-}
-@media (max-width: 991px) {
-    h1{font-size: 38px}
-    .size40{font-size: 33px}
-    h2,.size33{font-size: 26px}
-    h3,.size25{font-size: 18px}
-    h4,p{font-size: 16px}
-    .size16{font-size: 14px}
-    footer p, footer a{
-        font-size: 13px;
-    }
-    .navbar-default .navbar-nav>li>a{
-        font-size: 12px;
-    }
-    #btn-intro{
-        margin-top: 25px;
+    .icon-bar {
+        background-color: red
     }
 }
 @media (min-width: 768px) {
-    .smallspace{
-        height: 25px;
+    .navbar-brand {
+        padding: 10px 15px !important;
     }
-    .space{
-        height: 50px;
+    #menuHome:hover,#menuHome:focus {
+        border-bottom: solid 3px #9E65B0;
     }
-    .navbar-header{
-        margin-top: 10px;
+    #menuTeachers:hover,#menuTeachers:focus {
+        border-bottom: solid 3px #fb8f41;
     }
-    .navbar-default .navbar-nav>li,.navbar-default .navbar-nav>li>a{
-        height: 73px;
+    #menuOpportunities:hover,#menuOpportunities:focus {
+        border-bottom: solid 3px #26a4fb;
     }
-    .navbar-default .navbar-nav>li>a{
-        border-top: solid 3px #084179;
+    #menuSharing:hover,#menuSharing:focus {
+        border-bottom: solid 3px #ffd119;
     }
-    #menuhome:hover{
-        border-top: solid 3px #ffffff;
+    #menuInfo:hover,#menuInfo:focus {
+        border-bottom: solid 3px #14CC80;
     }
-    #menucohoi:hover {
-        border-top: solid 3px #9e86d5;
+}
+@media (max-width: 991px) {
+    h2, .h2{
+        font-size: 26px
     }
-    #menuqua:hover,#menuqua:active {
-        border-top: solid 3px #fb8f41;
+    h3{
+        font-size: 18px
     }
-    #menudg:hover {
-        border-top: solid 3px #20a2a2;
+    h4,p{
+        font-size: 16px
     }
-    #menucs:hover {
-        border-top: solid 3px #ffd119;
-    }
-    #menuds:hover {
-        border-top: solid 3px #29cd6b;
-    }
-    .intro{
-        padding-top: 30px;
-    }
-    .chiase2{
-        float: right;
+    .navbar-nav>li>a{
+        font-size: 13px;
     }
 }
 @media (min-width: 992px){
-    h1{font-size: 45px}
-    .size40{font-size: 40px}
-    h2,.size33{font-size: 33px}
-    h3,.size25{font-size: 25px}
-    h4,p{font-size: 18px}
-    .size16{font-size: 16px}
-    footer p, footer a{
-        font-size: 15px;
+    h2, .h2{
+        font-size: 33px
     }
-    #btn-intro{
-        margin-top: -15px;
+    h4,p{
+        font-size: 18px
     }
-}
-
-.form-control{
-    border-radius: 0px;
-}
-.input-group{
-    width: 100%;
-}
-
-#ModalHeader{
-    font-size: 30px;
-    color: #000011;
-}
-
-#ModalHeader span.subTitle{
-    display: block;
-    font-size: 15px;
-    color: #bc0000;
-    font-style: italic;
-}
-
-.dred, .dred:active, .dred:focus, .dred:hover {
-    color: #e4121a;
-}
-
-.dbluebg {
-    background-color: #06162f;
 }

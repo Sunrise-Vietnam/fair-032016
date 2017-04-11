@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../../main.scss';
 
 export default class Thanks extends React.Component {
     componentDidMount(){
@@ -13,88 +14,73 @@ export default class Thanks extends React.Component {
         //goConversion.src = '//www.googleadservices.com/pagead/conversion/1017172282/?label=x5h4CLuWlWQQmNyBugM&amp;guid=ON&amp;script=0';
     }
     render() {
-        return <div className="container-fluid">
-            <div className="row tk-header">
-                <img width="100%" className="img-responsive bigimg hidden-xs"
+        return <div>
+            <div className="container-fluid">
+                <img width="100%" className="img-responsive hidden-xs"
                      src={require("../../photos/thanks/tk-header.png")}/>
-                <img width="100%" className="img-responsive smallimg visible-xs"
+                <img width="100%" className="img-responsive visible-xs"
                      src={require("../../photos/thanks/tk-headersmall.png")}/>
-
-                <div className="row">
-                    <div className="col-xs-2 col-xs-offset-3 img-links text-right">
-                        <a href="mailto:info@sunrisevietnam.com"><img
-                            src={require("../../photos/thanks/mail.png")}/></a>
-                    </div>
-                    <div className="col-xs-2 img-links text-center">
-                        <a href="http://sunrisevietnam.com"><img
-                            src={require("../../photos/thanks/globe.png")}/></a>
-                    </div>
-                    <div className="col-xs-2 img-links text-left">
-                        <a href="http://fb.com/thaiduong.vietnam"><img src={require("../../photos/thanks/fb.png")}/></a>
-                    </div>
+                <div className="col-xs-2 col-xs-offset-3 img-links text-right">
+                    <a href="mailto:info@sunrisevietnam.com">
+                        <img src={require("../../photos/thanks/mail.png")}/></a>
                 </div>
-
+                <div className="col-xs-2 img-links text-center">
+                    <a target="_blank" href="http://sunrisevietnam.com">
+                        <img src={require("../../photos/thanks/globe.png")}/></a>
+                </div>
+                <div className="col-xs-2 img-links text-left">
+                    <a target="_blank" href="http://fb.com/thaiduong.vietnam">
+                        <img src={require("../../photos/thanks/fb.png")}/></a>
+                </div>
             </div>
-
             <div className="container">
-                <div className="smallspace"></div>
+                <div className={`${styles.smallSpacing}`}></div>
                 <div className="row">
-                    <div className="col-xs-12 bold">
-                        <h3 className="text-center black">Cảm ơn bạn đã đăng ký tham gia triển lãm <br
-                            className="visible-xs"/><span className="size33 orange">THẾ GIỚI DU HỌC 2017</span></h3>
-
-                        <h3 className="text-center black">Trước khi sự kiện diễn ra 1 tuần, SUNRISE VIETNAM sẽ gọi
-                            điện hoặc email tới bạn để xác nhận lại.</h3>
-                        <br/>
-
-                        <h3 className="text-center dorange">HÃY CHIA SẺ THÔNG TIN TRIỂN LÃM ĐẾN BẠN BÈ<br/>VÀ NHỮNG
-                            NGƯỜI QUAN TÂM NHÉ!</h3>
-
-                        <h3 className="text-center black">Chân thành cảm ơn và hẹn gặp lại bạn tại triển lãm.</h3>
-
-                        <h3 className="text-center red">SUNRISE VIETNAM</h3>
+                    <div className={`col-xs-12 text-center`}>
+                        <h3 className={`${styles.bold}`}>Cảm ơn bạn đã đăng ký</h3>
+                        <h2 className={`${styles.bold} ${styles.orange}`}>NHẬN TƯ VẤN KHÓA HỌC VÀ NHẬN TÀI LIỆU IELTS</h2>
+                        <h3 className="text-center black">SUNRISE VIETNAM sẽ gọi điện hoặc email tới bạn để xác nhận lại.</h3>
+                        <div className={`${styles.smallSpacing}`}></div>
+                        <div className={`${styles.smallSpacing}`}></div>
+                    </div>
+                    <div className={`col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5 text-center`}>
+                        <img className="img-responsive" src={require("../../photos/logo.png")} width="100%"/>
+                        <div className={`${styles.mediumSpacing}`}></div>
                     </div>
                 </div>
                 <div className="space"></div>
-                <footer>
-                    <div className="row">
-                        <div className="col-xs-12 col-sm-4">
-                            <p className="red semibold">TRỤ SỞ CHÍNH SUNRISE VIETNAM</p>
-
-                            <p className="mblue text-uppercase">
-                                <img src={require("../../photos/thanks/tk-home.png")}/>&nbsp; 86 Cửa Bắc - Ba Đình -
-                                Hà Nội<br/>
-                                <img src={require("../../photos/thanks/tk-mobile.png")}/>&nbsp;&nbsp; Tel: (84-4)
-                                3722.4878 - 3722.4898<br/>
-                                <img src={require("../../photos/thanks/tk-printer.png")}/>&nbsp;&nbsp;Fax: (84-4)
-                                3722.4855</p>
-                        </div>
-                        <div className="col-xs-12 col-sm-4">
-                            <p className="red semibold">VĂN PHÒNG HẢI PHÒNG</p>
-
-                            <p className="mblue text-uppercase">
-                                <img src={require("../../photos/thanks/tk-home.png")}/>&nbsp; 29 Nguyễn Trãi - Ngô
-                                Quyền <br/>
-                                <img src={require("../../photos/thanks/tk-mobile.png")}/>&nbsp;&nbsp; Tel: (84-31)
-                                2640689 - 3653269 <br/>
-                                <img src={require("../../photos/thanks/tk-printer.png")}/>&nbsp;&nbsp;Fax: (84-31)
-                                3732895
-                            </p>
-                        </div>
-                        <div className="col-xs-12 col-sm-4">
-                            <p className="red semibold">VĂN PHÒNG HỒ CHÍ MINH</p>
-
-                            <p className="mblue text-uppercase">
-                                <img src={require("../../photos/thanks/tk-home.png")}/>&nbsp; Lầu 7, Tòa nhà Thanh
-                                Dung, số 179 Nguyễn Cư Trinh, Phường Nguyễn Cư Trinh, Q.1 <br/>
-                                <img src={require("../../photos/thanks/tk-mobile.png")}/>&nbsp;&nbsp; Tel: (84-8)
-                                38370176 - 38370226 <br/>
-                                <img src={require("../../photos/thanks/tk-printer.png")}/>&nbsp;&nbsp;Fax: (84-8)
-                                38360940</p>
-                        </div>
-                    </div>
-                </footer>
-                <div className="smallspace"></div>
+            </div>
+            <div className="container">
+                <div className="col-xs-12 col-sm-6 col-md-3">
+                    <p className={`red ${styles.semiBold}`}>TRỤ SỞ CHÍNH</p>
+                    <p className="mblue">
+                        <img src={require("../../photos/thanks/tk-home.png")}/>&nbsp; 86 Cửa Bắc, Ba Đình, Hà Nội<br/>
+                        <img src={require("../../photos/thanks/tk-mobile.png")}/>&nbsp;&nbsp; (84-43) 722 4878 - 722 4898
+                    </p>
+                </div>
+                <div className="col-xs-12 col-sm-6 col-md-3">
+                    <p className={`red ${styles.semiBold}`}>VĂN PHÒNG TIMES CITY</p>
+                    <p className="mblue">
+                        <img src={require("../../photos/thanks/tk-home.png")}/>&nbsp; Tầng 2 tòa nhà T5, Times City, 458 Minh Khai, Hai Bà Trưng, Hà Nội<br/>
+                        <img src={require("../../photos/thanks/tk-mobile.png")}/>&nbsp;&nbsp; (84-43) 200 4743 - 204 8333
+                    </p>
+                </div>
+                <div className="col-xs-12 col-sm-6 col-md-3">
+                    <p className={`red ${styles.semiBold}`}>VĂN PHÒNG HẢI PHÒNG</p>
+                    <p className="mblue">
+                        <img src={require("../../photos/thanks/tk-home.png")}/>&nbsp; 29 Nguyễn Trãi, Ngô
+                        Quyền <br/>
+                        <img src={require("../../photos/thanks/tk-mobile.png")}/>&nbsp;&nbsp; (84-31) 264 0689 - 365 3269
+                    </p>
+                </div>
+                <div className="col-xs-12 col-sm-6 col-md-3">
+                    <p className={`red ${styles.semiBold}`}>VĂN PHÒNG HỒ CHÍ MINH</p>
+                    <p className="mblue">
+                        <img src={require("../../photos/thanks/tk-home.png")}/>&nbsp; Lầu 7 tòa nhà Thanh
+                        Dung, 179 Nguyễn Cư Trinh, Q.1 <br/>
+                        <img src={require("../../photos/thanks/tk-mobile.png")}/>&nbsp;&nbsp; (84-8) 3837 0176 - 3837 0226
+                    </p>
+                </div>
             </div>
             <div style={{display:'inline'}}>
                 <img height="1" width="1" style={{"borderStyle": "none"}} alt="" src="//www.googleadservices.com/pagead/conversion/1017172282/?label=f4XPCPLbkWoQuqKD5QM&amp;guid=ON&amp;script=0"/>
