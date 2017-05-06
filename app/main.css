@@ -73,6 +73,10 @@ h2{
     to { transform: translateX(0); }
 }
 /*------------default form------------*/
+.img-responsive {
+    display: inline-block;
+}
+/*------------default form------------*/
 .form-control{
     border-radius: 8px;
 }
@@ -107,7 +111,7 @@ h2{
 /*------------size of page------------*/
 @media (max-width:767px){
     .navbar-brand {
-        padding: 5px 20px 0 20px !important;
+        padding: 8px 20px 0 20px !important;
     }
     .navbar-toggle {
         border-color: red
@@ -152,7 +156,7 @@ h2{
 }
 @media (min-width: 992px){
     h2, .h2{
-        font-size: 33px
+        font-size: 31px
     }
     h4,p{
         font-size: 18px

@@ -86,10 +86,10 @@ if(TARGET === 'start' || !TARGET){
             new webpack.HotModuleReplacementPlugin(),
             new HtmlwebpackPlugin({
                 template: 'html-webpack-template.html',
-                title : 'Triển lãm thế giới du học tháng 03/2017 | Sunrise Vietnam Co. , Ltd',
+                title : 'Sunrise Vietnam cùng bạn học tiếng Anh hiệu quả | Sunrise Vietnam Co. , Ltd',
                 mobile : true,
                 appMountId: 'app',
-                ogImage : 'http://fair.sunrisevietnam.com/photos/73b8a701da059e47427c74fea69e5bde.jpg'
+                ogImage : 'http://dangkyhoc.sunrise.edu.vn/photos/b34a3932b77bf67de383269cd989665b.png'
             }),
         ]
     })
@@ -106,10 +106,10 @@ if(TARGET === 'build') {
             }),
             new HtmlwebpackPlugin({
                 template: 'html-webpack-template.html',
-                title : 'Triển lãm thế giới du học tháng 03/2017 | Sunrise Vietnam Co. , Ltd',
+                title : 'Sunrise Vietnam cùng bạn học tiếng Anh hiệu quả | Sunrise Vietnam Co. , Ltd',
                 mobile : true,
                 appMountId: 'app',
-                ogImage : 'http://fair.sunrisevietnam.com/photos/73b8a701da059e47427c74fea69e5bde.jpg',
+                ogImage : 'http://dangkyhoc.sunrise.edu.vn/photos/b34a3932b77bf67de383269cd989665b.png',
                 favicon : 'app/photos/favicon.ico',
                 gaCodes : ['UA-67504902-1'],
                 goConversions : ['1017172282'],

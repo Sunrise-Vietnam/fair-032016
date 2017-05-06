@@ -55,7 +55,7 @@ body {
   background-color: #000;
 }
 .bblackBg {
-  background-color: #3d3b3c;
+  background-color: #3d3c3c;
 }
 .white, .white:hover, .white:focus{
   color: #fff;
@@ -65,6 +65,9 @@ body {
 }
 .yellowBg {
   background-color: #FFC00D;
+}
+.lorange {
+  color: #fde6ce;
 }
 .orange {
   color: #FF530D;
@@ -87,6 +90,12 @@ body {
 }
 .lblueBg {
   background-color: #26a4fb;
+}
+.dblueBg {
+  background-color: #030c26;
+}
+.dturquoiseBg {
+  background-color: #13B4B3;
 }
 
 /*------------menu------------*/
@@ -111,6 +120,83 @@ body {
 /*------------come-in effect (places)------------*/
 .module {
   display: inline-block;
+}
+/*------------courses------------*/
+.courseTitleMB {
+  border-radius: 8px;
+  margin-top: -23px;
+  margin-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 9px;
+}
+.courseImgContainer {
+  position: relative;
+}
+.courseImg {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+}
+/*------------opportunities------------*/
+.oppDash {
+  background-repeat: repeat-x;
+  background-image: url("../app/photos/dash.png");
+  width: 255px;
+  height:3px;
+  margin: auto;
+}
+.oppImgCenterContainer {
+  position: relative;
+}
+.oppImgCenter {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+}
+/*------------sharing------------*/
+.imgMainContainer {
+  background-size: cover;
+  background-position: center;
+}
+.imgContainer1 {
+  background-image: url('./photos/sharing-1.png');
+}
+.imgContainer2 {
+  background-image: url('./photos/sharing-2.png');
+}
+.imgContainer3 {
+  background-image: url('./photos/sharing-3.png');
+}
+.imgContainer4 {
+  background-image: url('./photos/sharing-4.png');
+}
+.imgContainer5 {
+  background-image: url('./photos/sharing-5.png');
+}
+.imgContainer6 {
+  background-image: url('./photos/sharing-6.png');
+}
+/*------------info------------*/
+.aAlign:hover {
+  text-decoration: none;
+}
+/*------------footer------------*/
+.footer {
+  background-image: url('./photos/background-footer.png');
+  background-position: center;
+  background-size: contain;
+  color: white;
+}
+.customMedia {
+  margin-top: 10px !important;
+}
+.customMedia h5 {
+  font-size: 17px !important;
 }
 /*------------form------------*/
 .customInput {
@@ -149,58 +235,35 @@ input:-moz-placeholder { /* Firefox 4 - 18 */
 }
 /*------------button - form------------*/
 .btnBlock {
-  margin: 20px auto 10px auto;
+  margin: 0 auto 10px auto;
   display: block;
   padding: 14px 55px 8px 55px;
   border-radius: 10px !important;
   box-shadow: none;
   border: none;
 }
-#btnRegister {
+/*#btnRegister {
   background-color: #000;
   color: white;
 }
 #btnRegister:hover {
   background-color: #3d3b3c;
-}
-/*------------sharing------------*/
-.imgMainContainer {
-  background-size: cover;
-  background-position: center;
-}
-.imgContainer1 {
-  background-image: url('./photos/sharing-1.png');
-}
-.imgContainer2 {
-  background-image: url('./photos/sharing-2.png');
-}
-.imgContainer3 {
-  background-image: url('./photos/sharing-3.png');
-}
-.imgContainer4 {
-  background-image: url('./photos/sharing-4.png');
-}
-.imgContainer5 {
-  background-image: url('./photos/sharing-5.png');
-}
-.imgContainer6 {
-  background-image: url('./photos/sharing-6.png');
-}
-/*------------footer------------*/
-.footer {
-  background-image: url('./photos/background-footer.png');
-  background-position: center;
-  background-size: contain;
-  color: white;
-}
-.customMedia {
-  margin-top: 10px !important;
-}
-.customMedia h5 {
-  font-size: 17px !important;
-}
+}*/
 /*------------size of page------------*/
+@media (max-width: 599px) {
+  .hiddenXXS {
+    display: none!important;
+  }
+}
+@media (min-width: 600px) {
+  .visibleXXS {
+    display: none!important;
+  }
+}
 @media (max-width: 767px) {
+  .sectionTitle {
+    padding: 0;
+  }
   .navBarCustom {
     width: 100%;
   }
@@ -211,6 +274,14 @@ input:-moz-placeholder { /* Firefox 4 - 18 */
   .banner {
     margin-top: 50px;
   }
+  .courseContainer {
+    border-radius: 45px;
+    margin-top: 23px;
+    margin-bottom: 50px;
+  }
+  .courseImgContainer {
+    height: 250px;
+  }
   .marginBottomXS {
     margin-bottom: 15px;
   }
@@ -220,6 +291,13 @@ input:-moz-placeholder { /* Firefox 4 - 18 */
   .imgMainContainer {
     height: 270px;
   }
+  .infoContainer {
+    padding: 20px;
+    border-radius: 120px;
+  }
+  .aAlign {
+    font-size: 18px;
+  }
 }
 @media (min-width: 768px) {
   .centerMenu > ul > li > a.customA {
@@ -228,8 +306,46 @@ input:-moz-placeholder { /* Firefox 4 - 18 */
   .banner {
     margin-top: 95px;
   }
+  .courseContainer:last-child {
+    margin-bottom: 20px!important;
+  }
+  .courseContainer {
+    border-radius: 60px;
+    margin-top: 35px;
+    margin-bottom: 55px;
+  }
+  .courseImgContainer {
+    height: 220px;
+  }
   .imgMainContainer {
     height: 300px;
+  }
+  .infoBorder {
+    position: relative;
+    border-radius: 50%;
+    border: dashed 3px white;
+    height: 226px;
+    width: 226px;
+    padding: 10px;
+
+  }
+  .infoContainer {
+    position: relative;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+
+  }
+  .aAlign {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    font-size: 22px;
+  }
+  .shadowMargin {
+    margin-top: -18px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -272,10 +388,20 @@ input:-moz-placeholder { /* Firefox 4 - 18 */
     height: 80px;
   }
   .centerMenu > ul > li > a.customA {
-    padding-top: 32px;
+    padding-top: 42px;
+  }
+  .courseContainer {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .courseImgContainer {
+    height: 245px;
   }
   .marginBottomMD {
     margin-bottom: 15px;
+  }
+  .imgMainContainer {
+    height: 320px;
   }
   .imgMainContent {
     font-size: 13px;
@@ -298,6 +424,14 @@ input:-moz-placeholder { /* Firefox 4 - 18 */
   .captionCustom {
     font-size: 15px;
   }
+  .infoBorder {
+    height: 256px;
+    width: 256px;
+  }
+  .infoContainer {
+    height: 230px;
+    width: 230px;
+  }
   h5 {
     font-size: 16px!important;
   }
@@ -305,11 +439,16 @@ input:-moz-placeholder { /* Firefox 4 - 18 */
     font-size: 14px;
   }
 }
+@media (max-width: 1199px) {
+  .oppImgCenter {
+    width: 500px;
+  }
+}
 @media (min-width: 1200px) {
-  .centerMenu > ul > li > a.customA {
-    padding-top: 40px;
+  .imgMainContainer {
+    height: 270px;
   }
   .imgMainContent {
-    padding: 20px;
+    padding: 20px 20px 20px 20px;
   }
 }
