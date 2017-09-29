@@ -86,7 +86,7 @@ if(TARGET === 'start' || !TARGET){
             new webpack.HotModuleReplacementPlugin(),
             new HtmlwebpackPlugin({
                 template: 'html-webpack-template.html',
-                title : 'Triển lãm thế giới du học tháng 03/2017 | Sunrise Vietnam Co. , Ltd',
+                title : 'Triển lãm thế giới du học tháng 10/2017 | Sunrise Vietnam Co. , Ltd',
                 mobile : true,
                 appMountId: 'app',
                 ogImage : 'http://fair.sunrisevietnam.com/photos/73b8a701da059e47427c74fea69e5bde.jpg'
@@ -106,7 +106,7 @@ if(TARGET === 'build') {
             }),
             new HtmlwebpackPlugin({
                 template: 'html-webpack-template.html',
-                title : 'Triển lãm thế giới du học tháng 03/2017 | Sunrise Vietnam Co. , Ltd',
+                title : 'Triển lãm thế giới du học tháng 10/2017 | Sunrise Vietnam Co. , Ltd',
                 mobile : true,
                 appMountId: 'app',
                 ogImage : 'http://fair.sunrisevietnam.com/photos/73b8a701da059e47427c74fea69e5bde.jpg',

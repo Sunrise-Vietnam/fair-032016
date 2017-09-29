@@ -11,6 +11,7 @@
     src: url("./fonts/MYRIADPRO-SEMIBOLD.otf")}
 body{
     font-family: "myriad";
+    color:black;
 }
 .semibold{
     font-family: "myriadsemibold";
@@ -70,6 +71,9 @@ hr{
     height: 30px;
 }
 /*----menu----*/
+ul.nav.navbar-nav{
+    text-align: center;
+}
 .menu{
     z-index: 1039;
     border-bottom: 7px solid #ffffff;

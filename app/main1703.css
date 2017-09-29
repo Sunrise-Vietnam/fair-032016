@@ -3,77 +3,74 @@
     font-family: "myriad";
     src: url("./fonts/MYRIADPRO-REGULAR.otf")
 }
-
 @font-face {
     font-family: "myriadbold";
     src: url("./fonts/MYRIADPRO-BOLD.otf")
 }
-
 @font-face {
     font-family: "myriadsemibold";
     src: url("./fonts/MYRIADPRO-SEMIBOLD.otf")
 }
-
 body {
     font-family: "myriad" !important;
+    font-size:15px;
 }
-
 .semibold {
     font-family: "myriadsemibold";
 }
-
 .bold {
     font-family: "myriadbold";
 }
-
 .bootstrap-select{
     padding-bottom: 0px;
 }
-
+h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+/*----form----*/
 .form-group .bootstrap-select.btn-group {
-    height: 46px;
+    height: 44px;
 }
 .bootstrap-select>.dropdown-toggle.bs-placeholder, .bootstrap-select.btn-group .dropdown-toggle {
-    background-color: #F4820E !important;
-    border-radius: 8px !important;
-    padding: 12px 40px 12px 10px !important;
+    background-color: #Ffffff !important;
+    border-radius: 9px !important;
+    padding: 14px 40px 10px 10px !important;
     height: auto !important;
-    color: #FFF !important;
+    color: black !important;
     font-size: 14px!important;
 }
 .bootstrap-select.btn-group .dropdown-menu {
-    background-color: #F4820E !important;
-    color: #fff !important;
+    background-color: #Ffffff !important;
+    color: black !important;
 }
 .dropdown-menu > li > a {
-    color: white;
+    color: black;
 }
+/*----devices----*/
 @media (max-width:767px){
     .navbar-brand {
         padding: 5px 0 0 0 !important;
     }
     .navbar-toggle {
-        border-color: #F4820E
+        border-color: #4c901e
     }
     .icon-bar {
-        background-color: #F4820E
+        background-color: #4c901e
     }
 }
-
+/*----transition----*/
 .come-in {
     transform: translateX(-150px);
     animation: come-in 2.0s ease forwards;
 }
-
 .come-in:nth-child(odd) {
     animation-duration: 1.2s;
 }
-
 .already-visible {
     transform: translateX(0);
     animation: none;
 }
-
 @keyframes come-in {
     to { transform: translateX(0); }
 }

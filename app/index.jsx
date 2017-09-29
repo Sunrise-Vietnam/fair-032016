@@ -45,7 +45,7 @@ ReactDom.render((
     <Router history={history}>
         <Route component={App}>
             <Route path="/" component={Home}/>
-            <Route path="/thanks-you" component={Thanks}/>
+            <Route path="/thank-you" component={Thanks}/>
         </Route>
     </Router>
 ), document.getElementById('app'))
