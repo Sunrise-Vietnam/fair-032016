@@ -1,10 +1,5 @@
 @media (max-width: 767px) {
-  .xsCenter {
-    text-align: center;
-  }
-  .marginBottomXS {
-    margin-bottom: 15px;
-  }
+  /*--menu bar--*/
   .navBarCustom {
     width: 100%;
   }
@@ -12,39 +7,108 @@
     padding-top: 12px;
     padding-bottom: 7px;
   }
+  /*--banner*/
   .banner {
     margin-top: 25px;
+  }
+  /*--form--*/
+  .marginBottomXS {
+    margin-bottom: 15px;
   }
   .customCheckbox label {
     font-weight: normal;
   }
+  /*--sharing--*/
   .imgMainContainer {
     height: 230px;
   }
 }
 @media (min-width: 768px) {
-  .navBarCustom {
-    background-color: white;
-  }
   .centerMenu > ul > li > a.customA {
     padding-top: 25px;
     height: 80px;
   }
+  /*--sharing--*/
+  .imgMainContainer {
+    height: 280px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /*--banner--*/
   .banner {
     margin-top: 40px;
   }
+  /*--form--*/
+  .marginBottomSM {
+    margin-bottom: 15px;
+  }
+  /*--opportunities--*/
+  .oppContent {
+    height: 440px;
+  }
+}
+@media (max-width: 991px) {
+  /*--font--*/
+  h5 {
+    font-size: 17px!important;
+  }
+  /*--space--*/
+  .smSpace {
+    height: 17px;
+  }
+  .mdSpace {
+    height: 30px;
+  }
+  .lgSpace {
+    height: 70px;
+  }
+  /*--opportunities--*/
+  .oppContainer {
+    margin-top: 70px;
+  }
+}
+@media (min-width: 992px) {
+  /*--font--*/
+  h5 {
+    font-size: 16px!important;
+  }
+  /*--space--*/
+  .smSpace {
+    height: 20px;
+  }
+  .mdSpace {
+    height: 50px;
+  }
+  .lgSpace {
+    height: 90px;
+  }
+  /*--menu bar--*/
+  .centerMenu > ul > li > a.customA {
+    padding-top: 25px;
+    height: 65px;
+  }
+  /*--form--*/
+  .marginBottomMD {
+    margin-bottom: 15px;
+  }
+  /*--opportunities--*/
+  .oppContainer {
+    margin-top: 40px;
+  }
+  .oppContent {
+    height: 540px;
+  }
+  /*--schools--*/
   .sliderContent .sliderCaption {
     visibility: hidden;
   }
   .sliderContent:hover .sliderCaption {
     visibility: visible;
   }
-  .imgMainContainer {
-    height: 280px;
-  }
+  /*--sharing--*/
   .imgMainContent {
     height: inherit;
-    padding-top: 82%;
+    padding-top: 72%;
     transition: background-color .4s linear;
     -webkit-transition: background-color .4s ease-in-out;
     -moz-transition: background-color .4s ease-in-out;
@@ -58,67 +122,6 @@
   }
   .imgMainContent:hover .captionCustom {
     visibility: visible;
-  }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .xsCenter {
-    text-align: center;
-  }
-  .marginBottomSM {
-    margin-bottom: 15px;
-  }
-  .oppContent {
-    height: 370px;
-  }
-}
-@media (max-width: 991px) {
-  .navBarCustom {
-    background-color: white;
-  }
-  .smSpace {
-    height: 17px;
-  }
-  .mdSpace {
-    height: 30px;
-  }
-  .lgSpace {
-    height: 70px;
-  }
-  h5 {
-    font-size: 17px!important;
-  }
-  .oppContainer {
-    margin-top: 70px;
-  }
-}
-@media (min-width: 992px) {
-  .marginBottomMD {
-    margin-bottom: 15px;
-  }
-  .smSpace {
-    height: 20px;
-  }
-  .mdSpace {
-    height: 50px;
-  }
-  .lgSpace {
-    height: 90px;
-  }
-  h5 {
-    font-size: 16px!important;
-  }
-  .centerMenu > ul > li > a.customA {
-    padding-top: 25px;
-    height: 65px;
-  }
-  .banner {
-    margin-top: 0;
-  }
-  .oppContainer {
-    margin-top: 40px;
-  }
-  .oppContent {
-    height: 415px;
   }
 }
 body {
@@ -221,6 +224,7 @@ h4, h5 {
 }
 /*--menu bar--*/
 .navBarCustom {
+  background-color: white;
   margin-bottom: 0 !important;
   text-align: center;
   border: 0 !important
@@ -315,6 +319,9 @@ input:-moz-placeholder { /* Firefox 4 - 18 */
   background-color: #4c901e;
   color: white;
 }
+.customUL {
+  padding-left: 30px;
+}
 /*--schools--*/
 .schoolsContainer {
   background-image: url('./photos/201710/schools-bg.png');
@@ -322,10 +329,6 @@ input:-moz-placeholder { /* Firefox 4 - 18 */
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
-  height: 400px;
-}
-.schoolsContainer h4 {
-  line-height: 28px !important;
 }
 /*--sharing--*/
 .imgMainContainer {

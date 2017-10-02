@@ -613,7 +613,7 @@ class SimpleSlider extends React.Component {
                     const id = _.uniqueId(prefix);
                     return <div key={id} className={styles.sliderContent}>
                         <img src={source.src}/>
-                        <div className={styles.smSpace}></div>
+                        <div className={styles.lgSpace}></div>
                         <p className={styles.sliderCaption}>{source.text}</p>
                     </div>
                 })}
@@ -684,7 +684,7 @@ class Main extends React.Component {
         this.slider = [
             {
                 src: require('../../photos/201710/schools/abbey-dld.png'),
-                text: 'something'
+                text: ''
             },
             {
                 src: require('../../photos/201710/schools/bicc.png'),
@@ -895,13 +895,16 @@ class Main extends React.Component {
                         <div className={`row ${styles.oppContent}`}>
                             <div className="col-xs-4 col-xs-offset-4 col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
                                 <img src={require('../../photos/201710/woman.png')} className={styles.imgResponsive}/>
-                                <div className={`hidden-xs ${styles.smSpace}`}></div>
                             </div>
                             <div className="col-xs-12">
                                 <div className={styles.smSpace}></div>
                                 <h3 className="text-center"><b>TƯ VẤN TỔNG QUAN</b></h3>
-                                <h5>Trả lời câu hỏi du học & luyện thi IELTS/TOEFL từ
-                                    A đến Z</h5>
+                                <ul className={styles.customUL}>
+                                    <li><h5>Trả lời câu hỏi du học & luyện thi IELTS/ TOEFL từ
+                                        A đến Z</h5></li>
+                                    <li><h5>Gặp trực tiếp đại diện trường</h5></li>
+                                    <li><h5>Nhận quà tại quầy trường</h5></li>
+                                </ul>
                                 <div className={`visible-xs ${styles.mdSpace}`}></div>
                             </div>
                         </div>
@@ -910,13 +913,16 @@ class Main extends React.Component {
                         <div className={`row ${styles.oppContent}`}>
                             <div className="col-xs-4 col-xs-offset-4 col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
                                 <img src={require('../../photos/201710/man.png')} className={styles.imgResponsive}/>
-                                <div className={`hidden-xs ${styles.smSpace}`}></div>
                             </div>
                             <div className="col-xs-12">
                                 <div className={styles.smSpace}></div>
                                 <h3 className="text-center"><b>TƯ VẤN CHUYÊN SÂU</b></h3>
-                                <h5>Gặp trực tiếp đại diện trường</h5>
-                                <h5>Nhận quà tại quầy trường</h5>
+                                <ul className={styles.customUL}>
+                                    <li><h5>Workshop: Giới thiệu hệ thống giáo dục Hoa Kỳ và cơ hội cho học sinh Việt Nam</h5></li>
+                                    <li><h5>Workshop: Định hướng nghề nghiệp ngành Quản Lý Khách Sạn</h5></li>
+                                    <li><h5>Workshop: Du học trong tầm tay</h5></li>
+                                    <li><h5>Workshop: Unlock the IELTS Test</h5></li>
+                                </ul>
                                 <div className={`visible-xs ${styles.mdSpace}`}></div>
                             </div>
                         </div>
@@ -925,13 +931,17 @@ class Main extends React.Component {
                         <div className={`row ${styles.oppContent}`}>
                             <div className="col-xs-4 col-xs-offset-4 col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
                                 <img src={require('../../photos/201710/scholarship.png')} className={styles.imgResponsive}/>
-                                <div className={`hidden-xs ${styles.smSpace}`}></div>
                             </div>
                             <div className="col-xs-12">
                                 <div className={styles.smSpace}></div>
-                                <h3 className="text-center"><b>HỌC BỔNG TẠI CHỖ</b></h3>
-                                <h5>Phỏng vấn học bổng các bậc học</h5>
-                                <h5>Thi thử IELTS Speaking</h5>
+                                <h3 className="text-center"><b>HỌC BỔNG - HỖ TRỢ</b></h3>
+                                <ul className={styles.customUL}>
+                                    <li><h5>Phỏng vấn, đăng ký thi học bổng 30% - 50% - 100% các bậc học</h5></li>
+                                    <li><h5>Thi thử IELTS Speaking và nhận học bổng khoá học IELTS</h5></li>
+                                    <li><h5>Bốc thăm hỗ trợ lệ phí thi IELTS</h5></li>
+                                    <li><h5>Voucher nhận hỗ trợ vé máy bay du học</h5></li>
+                                    <li><h5>Hỗ trợ từ phía ngân hàng đối tác</h5></li>
+                                </ul>
                                 <div className={`visible-xs ${styles.mdSpace}`}></div>
                             </div>
                         </div>
@@ -940,16 +950,17 @@ class Main extends React.Component {
                         <div className={`row ${styles.oppContent}`}>
                             <div className="col-xs-4 col-xs-offset-4 col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
                                 <img src={require('../../photos/201710/gift.png')} className={styles.imgResponsive}/>
-                                <div className={`hidden-xs ${styles.smSpace}`}></div>
                             </div>
                             <div className="col-xs-12">
                                 <div className={styles.smSpace}></div>
-                                <h3 className="text-center"><b>QUÀ TẶNG KHI THAM GIA</b></h3>
-                                <h5>Túi, bút, sổ, móc khóa</h5>
-                                <h5>30 cặp vé CGV</h5>
-                                <h5>Cẩm nang du học</h5>
-                                <h5>Bốc thăm hỗ trợ lệ phí thi IELTS</h5>
-                                <h5>Tặng gói dịch vụ trị giá 10 triệu đồng</h5>
+                                <h3 className="text-center"><b>QUÀ TẶNG HẤP DẪN</b></h3>
+                                <ul className={styles.customUL}>
+                                    <li><h5>Cẩm nang Du học, túi, bút, sổ, móc khóa</h5></li>
+                                    <li><h5>30 cặp vé CGV</h5></li>
+                                    <li><h5>Tặng gói Dịch vụ trị giá 10 triệu đồng - Hỗ trợ trọn đời Du học</h5></li>
+                                    <li><h5>Tặng lệ phí thi IELTS khi du học dài hạn</h5></li>
+                                    <li><h5>Tặng 1 đến 2 tuần học tiếng Anh tại Philippines khi đăng ký học 3 tuần trở lên</h5></li>
+                                </ul>
                                 <div className={`visible-xs ${styles.mdSpace}`}></div>
                             </div>
                         </div>
@@ -990,7 +1001,8 @@ class Main extends React.Component {
                             </div>
                         </div>
                         <div className={`col-xs-12 ${styles.greenBg}`}>
-                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Mr. Leo Harten<br className="visible-md visible-lg"/><br/></h3>
+                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Mr. Leo Harten</h3>
+                            <h6 className={`${styles.white} ${styles.captionCustom}`}><i>Kinh nghiệm 25 tư vấn du học Mỹ tại thị trường Đông Nam Á, đại diện 5 trường cao đẳng tại Mỹ</i></h6>
                             <hr className={`visible-xs visible-sm ${styles.hrCustom} ${styles.grayBg} ${styles.captionCustom}`}/>
                             <p className={`visible-xs visible-sm ${styles.white} ${styles.captionCustom}`}>Workshop: Giới thiệu hệ thống giáo dục Hoa Kỳ và cơ hội cho học sinh Việt Nam</p>
                         </div>
@@ -1003,9 +1015,11 @@ class Main extends React.Component {
                             </div>
                         </div>
                         <div className={`col-xs-12 ${styles.greenBg}`}>
-                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Ms. Hạnh Bùi<br className="visible-md visible-lg"/><br/></h3>
+                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Ms. Hạnh Bùi</h3>
+                            <h6 className={`${styles.white} ${styles.captionCustom}`}><i>Đại diện tổ chức Giáo dục Laureate chuyên đào tạo ngành Quản lý Khách sạn</i></h6>
                             <hr className={`visible-xs visible-sm ${styles.hrCustom} ${styles.grayBg} ${styles.captionCustom}`}/>
                             <p className={`visible-xs visible-sm ${styles.white} ${styles.captionCustom}`}>Workshop: Định hướng nghề nghiệp ngành Quản Lý Khách Sạn</p>
+                            <br className="visible-md"/>
                         </div>
                     </div>
                     <div className="col-xs-12 col-sm-6 col-md-3">
@@ -1016,9 +1030,11 @@ class Main extends React.Component {
                             </div>
                         </div>
                         <div className={`col-xs-12 ${styles.greenBg}`}>
-                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Ms. Mai Phạm<br className="visible-md visible-lg"/><br/></h3>
+                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Ms. Mai Phạm</h3>
+                            <h6 className={`${styles.white} ${styles.captionCustom}`}><i>PGĐ Sunrise Vietnam, 8 năm kinh nghiệm tư vấn du học các nước</i></h6>
                             <hr className={`visible-xs visible-sm ${styles.hrCustom} ${styles.grayBg} ${styles.captionCustom}`}/>
                             <p className={`visible-xs visible-sm ${styles.white} ${styles.captionCustom}`}>Workshop: Du học trong tầm tay</p>
+                            <br className="visible-md visible-lg"/>
                         </div>
                     </div>
                     <div className="col-xs-12 col-sm-6 col-md-3">
@@ -1029,9 +1045,11 @@ class Main extends React.Component {
                             </div>
                         </div>
                         <div className={`col-xs-12 ${styles.greenBg}`}>
-                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Mr. Ngọc Trần<br className="visible-md visible-lg"/><br/></h3>
+                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Mr. Ngọc Trần</h3>
+                            <h6 className={`${styles.white} ${styles.captionCustom}`}><i>Cựu du học sinh tại Anh, giảng viên IELTS tại Sunrise Vietnam</i></h6>
                             <hr className={`visible-xs visible-sm ${styles.hrCustom} ${styles.grayBg} ${styles.captionCustom}`}/>
                             <p className={`visible-xs visible-sm ${styles.white} ${styles.captionCustom}`}>Workshop: Unlock the IELTS Test</p>
+                            <br className="visible-md visible-lg"/>
                         </div>
                     </div>
                     <div className="col-xs-12 col-sm-6 col-md-3">
@@ -1042,7 +1060,9 @@ class Main extends React.Component {
                             </div>
                         </div>
                         <div className={`col-xs-12 ${styles.greenBg}`}>
-                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Đặng Diệu Linh<br className="visible-md visible-lg"/><br/></h3>
+                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Đặng Diệu Linh</h3>
+                            <h6 className={`${styles.white} ${styles.captionCustom}`}><i>Du học sinh tại Anh</i></h6>
+                            <br className="visible-md"/>
                             <hr className={`visible-xs visible-sm ${styles.hrCustom} ${styles.grayBg} ${styles.captionCustom}`}/>
                             <p className={`visible-xs visible-sm ${styles.white} ${styles.captionCustom}`}>Du học là một chuyến đi mà bạn được trang bị kiến thức, gặp gỡ người mới để mở mang tầm mắt.</p>
                         </div>
@@ -1055,7 +1075,8 @@ class Main extends React.Component {
                             </div>
                         </div>
                         <div className={`col-xs-12 ${styles.greenBg}`}>
-                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Nguyễn Hoàng Nhật Anh<br className="visible-lg"/><br/></h3>
+                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Nguyễn Hoàng <br className="visible-md"/>Nhật Anh</h3>
+                            <h6 className={`${styles.white} ${styles.captionCustom}`}><i>Du học sinh tại Mỹ</i></h6>
                             <hr className={`visible-xs visible-sm ${styles.hrCustom} ${styles.grayBg} ${styles.captionCustom}`}/>
                             <p className={`visible-xs visible-sm ${styles.white} ${styles.captionCustom}`}>Sau khi đi du học nhất là 3 năm tại trường Stony Brook, em đã cảm nhận được mình đã trưởng thành hơn rất nhiều.</p>
                         </div>
@@ -1068,7 +1089,9 @@ class Main extends React.Component {
                             </div>
                         </div>
                         <div className={`col-xs-12 ${styles.greenBg}`}>
-                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Nguyễn Thành Long<br className="visible-md visible-lg"/><br/></h3>
+                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Nguyễn Thành Long</h3>
+                            <h6 className={`${styles.white} ${styles.captionCustom}`}><i>Du học sinh tại Úc</i></h6>
+                            <br className="visible-md"/>
                             <hr className={`visible-xs visible-sm ${styles.hrCustom} ${styles.grayBg} ${styles.captionCustom}`}/>
                             <p className={`visible-xs visible-sm ${styles.white} ${styles.captionCustom}`}>Đi du học khiến mình tự lập hơn, biết lo nghĩ về sự nghiệp và cuộc sống.</p>
                         </div>
@@ -1082,7 +1105,9 @@ class Main extends React.Component {
                             </div>
                         </div>
                         <div className={`col-xs-12 ${styles.greenBg}`}>
-                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Nguyễn Thùy My<br className="visible-md visible-lg"/><br/></h3>
+                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Nguyễn Thùy My</h3>
+                            <h6 className={`${styles.white} ${styles.captionCustom}`}><i>Du học sinh tại Mỹ</i></h6>
+                            <br className="visible-md"/>
                             <hr className={`visible-xs visible-sm ${styles.hrCustom} ${styles.grayBg} ${styles.captionCustom}`}/>
                             <p className={`visible-xs visible-sm ${styles.white} ${styles.captionCustom}`}>Theo học Cao Đẳng Cộng Đồng, cái đầu tiên em có được chính là kiến thức.</p>
                         </div>
@@ -1119,10 +1144,8 @@ const Footer = React.createClass({
                             </li>
                             <li className={`media ${styles.customMedia}`}>
                                 <div className="media-left media-top">
-                                    <a href="#">
-                                        <img className="media-object" width="16px"
-                                             src={require('../../photos/201609/phone.png')}/>
-                                    </a>
+                                    <img className="media-object" width="16px"
+                                         src={require('../../photos/201609/phone.png')}/>
                                 </div>
                                 <div className="media-body">
                                     <p className="media-heading">024 3722 4898</p>
