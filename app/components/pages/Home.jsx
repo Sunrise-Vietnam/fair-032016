@@ -192,11 +192,11 @@ class DefaultForm extends React.Component {
                                 <option value="Hải Phòng">Hải Phòng, thứ 6 từ 17 giờ - 21 giờ, ngày 27/10/2017,
                                     tại khách sạn Nam Cường, 47 Lạch Tray - Ngô Quyền
                                 </option>
-                                <option value="Hà Nội">Hà Nội, thứ 7 từ 14 giờ - 17 giờ, ngày 28/10/2017, tại Star
+                                <option value="Hà Nội">Hà Nội, thứ 7 từ 14 giờ - 18 giờ, ngày 28/10/2017, tại Star
                                     Galaxy Convention, 87 Láng Hạ - Đống Đa
                                 </option>
 
-                                <option value="TP HCM">Tp. Hồ Chí Minh, chủ nhật từ 14 giờ - 17 giờ, ngày 29/10/2017,
+                                <option value="TP HCM">Tp. Hồ Chí Minh, chủ nhật từ 14 giờ - 18 giờ, ngày 29/10/2017,
                                     tại khách sạn Liberty Central Riverside Saigon, 17 Tôn Đức Thắng - Quận 1
                                 </option>
                             </select>
@@ -433,10 +433,10 @@ class SpecialForm extends React.Component {
                                 <option value="Hải Phòng">Hải Phòng, thứ 6 từ 17 giờ - 21 giờ, ngày 27/10/2017,
                                     tại khách sạn Nam Cường, 47 Lạch Tray - Ngô Quyền
                                 </option>
-                                <option value="Hà Nội">Hà Nội, thứ 7 từ 14 giờ - 17 giờ, ngày 28/10/2017, tại Star
+                                <option value="Hà Nội">Hà Nội, thứ 7 từ 14 giờ - 18 giờ, ngày 28/10/2017, tại Star
                                     Galaxy Convention, 87 Láng Hạ - Đống Đa
                                 </option>
-                                <option value="TP HCM">Tp. Hồ Chí Minh, chủ nhật từ 14 giờ - 17 giờ, ngày 29/10/2017,
+                                <option value="TP HCM">Tp. Hồ Chí Minh, chủ nhật từ 14 giờ - 18 giờ, ngày 29/10/2017,
                                     tại khách sạn Liberty Central Riverside Saigon, 17 Tôn Đức Thắng - Quận 1
                                 </option>
                             </select>
@@ -596,6 +596,8 @@ class SimpleSlider extends React.Component {
             speed: 500,
             slidesToShow: 5,
             slidesToScroll: 5,
+            autoplay: true,
+            autoplaySpeed: 5000,
             responsive: [
                 /*{breakpoint: 390, settings: {slidesToShow: 1, slidesToScroll: 1}},*/
                 {breakpoint: 580, settings: {slidesToShow: 1, slidesToScroll: 1}},
@@ -810,7 +812,7 @@ class Main extends React.Component {
                                 <img src={require('../../photos/201609/time.png')} className={styles.iconPlaces}/>
                             </div>
                             <div className="media-body">
-                                <h5 className="media-heading text-uppercase"><strong>Thứ 7, từ 14 giờ - 17 giờ</strong><br/>
+                                <h5 className="media-heading text-uppercase"><strong>Thứ 7, từ 14 giờ - 18 giờ</strong><br/>
                                     <span className={styles.spaceImg}></span>Ngày 28/10/2017</h5>
                             </div>
                         </li>
@@ -843,7 +845,7 @@ class Main extends React.Component {
                                 <img src={require('../../photos/201609/time.png')} className={styles.iconPlaces}/>
                             </div>
                             <div className="media-body">
-                                <h5 className="media-heading text-uppercase"><strong>Chủ nhật, TỪ 14 GIỜ - 17
+                                <h5 className="media-heading text-uppercase"><strong>Chủ nhật, TỪ 14 GIỜ - 18
                                     GIỜ</strong><br/>
                                     Ngày 29/10/2017</h5>
                             </div>
@@ -1162,7 +1164,7 @@ const Footer = React.createClass({
                                 </div>
                                 <div className="media-body">
                                     <p className="media-heading">TẦNG 2, TOÀ NHÀ T5, <br className="hidden-xs"/>KHU VĂN PHÒNG TIMES CITY, <br className="hidden-xs"/>
-                                        458 MINH KHAI, Q. HAI BÀ TRƯNG, HÀ NỘI</p>
+                                        458 MINH KHAI, Q. HAI BÀ TRƯNG, <br className="visible-lg"/>HÀ NỘI</p>
                                 </div>
                             </li>
                             <li className={`media ${styles.customMedia}`}>
