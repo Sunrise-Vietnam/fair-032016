@@ -685,6 +685,14 @@ class Main extends React.Component {
         super(props);
         this.slider = [
             {
+                src: require('../../photos/201710/schools/kaplan.png'),
+                text: ''
+            },
+            {
+                src: require('../../photos/201710/schools/jamescook.png'),
+                text: ''
+            },
+            {
                 src: require('../../photos/201710/schools/abbey-dld.png'),
                 text: ''
             },
