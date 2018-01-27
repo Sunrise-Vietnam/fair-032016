@@ -20,7 +20,7 @@ const _formObj = {
     bietchuongtrinhquakenh: []
 };
 
-const _eventCode = '86X8BoeT7Bma5ns46XRR';
+const _eventCode = 'c247s94j6ZwDxI4';
 
 export default class Home extends React.Component {
     constructor(props) {
@@ -188,17 +188,9 @@ class DefaultForm extends React.Component {
                     <div className="form-group">
                         <div className="col-xs-12">
                             <select className={`form-control selectpicker ${styles.customSelect}`}
-                                title="Bạn sẽ tham dự triển lãm tại" {...this._handleChange('thamdutai')} mobile="true">
-                                <option value="Hải Phòng">Hải Phòng, thứ 6 từ 17 giờ - 21 giờ, ngày 27/10/2017,
-                                    tại khách sạn Nam Cường, 47 Lạch Tray - Ngô Quyền
-                                </option>
-                                <option value="Hà Nội">Hà Nội, thứ 7 từ 14 giờ - 18 giờ, ngày 28/10/2017, tại Star
-                                    Galaxy Convention, 87 Láng Hạ - Đống Đa
-                                </option>
-
-                                <option value="TP HCM">Tp. Hồ Chí Minh, chủ nhật từ 14 giờ - 18 giờ, ngày 29/10/2017,
-                                    tại khách sạn Liberty Central Riverside Saigon, 17 Tôn Đức Thắng - Quận 1
-                                </option>
+                                title="Bạn sẽ tham dự sự kiện tại" {...this._handleChange('thamdutai')} mobile="true">
+                                <option value="Hà Nội">Hà Nội, 13:00 - 14:00, Chủ nhật, ngày 04/03/2018, tại KS MOVENPICK</option>
+                                <option value="TP Hồ Chí Minh">TP Hồ Chí Minh, 13:00 - 14:00, Thứ 7, ngày 03/03/2018, tại ÉN TEA HOUSE & RESTAURANT</option>
                             </select>
                         </div>
                     </div>
@@ -208,7 +200,7 @@ class DefaultForm extends React.Component {
                                     title="Bạn là" {...this._handleChange('nguoidangkyla')}>
                                 <option value="Học sinh THCS">Học sinh THCS</option>
                                 <option value="Học sinh THPT">Học sinh THPT</option>
-                                <option value="Sinh viên Đại học">Sinh viên đại học</option>
+                                <option value="Sinh viên Đại học">Sinh viên Đại học</option>
                                 <option value="Đã tốt nghiệp">Đã tốt nghiệp</option>
                                 <option value="Phụ huynh">Phụ huynh</option>
                                 <option value="Khác">Khác</option>
@@ -309,7 +301,6 @@ class DefaultForm extends React.Component {
                             <select
                                 className={`form-control selectpicker ${styles.customSelect}`} title="Thời gian dự định du học"
                                 {...this._handleChange('thoigianduhoc')}>
-                                <option value="Năm 2017">Năm 2017</option>
                                 <option value="Năm 2018">Năm 2018</option>
                                 <option value="Năm 2019">Năm 2019</option>
                                 <option value="Năm 2020">Năm 2020</option>
@@ -429,16 +420,9 @@ class SpecialForm extends React.Component {
                             <select
                                 className={`form-control ${styles.customInput}`} {...this._handleChange('thamdutai')}
                                 mobile="true">
-                                <option disabled>Bạn sẽ tham dự triển lãm tại</option>
-                                <option value="Hải Phòng">Hải Phòng, thứ 6 từ 17 giờ - 21 giờ, ngày 27/10/2017,
-                                    tại khách sạn Nam Cường, 47 Lạch Tray - Ngô Quyền
-                                </option>
-                                <option value="Hà Nội">Hà Nội, thứ 7 từ 14 giờ - 18 giờ, ngày 28/10/2017, tại Star
-                                    Galaxy Convention, 87 Láng Hạ - Đống Đa
-                                </option>
-                                <option value="TP HCM">Tp. Hồ Chí Minh, chủ nhật từ 14 giờ - 18 giờ, ngày 29/10/2017,
-                                    tại khách sạn Liberty Central Riverside Saigon, 17 Tôn Đức Thắng - Quận 1
-                                </option>
+                                <option disabled>Bạn sẽ tham dự sự kiện tại</option>
+                                <option value="Hà Nội">Hà Nội, 13:00 - 14:00, Chủ nhật, ngày 04/03/2018, tại KS MOVENPICK</option>
+                                <option value="TP Hồ Chí Minh">TP Hồ Chí Minh, 13:00 - 14:00, Thứ 7, ngày 03/03/2018, tại ÉN TEA HOUSE & RESTAURANT</option>
                             </select>
                         </div>
                     </div>
@@ -449,7 +433,7 @@ class SpecialForm extends React.Component {
                                 <option disabled>Bạn là</option>
                                 <option value="Học sinh THCS">Học sinh THCS</option>
                                 <option value="Học sinh THPT">Học sinh THPT</option>
-                                <option value="Sinh viên Đại học">Sinh viên đại học</option>
+                                <option value="Sinh viên Đại học">Sinh viên Đại học</option>
                                 <option value="Đã tốt nghiệp">Đã tốt nghiệp</option>
                                 <option value="Phụ huynh">Phụ huynh</option>
                                 <option value="Khác">Khác</option>
@@ -544,7 +528,6 @@ class SpecialForm extends React.Component {
                             <select className={`form-control ${styles.customInput}`}
                                 {...this._handleChange('thoigianduhoc')}>
                                 <option disabled>Thời gian dự định du học</option>
-                                <option value="Năm 2017">Năm 2017</option>
                                 <option value="Năm 2018">Năm 2018</option>
                                 <option value="Năm 2019">Năm 2019</option>
                                 <option value="Năm 2020">Năm 2020</option>
@@ -761,115 +744,74 @@ class Main extends React.Component {
                 <img className="hidden-xs" src={require('../../photos/201710/banner.png')} width="100%"/>
                 <img className="visible-xs" src={require('../../photos/201710/banner-small.jpg')} width="100%"/>
             </div>
-            {/*----------------------places----------------------*/}
-            <a id="places">
+            {/*----------------------opportunities----------------------*/}
+            <a id="opportunities">
                 <div className={styles.smSpace}></div>
             </a>
             <div className="container">
-                <div className="col-xs-12 col-sm-8 col-sm-offset-2 text-center">
-                    <div className={styles.mdSpace}></div>
-                    <h2 className="semibold">THỜI GIAN DIỄN RA</h2>
-                    <div className={styles.underlineCustom}></div>
-                    <div className={styles.mdSpace}></div>
+                <div className="row">
+                    <div className={`col-xs-12 col-md-8 col-md-offset-2 text-center ${styles.sectionTitle}`}>
+                        <h2 className="semibold">TIÊU ĐIỂM CỦA SỰ KIỆN</h2>
+                        <div className={styles.underlineCustom}></div>
+                    </div>
                 </div>
-                <div className="col-xs-12 col-sm-6 col-md-4 module">
-                    <ul className="media-list">
-                        <li className="media">
-                            <div className="media-left media-top">
-                                <p className={styles.iconPlaces}></p>
+                <div className="row">
+                    <div className={`col-xs-12 col-sm-6 col-md-3 ${styles.oppContainer} ${styles.greenBg}`}>
+                        <div className={`row ${styles.oppContent}`}>
+                            <div className="col-xs-4 col-xs-offset-4 col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
+                                <img src={require('../../photos/201710/woman.png')} className={styles.imgResponsive}/>
                             </div>
-                            <div className="media-body">
-                                <h4 className="media-heading text-uppercase"><strong><em>*
-                                    HẢI PHÒNG</em></strong></h4>
+                            <div className="col-xs-12">
+                                <div className={styles.smSpace}></div>
+                                <h3 className="text-center"><b>GẶP TRỰC TIẾP ĐẠI DIỆN 20 TRƯỜNG PHỔ THÔNG, CAO ĐẲNG, ĐẠI HỌC LỚN TẠI MỸ VÀ CANADA</b></h3>
+                                <div className={`visible-xs ${styles.mdSpace}`}></div>
                             </div>
-                        </li>
-                        <li className={`media ${styles.customMedia}`}>
-                            <div className="media-left media-top">
-                                <img src={require('../../photos/201609/time.png')} className={styles.iconPlaces}/>
+                        </div>
+                    </div>
+                    <div className={`col-xs-12 col-sm-6 col-md-3 ${styles.oppContainer} ${styles.greenBg}`}>
+                        <div className={`row ${styles.oppContent}`}>
+                            <div className="col-xs-4 col-xs-offset-4 col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
+                                <img src={require('../../photos/201710/man.png')} className={styles.imgResponsive}/>
                             </div>
-                            <div className="media-body">
-                                <h5 className="media-heading text-uppercase"><strong>Thứ 6, từ 17 giờ - 21 giờ</strong><br/>
-                                    Ngày 27/10/2017</h5>
+                            <div className="col-xs-12">
+                                <div className={styles.smSpace}></div>
+                                <h3 className="text-center"><b>HỘI THẢO THẨM ĐỊNH HỒ SƠ TÀI CHÍNH DU HỌC MỸ VÀ CANADA</b></h3>
+                                <div className={`visible-xs ${styles.mdSpace}`}></div>
                             </div>
-                        </li>
-                        <li className={`media ${styles.customMedia}`}>
-                            <div className="media-left media-top">
-                                <img src={require('../../photos/201609/place.png')} className={styles.iconPlaces}/>
+                        </div>
+                    </div>
+                    <div className={`col-xs-12 col-sm-6 col-md-3 ${styles.oppContainer} ${styles.greenBg}`}>
+                        <div className={`row ${styles.oppContent}`}>
+                            <div className="col-xs-4 col-xs-offset-4 col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
+                                <img src={require('../../photos/201710/scholarship.png')} className={styles.imgResponsive}/>
                             </div>
-                            <div className="media-body">
-                                <h5 className="media-heading text-uppercase"><strong>Tại khách sạn Nam
-                                    Cường</strong><br/>
-                                    47 Lạch Tray - Ngô Quyền</h5>
+                            <div className="col-xs-12">
+                                <div className={styles.smSpace}></div>
+                                <h3 className="text-center"><b>TƯ VẤN TRỰC TIẾP VỚI CÁC CHUYÊN GIA TƯ VẤN MỸ VÀ CANADA</b></h3>
+                                <div className={`visible-xs ${styles.mdSpace}`}></div>
                             </div>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
+                    <div className={`col-xs-12 col-sm-6 col-md-3 ${styles.oppContainer} ${styles.greenBg}`}>
+                        <div className={`row ${styles.oppContent}`}>
+                            <div className="col-xs-4 col-xs-offset-4 col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
+                                <img src={require('../../photos/201710/gift.png')} className={styles.imgResponsive}/>
+                            </div>
+                            <div className="col-xs-12">
+                                <div className={styles.smSpace}></div>
+                                <h3 className="text-center"><b>NHẬN ƯU ĐÃI HỖ TRỢ LỆ PHÍ THI IELTS HOẶC KHÓA HỌC IELTS</b></h3>
+                                <div className={`visible-xs ${styles.mdSpace}`}></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="col-xs-12 col-sm-6 col-md-4 module">
-                    <ul className="media-list">
-                        <li className="media">
-                            <div className="media-left media-top">
-                                <p className={styles.iconPlaces}></p>
-                            </div>
-                            <div className="media-body">
-                                <h4 className="media-heading text-uppercase"><strong><em>*
-                                    HÀ NỘI</em></strong></h4>
-                            </div>
-                        </li>
-                        <li className={`media ${styles.customMedia}`}>
-                            <div className="media-left media-top">
-                                <img src={require('../../photos/201609/time.png')} className={styles.iconPlaces}/>
-                            </div>
-                            <div className="media-body">
-                                <h5 className="media-heading text-uppercase"><strong>Thứ 7, từ 14 giờ - 18 giờ</strong><br/>
-                                    <span className={styles.spaceImg}></span>Ngày 28/10/2017</h5>
-                            </div>
-                        </li>
-                        <li className={`media ${styles.customMedia}`}>
-                            <div className="media-left media-top">
-                                <img src={require('../../photos/201609/place.png')} className={styles.iconPlaces}/>
-                            </div>
-                            <div className="media-body">
-                                <h5 className="media-heading text-uppercase"><strong>Tại Star Galaxy Convention</strong><br/>
-                                    87 Láng Hạ - Đống Đa<br/>
-                                    (Cạnh rạp chiếu phim Quốc gia)</h5>
-                            </div>
-                        </li>
-                    </ul>
-                    <div className={`visible-xs visible-sm ${styles.smSpace}`}></div>
+                <div className="row">
+                    <div className={`col-xs-12 text-center`}>
+                        <button className={`${styles.btnBlock}`}><h4>ĐĂNG KÝ</h4></button>
+                        <div className={styles.mdSpace}></div>
+                    </div>
                 </div>
-                <div className="col-xs-12 col-sm-10 col-sm-offset-2 col-md-4 col-md-offset-0 module">
-                    <ul className="media-list">
-                        <li className="media">
-                            <div className="media-left media-top">
-                                <p className={styles.iconPlaces}></p>
-                            </div>
-                            <div className="media-body">
-                                <h4 className="media-heading text-uppercase"><strong><em>*
-                                    Hồ Chí Minh</em></strong></h4>
-                            </div>
-                        </li>
-                        <li className={`media ${styles.customMedia}`}>
-                            <div className="media-left media-top">
-                                <img src={require('../../photos/201609/time.png')} className={styles.iconPlaces}/>
-                            </div>
-                            <div className="media-body">
-                                <h5 className="media-heading text-uppercase"><strong>Chủ nhật, TỪ 14 GIỜ - 18
-                                    GIỜ</strong><br/>
-                                    Ngày 29/10/2017</h5>
-                            </div>
-                        </li>
-                        <li className={`media ${styles.customMedia}`}>
-                            <div className="media-left media-top">
-                                <img src={require('../../photos/201609/place.png')} className={styles.iconPlaces}/>
-                            </div>
-                            <div className="media-body">
-                                <h5 className="media-heading text-uppercase"><strong>Tại KS Liberty Central Riverside Saigon</strong><br/>
-                                    17 Tôn Đức Thắng - Quận 1</h5>
-                            </div>
-                        </li>
-                    </ul>
-                    <div className={`hidden-xs ${styles.lgSpace}`}></div>
-                </div>
+
             </div>
             {/*----------------------form----------------------*/}
             <div className={`container-fluid ${styles.greenBg}`}>
@@ -889,111 +831,6 @@ class Main extends React.Component {
                     <div className={styles.mdSpace}></div>
                 </a>
             </div>
-            {/*----------------------opportunities----------------------*/}
-            <a id="opportunities">
-                <div className={styles.smSpace}></div>
-            </a>
-            <div className="container">
-                <div className="row">
-                    <div className={`col-xs-12 col-md-8 col-md-offset-2 text-center ${styles.sectionTitle}`}>
-                        <h2 className="semibold">CƠ HỘI DÀNH CHO BẠN TẠI TRIỂM LÃM</h2>
-                        <div className={styles.underlineCustom}></div>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className={`col-xs-12 col-sm-6 col-md-3 ${styles.oppContainer} ${styles.greenBg}`}>
-                        <div className={`row ${styles.oppContent}`}>
-                            <div className="col-xs-4 col-xs-offset-4 col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
-                                <img src={require('../../photos/201710/woman.png')} className={styles.imgResponsive}/>
-                            </div>
-                            <div className="col-xs-12">
-                                <div className={styles.smSpace}></div>
-                                <h3 className="text-center"><b>TƯ VẤN TỔNG QUAN</b></h3>
-                                <ul className={styles.customUL}>
-                                    <li><h5>Trả lời câu hỏi du học & luyện thi IELTS/ TOEFL từ
-                                        A đến Z</h5></li>
-                                    <li><h5>Gặp trực tiếp đại diện trường</h5></li>
-                                    <li><h5>Nhận quà tại quầy trường</h5></li>
-                                </ul>
-                                <div className={`visible-xs ${styles.mdSpace}`}></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={`col-xs-12 col-sm-6 col-md-3 ${styles.oppContainer} ${styles.greenBg}`}>
-                        <div className={`row ${styles.oppContent}`}>
-                            <div className="col-xs-4 col-xs-offset-4 col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
-                                <img src={require('../../photos/201710/man.png')} className={styles.imgResponsive}/>
-                            </div>
-                            <div className="col-xs-12">
-                                <div className={styles.smSpace}></div>
-                                <h3 className="text-center"><b>TƯ VẤN CHUYÊN SÂU</b></h3>
-                                <ul className={styles.customUL}>
-                                    <li><h5>Workshop: Giới thiệu hệ thống giáo dục Hoa Kỳ và cơ hội cho học sinh Việt Nam</h5></li>
-                                    <li><h5>Workshop: Định hướng nghề nghiệp ngành Quản Lý Khách Sạn</h5></li>
-                                    <li><h5>Workshop: Du học trong tầm tay</h5></li>
-                                    <li><h5>Workshop: Unlock the IELTS Test</h5></li>
-                                </ul>
-                                <div className={`visible-xs ${styles.mdSpace}`}></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={`col-xs-12 col-sm-6 col-md-3 ${styles.oppContainer} ${styles.greenBg}`}>
-                        <div className={`row ${styles.oppContent}`}>
-                            <div className="col-xs-4 col-xs-offset-4 col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
-                                <img src={require('../../photos/201710/scholarship.png')} className={styles.imgResponsive}/>
-                            </div>
-                            <div className="col-xs-12">
-                                <div className={styles.smSpace}></div>
-                                <h3 className="text-center"><b>HỌC BỔNG - HỖ TRỢ</b></h3>
-                                <ul className={styles.customUL}>
-                                    <li><h5>Phỏng vấn, đăng ký thi học bổng 30% - 50% - 100% các bậc học</h5></li>
-                                    <li><h5>Thi thử IELTS Speaking và nhận học bổng khoá học IELTS</h5></li>
-                                    <li><h5>Bốc thăm hỗ trợ lệ phí thi IELTS</h5></li>
-                                    <li><h5>Voucher nhận hỗ trợ vé máy bay du học</h5></li>
-                                    <li><h5>Hỗ trợ từ phía ngân hàng đối tác</h5></li>
-                                </ul>
-                                <div className={`visible-xs ${styles.mdSpace}`}></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={`col-xs-12 col-sm-6 col-md-3 ${styles.oppContainer} ${styles.greenBg}`}>
-                        <div className={`row ${styles.oppContent}`}>
-                            <div className="col-xs-4 col-xs-offset-4 col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
-                                <img src={require('../../photos/201710/gift.png')} className={styles.imgResponsive}/>
-                            </div>
-                            <div className="col-xs-12">
-                                <div className={styles.smSpace}></div>
-                                <h3 className="text-center"><b>QUÀ TẶNG HẤP DẪN</b></h3>
-                                <ul className={styles.customUL}>
-                                    <li><h5>Cẩm nang Du học, túi, bút, sổ, móc khóa</h5></li>
-                                    <li><h5>30 cặp vé CGV</h5></li>
-                                    <li><h5>Tặng gói Dịch vụ trị giá 10 triệu đồng - Hỗ trợ trọn đời Du học</h5></li>
-                                    <li><h5>Tặng lệ phí thi IELTS khi du học dài hạn</h5></li>
-                                    <li><h5>Tặng 1 đến 2 tuần học tiếng Anh tại Philippines khi đăng ký học 3 tuần trở lên</h5></li>
-                                </ul>
-                                <div className={`visible-xs ${styles.mdSpace}`}></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a id="schools">
-                <div className={styles.mdSpace}></div>
-            </a>
-            {/*----------------------schools----------------------*/}
-            <div className={styles.schoolsContainer}>
-                <div className={`container`}>
-                    <div className="col-xs-12 col-md-8 col-md-offset-2 text-center">
-                        <div className={styles.mdSpace}></div>
-                        <h2 className={`semibold ${styles.white}`}>CÁC TRƯỜNG THAM GIA TRIỂN LÃM</h2>
-                        <div className={styles.whiteUnderlineCustom}></div>
-                        <div className={styles.lgSpace}></div>
-                    </div>
-                    <div className="col-xs-12">
-                        <SimpleSlider images={this.slider} id='slider_'/>
-                    </div>
-                </div>
-            </div>
             {/*----------------------sharing----------------------*/}
             <a id="sharing">
                 <div className={styles.mdSpace}></div>
@@ -1001,125 +838,37 @@ class Main extends React.Component {
             <div>
                 <div className="container">
                     <div className={`col-xs-12 col-md-8 col-md-offset-2 text-center ${styles.sectionTitle}`}>
-                        <h2><b>CHUYÊN GIA VÀ DU HỌC SINH CHIA SẺ</b></h2>
+                        <h2><b>CẢM NHẬN CỦA DU HỌC SINH</b></h2>
                         <div className={styles.underlineCustom}></div>
                     </div>
-                    <div className="col-xs-12 col-sm-6 col-md-3">
-                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer1}`}>
-                            <div className={`visible-md visible-lg col-xs-12 ${styles.imgMainContent}`}>
-                                <p className={`${styles.white} ${styles.captionCustom}`}>Workshop: Giới thiệu hệ thống giáo dục Hoa Kỳ và cơ hội cho học sinh Việt Nam</p>
-                            </div>
-                        </div>
+                    <div className="col-xs-12 col-sm-6 col-md-4">
+                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer1}`}></div>
                         <div className={`col-xs-12 ${styles.greenBg}`}>
-                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Mr. Leo Harten</h3>
-                            <h6 className={`${styles.white} ${styles.captionCustom}`}><i>Kinh nghiệm 25 tư vấn du học Mỹ tại thị trường Đông Nam Á, đại diện 5 trường cao đẳng tại Mỹ</i></h6>
-                            <hr className={`visible-xs visible-sm ${styles.hrCustom} ${styles.grayBg} ${styles.captionCustom}`}/>
-                            <p className={`visible-xs visible-sm ${styles.white} ${styles.captionCustom}`}>Workshop: Giới thiệu hệ thống giáo dục Hoa Kỳ và cơ hội cho học sinh Việt Nam</p>
+                            <h3 className={`${styles.white} ${styles.captionCustom}`}>DIỆP LINH KHANH</h3>
+                        </div>
+                        <div className={`col-xs-12`}>
+                            <h4 className={`${styles.black} ${styles.captionCustom}`}>DU HỌC SINH TẠI MỸ</h4>
+                            <p className={`${styles.black} ${styles.captionCustom}`}> Nước Mỹ trong mắt em đầy sự tự do và bất ngờ, vì theo những gì em trải qua, mỗi một kì học là một sự khác biệt trong cuộc sống rất lớn. Nếu không đi Mỹ thì thật sự em không hình dung ra nổi hiện tại em sẽ như thế nào haha. Nhưng chắc chắn là em sẽ thích sự trưởng thành của em sau khi dành 3 năm ở Mỹ hơn là nếu em ở Việt Nam.</p>
                         </div>
                     </div>
-                    <div className="col-xs-12 col-sm-6 col-md-3">
-                        <div className={`visible-xs ${styles.mdSpace}`}></div>
-                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer2}`}>
-                            <div className={`visible-md visible-lg col-xs-12 ${styles.imgMainContent}`}>
-                                <p className={`${styles.white} ${styles.captionCustom}`}>Workshop: Định hướng nghề nghiệp ngành Quản Lý Khách Sạn</p>
-                            </div>
-                        </div>
+                    <div className="col-xs-12 col-sm-6 col-md-4">
+                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer1}`}></div>
                         <div className={`col-xs-12 ${styles.greenBg}`}>
-                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Ms. Hạnh Bùi</h3>
-                            <h6 className={`${styles.white} ${styles.captionCustom}`}><i>Đại diện tổ chức Giáo dục Laureate chuyên đào tạo ngành Quản lý Khách sạn</i></h6>
-                            <hr className={`visible-xs visible-sm ${styles.hrCustom} ${styles.grayBg} ${styles.captionCustom}`}/>
-                            <p className={`visible-xs visible-sm ${styles.white} ${styles.captionCustom}`}>Workshop: Định hướng nghề nghiệp ngành Quản Lý Khách Sạn</p>
-                            <br className="visible-md"/>
+                            <h3 className={`${styles.white} ${styles.captionCustom}`}>NGUYỄN NHẬT ANH</h3>
+                        </div>
+                        <div className={`col-xs-12`}>
+                            <h4 className={`${styles.black} ${styles.captionCustom}`}>DU HỌC SINH TẠI STONY BROOK SCHOOL, MA, MỸ</h4>
+                            <p className={`${styles.black} ${styles.captionCustom}`}>Thời gian học trong trường giúp mình biết cách sống và suy nghĩ trong một môi trường đa văn hoá, đa tôn giáo. Các môn học ở trường như khoa học, lich sử dạy rất tốt. Cơ sở vật chất đầy đủ và môn thể chất còn là môn bắt buộc nữa.</p>
                         </div>
                     </div>
-                    <div className="col-xs-12 col-sm-6 col-md-3">
-                        <div className={`visible-xs ${styles.mdSpace}`}></div>
-                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer3}`}>
-                            <div className={`visible-md visible-lg col-xs-12 ${styles.imgMainContent}`}>
-                                <p className={`${styles.white} ${styles.captionCustom}`}>Workshop: Du học trong tầm tay</p>
-                            </div>
-                        </div>
+                    <div className="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-0">
+                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer1}`}></div>
                         <div className={`col-xs-12 ${styles.greenBg}`}>
-                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Ms. Mai Phạm</h3>
-                            <h6 className={`${styles.white} ${styles.captionCustom}`}><i>PGĐ Sunrise Vietnam, 8 năm kinh nghiệm tư vấn du học các nước</i></h6>
-                            <hr className={`visible-xs visible-sm ${styles.hrCustom} ${styles.grayBg} ${styles.captionCustom}`}/>
-                            <p className={`visible-xs visible-sm ${styles.white} ${styles.captionCustom}`}>Workshop: Du học trong tầm tay</p>
-                            <br className="visible-md visible-lg"/>
+                            <h3 className={`${styles.white} ${styles.captionCustom}`}>NGUYỄN THỊ HÂN</h3>
                         </div>
-                    </div>
-                    <div className="col-xs-12 col-sm-6 col-md-3">
-                        <div className={`visible-xs ${styles.mdSpace}`}></div>
-                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer4}`}>
-                            <div className={`visible-md visible-lg col-xs-12 ${styles.imgMainContent}`}>
-                                <p className={`${styles.white} ${styles.captionCustom}`}>Workshop: Unlock the IELTS Test</p>
-                            </div>
-                        </div>
-                        <div className={`col-xs-12 ${styles.greenBg}`}>
-                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Mr. Ngọc Trần</h3>
-                            <h6 className={`${styles.white} ${styles.captionCustom}`}><i>Cựu du học sinh tại Anh, giảng viên IELTS tại Sunrise Vietnam</i></h6>
-                            <hr className={`visible-xs visible-sm ${styles.hrCustom} ${styles.grayBg} ${styles.captionCustom}`}/>
-                            <p className={`visible-xs visible-sm ${styles.white} ${styles.captionCustom}`}>Workshop: Unlock the IELTS Test</p>
-                            <br className="visible-md visible-lg"/>
-                        </div>
-                    </div>
-                    <div className="col-xs-12 col-sm-6 col-md-3">
-                        <div className={`visible-xs ${styles.mdSpace}`}></div>
-                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer5}`}>
-                            <div className={`visible-md visible-lg col-xs-12 ${styles.imgMainContent}`}>
-                                <p className={`${styles.white} ${styles.captionCustom}`}>Du học là một chuyến đi mà bạn được trang bị kiến thức, gặp gỡ người mới để mở mang tầm mắt.</p>
-                            </div>
-                        </div>
-                        <div className={`col-xs-12 ${styles.greenBg}`}>
-                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Đặng Diệu Linh</h3>
-                            <h6 className={`${styles.white} ${styles.captionCustom}`}><i>Du học sinh tại Anh</i></h6>
-                            <br className="visible-md"/>
-                            <hr className={`visible-xs visible-sm ${styles.hrCustom} ${styles.grayBg} ${styles.captionCustom}`}/>
-                            <p className={`visible-xs visible-sm ${styles.white} ${styles.captionCustom}`}>Du học là một chuyến đi mà bạn được trang bị kiến thức, gặp gỡ người mới để mở mang tầm mắt.</p>
-                        </div>
-                    </div>
-                    <div className="col-xs-12 col-sm-6 col-md-3">
-                        <div className={`visible-xs ${styles.mdSpace}`}></div>
-                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer6}`}>
-                            <div className={`visible-md visible-lg col-xs-12 ${styles.imgMainContent}`}>
-                                <p className={`${styles.white} ${styles.captionCustom}`}>Sau khi đi du học nhất là 3 năm tại trường Stony Brook, em đã cảm nhận được mình đã trưởng thành hơn rất nhiều.</p>
-                            </div>
-                        </div>
-                        <div className={`col-xs-12 ${styles.greenBg}`}>
-                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Nguyễn Hoàng <br className="visible-md"/>Nhật Anh</h3>
-                            <h6 className={`${styles.white} ${styles.captionCustom}`}><i>Du học sinh tại Mỹ</i></h6>
-                            <hr className={`visible-xs visible-sm ${styles.hrCustom} ${styles.grayBg} ${styles.captionCustom}`}/>
-                            <p className={`visible-xs visible-sm ${styles.white} ${styles.captionCustom}`}>Sau khi đi du học nhất là 3 năm tại trường Stony Brook, em đã cảm nhận được mình đã trưởng thành hơn rất nhiều.</p>
-                        </div>
-                    </div>
-                    <div className="col-xs-12 col-sm-6 col-md-3">
-                        <div className={`visible-xs ${styles.mdSpace}`}></div>
-                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer7}`}>
-                            <div className={`visible-md visible-lg col-xs-12 ${styles.imgMainContent}`}>
-                                <p className={`${styles.white} ${styles.captionCustom}`}>Đi du học khiến mình tự lập hơn, biết lo nghĩ về sự nghiệp và cuộc sống.</p>
-                            </div>
-                        </div>
-                        <div className={`col-xs-12 ${styles.greenBg}`}>
-                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Nguyễn Thành Long</h3>
-                            <h6 className={`${styles.white} ${styles.captionCustom}`}><i>Du học sinh tại Úc</i></h6>
-                            <br className="visible-md"/>
-                            <hr className={`visible-xs visible-sm ${styles.hrCustom} ${styles.grayBg} ${styles.captionCustom}`}/>
-                            <p className={`visible-xs visible-sm ${styles.white} ${styles.captionCustom}`}>Đi du học khiến mình tự lập hơn, biết lo nghĩ về sự nghiệp và cuộc sống.</p>
-                        </div>
-                    </div>
-
-                    <div className="col-xs-12 col-sm-6 col-md-3">
-                        <div className={`visible-xs ${styles.mdSpace}`}></div>
-                        <div className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer8}`}>
-                            <div className={`visible-md visible-lg col-xs-12 ${styles.imgMainContent}`}>
-                                <p className={`${styles.white} ${styles.captionCustom}`}>Theo học Cao Đẳng Cộng Đồng, cái đầu tiên em có được chính là kiến thức.</p>
-                            </div>
-                        </div>
-                        <div className={`col-xs-12 ${styles.greenBg}`}>
-                            <h3 className={`${styles.white} ${styles.captionCustom}`}>Nguyễn Thùy My</h3>
-                            <h6 className={`${styles.white} ${styles.captionCustom}`}><i>Du học sinh tại Mỹ</i></h6>
-                            <br className="visible-md"/>
-                            <hr className={`visible-xs visible-sm ${styles.hrCustom} ${styles.grayBg} ${styles.captionCustom}`}/>
-                            <p className={`visible-xs visible-sm ${styles.white} ${styles.captionCustom}`}>Theo học Cao Đẳng Cộng Đồng, cái đầu tiên em có được chính là kiến thức.</p>
+                        <div className={`col-xs-12`}>
+                            <h4 className={`${styles.black} ${styles.captionCustom}`}>DU HỌC SINH CANADA TẠI CAMOSUN COLLEGE</h4>
+                            <p className={`${styles.black} ${styles.captionCustom}`}>Nhà chủ rất tốt và nhiệt tình, em không có gì để phàn nàn cả. Thỉnh thoảng chị chủ còn đưa đón em đi học, không thì em đi xe bus miễn phí vì có thẻ sinh viên. Nhìn chung em rất hạnh phúc. Mọi việc đều rất hoàn hảo</p>
                         </div>
                     </div>
                 </div>
