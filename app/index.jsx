@@ -1,6 +1,6 @@
 require('expose?$!expose?jQuery!jquery');
 require("bootstrap-webpack");
-require('./main1703.css');
+require('./main.css');
 require('./callbutton.css');
 require('bootstrap-select');
 require('!style!css!bootstrap-select/dist/css/bootstrap-select.min.css');
