@@ -760,7 +760,8 @@ class Main extends React.Component {
             <div className={`${styles.banner}`}>
                 <img className="visible-xs" src={require('../../photos/201803/banner-small.png')} width="100%"/>
                 {/*<img className="visible-xs" src={require('../../photos/201710/banner-small.jpg')} width="100%"/>*/}
-                <div className={`hidden-xs col-sm-6 col-md-5 col-md-offset-1 text-right ${styles.module} ${styles.place}`}>
+                <div
+                    className={`hidden-xs col-sm-6 col-md-5 col-md-offset-1 text-right ${styles.module} ${styles.place}`}>
                     <ul className="media-list">
                         <li className="media">
                             <div className="media-body">
@@ -1035,12 +1036,12 @@ class Main extends React.Component {
                         <div
                             className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer1}`}></div>
                         <div className={`col-xs-12 ${styles.blueBg}`}>
-                            <h3 className={`text-center semiBold ${styles.yellow} ${styles.captionCustom}`}>
+                            <h3 className={`text-center semiBold ${styles.yellow}`}>
                                 DIỆP LINH KHANH</h3>
                         </div>
                         <div className={`col-xs-12`}>
                             <div className={styles.smSpace}></div>
-                            <h4 className={`${styles.blue} ${styles.captionCustom} semiBold`}>DU HỌC SINH TẠI
+                            <h4 className={`${styles.blue} semiBold`}>DU HỌC SINH TẠI
                                 MỸ</h4>
                             <p> Nước Mỹ trong mắt em đầy sự tự do
                                 và bất ngờ, vì theo những gì em trải qua, mỗi một kì học là một sự khác biệt trong cuộc
@@ -1053,12 +1054,12 @@ class Main extends React.Component {
                         <div
                             className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer2}`}></div>
                         <div className={`col-xs-12 ${styles.blueBg}`}>
-                            <h3 className={`text-center semiBold ${styles.yellow} ${styles.captionCustom}`}>
+                            <h3 className={`text-center semiBold ${styles.yellow}`}>
                                 NGUYỄN NHẬT ANH</h3>
                         </div>
                         <div className={`col-xs-12`}>
                             <div className={styles.smSpace}></div>
-                            <h4 className={`${styles.blue} ${styles.captionCustom} semiBold`}>DU HỌC SINH TẠI
+                            <h4 className={`${styles.blue} semiBold`}>DU HỌC SINH TẠI
                                 STONY BROOK SCHOOL, MA, MỸ</h4>
                             <p>Thời gian học trong trường giúp
                                 mình biết cách sống và suy nghĩ trong một môi trường đa văn hoá, đa tôn giáo. Các môn
@@ -1070,12 +1071,12 @@ class Main extends React.Component {
                         <div
                             className={`col-xs-12 ${styles.noPadding} ${styles.imgMainContainer} ${styles.imgContainer3}`}></div>
                         <div className={`col-xs-12 ${styles.blueBg}`}>
-                            <h3 className={`text-center semiBold ${styles.yellow} ${styles.captionCustom}`}>
+                            <h3 className={`text-center semiBold ${styles.yellow}`}>
                                 NGUYỄN THỊ HÂN</h3>
                         </div>
                         <div className={`col-xs-12`}>
                             <div className={styles.smSpace}></div>
-                            <h4 className={`${styles.blue} ${styles.captionCustom} semiBold`}>DU HỌC SINH
+                            <h4 className={`${styles.blue} semiBold`}>DU HỌC SINH
                                 CANADA TẠI CAMOSUN COLLEGE</h4>
                             <p>Nhà chủ rất tốt và nhiệt tình, em
                                 không có gì để phàn nàn cả. Thỉnh thoảng chị chủ còn đưa đón em đi học, không thì em đi

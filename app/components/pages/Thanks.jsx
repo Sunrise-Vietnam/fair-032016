@@ -33,7 +33,8 @@ export default class Thanks extends React.Component {
                         <h3 className="text-center black">Trước khi sự kiện diễn ra 1 tuần, SUNRISE VIETNAM sẽ gọi
                             điện hoặc email tới bạn để xác nhận lại.</h3>
                         <br/>
-                        <h3 className={`text-center ${styles.blue}`}>HÃY CHIA SẺ THÔNG TIN TRIỂN LÃM ĐẾN BẠN BÈ<br className="hidden-xs"/> VÀ
+                        <h3 className={`text-center ${styles.blue}`}>HÃY CHIA SẺ THÔNG TIN TRIỂN LÃM ĐẾN BẠN BÈ<br
+                            className="hidden-xs"/> VÀ
                             NHỮNG NGƯỜI QUAN TÂM NHÉ! </h3>
                         <h3 className="text-center black">Chân thành cảm ơn và hẹn gặp lại bạn tại sự kiện.</h3>
                         <div className={styles.mdSpace}></div>
@@ -96,7 +97,8 @@ export default class Thanks extends React.Component {
                                 sunrisevietnam.com</a></p>
                         </div>
                         <div className="col-xs-12 col-md-4 text-center">
-                            <p className={styles.blue}>Facebook: <a href="http://fb.com/thaiduong.vietnam" target="_blank">
+                            <p className={styles.blue}>Facebook: <a href="http://fb.com/thaiduong.vietnam"
+                                                                    target="_blank">
                                 facebook.com/thaiduong.vietnam</a></p>
                         </div>
                     </div>
